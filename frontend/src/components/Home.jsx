@@ -1,9 +1,10 @@
 import React from 'react'
-
+import DropdownMenu from './DropdownMenu'
 
 function Home() {
   return (
-    <div>Home</div>
+    <div>
+      <DropdownMenu/></div>
   )
 }
 
