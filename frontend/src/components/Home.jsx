@@ -1,10 +1,14 @@
 import React from 'react'
-import DropdownMenu from './DropdownMenu'
+import Main from './Main.jsx'
+
 
 function Home() {
   return (
     <div>
-      <DropdownMenu/></div>
+        <Main />
+
+    </div>
+
   )
 }
 
