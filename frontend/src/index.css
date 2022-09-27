@@ -4,8 +4,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.search-form{
+  max-width: 59%;
+ 
+
 .image {
   width: 50%;
   max-width: 200px;
   height:50%;
+
 }
