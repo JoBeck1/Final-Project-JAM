@@ -4,8 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "../assets/images/unnamed.png";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
 
 function Header() {
   return (
@@ -25,7 +24,7 @@ function Header() {
                 
                     <Nav.Link href="#link">Sign Up</Nav.Link>
                
-                    <Nav.Link href="#link">Log In</Nav.Link>
+                    <Nav.Link href="#LogIn">log in</Nav.Link>
                  
               
               </Nav1>
@@ -41,9 +40,9 @@ export default Header;
 
 const HeaderContainer = styled.div`
   font-size: 1.3em;
- margin-top: 10px;
- margin-left: 5px;
- margin-right: 5px;
+ //margin-top: 10px;
+ //margin-left: 5px;
+ //margin-right: 5px;
 
  
 
