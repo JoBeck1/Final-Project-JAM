@@ -1,11 +1,17 @@
 
 import Home from './components/Home';
 import RegisterForm from './components/RegisterForm';
+import {Routes, Route} from 'react-router-dom'
 function App() {
   return (
     <div className="App">
- <Home/>
- <RegisterForm />
+
+
+ <Routes>
+  <Route path= "/" element= {<Home/>}/>
+  <Route path="/signup" element= {<RegisterForm />}/>
+  <Route path= "/login" />
+ </Routes>
     </div>
   );
 }
