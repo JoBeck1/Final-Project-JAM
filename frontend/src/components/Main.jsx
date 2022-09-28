@@ -5,14 +5,16 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Picture1 from '../assets/images/Picture1.jpg';
 import Picture2 from '../assets/images/Picture2.jpg';
-
+import DropdownMenu from './DropdownMenu.jsx'
+import Container from 'react-bootstrap/Container';
 
 function Main() {
   return (
-    <MainDiv>
+    <MainDiv className="fluid">
         <Row >
         <Col md={3}>
         {/* Put Side bar here */}
+        <DropdownMenu />
         </Col>
 
         {/* Main text */}
@@ -53,9 +55,9 @@ function Main() {
         </p></Col>
 
         <Col md={3}>
-        <img src={Picture1} class="img-fluid" alt="Flashcards"/>
+        <img src={Picture1} className="img-fluid" alt="Flashcards"/>
 
-        <img src={Picture2} class="img-fluid" alt="Flags"/>
+        <img src={Picture2} className="img-fluid" alt="Flags"/>
     
             
         
@@ -73,8 +75,10 @@ const Title = styled.h1`
 
 `
 const MainDiv = styled.div` 
-    background-color: #EAF8BF92;
+    /* background-color: #EAF8BF92; */
     font-family: Times New Roman; 
+    margin-left: 5px;
+    margin-right: 5px;
 
 `
 
