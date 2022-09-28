@@ -13,7 +13,10 @@ export default function App() {
   console.log(errors);
 
   const {result} = await axios.post("/signup", {data})
-  }
+
+}
+
+
   return (
     <FormWrapper>
       <StyledForm onSubmit={handleSubmit(onSubmit)}>
