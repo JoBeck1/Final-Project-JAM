@@ -38,9 +38,9 @@ function DropdownMenu() {
 }
 
 let ContainerInDropdown = styled(Container)`
-    max-width: 60%;
-    background-color:#27476E;
-    top: 10%;
+    max-width: 40%;
+    /* background-color:#27476E; */
+    padding-top:1rem;
   
   
 `

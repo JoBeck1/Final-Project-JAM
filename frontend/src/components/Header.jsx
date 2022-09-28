@@ -11,28 +11,27 @@ function Header() {
   return (
     <>
       <HeaderContainer>
+      
+          <Navbar>
         <div>
           <img src={Image} alt="logo" />
         </div>
-        <div>
-          <Navbar>
             <Container className="text-center">
               <Nav1>
-                <Row>
-                  <Col md={6}>
+              
+                 
                     <Nav.Link href="#home">Home</Nav.Link>
-                  </Col>
-                  <Col md={3}>
+               
+                
                     <Nav.Link href="#link">Sign Up</Nav.Link>
-                  </Col>
-                  <Col md={3}>
+               
                     <Nav.Link href="#link">Log In</Nav.Link>
-                  </Col>
-                </Row>
+                 
+              
               </Nav1>
             </Container>
           </Navbar>
-        </div>
+      
       </HeaderContainer>
     </>
   );
@@ -42,8 +41,11 @@ export default Header;
 
 const HeaderContainer = styled.div`
   font-size: 1.3em;
-  text-align: center;
-  display: flex;
+ margin-top: 10px;
+ margin-left: 5px;
+ margin-right: 5px;
+
+ 
 
   background-color: #79c1e2;
   img {
@@ -52,5 +54,14 @@ const HeaderContainer = styled.div`
 `;
 
 const Nav1 = styled(Nav)`
+ padding: 1rem;
+ /* margin: 0 auto; */
+ text-align: center;
+ width: 100%;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+ position: absolute;
+ left: 30px;
  
 `;
