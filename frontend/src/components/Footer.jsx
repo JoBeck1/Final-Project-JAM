@@ -36,7 +36,8 @@ const Contain= styled(Container)`
 
     position: absolute;
     top: 54vw;
-    left: 15%;
+    left: 10%;
+
 
     padding: 10px 0;
     
