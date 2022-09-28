@@ -6,6 +6,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Image from "../assets/images/unnamed.png";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import {Link} from "react-router-dom"
+
 
 function Header() {
   return (
@@ -19,11 +21,12 @@ function Header() {
             <Container className="text-center">
               <Nav1>
               
-                 
-                    <Nav.Link href="#home">Home</Nav.Link>
-               
-                
-                    <Nav.Link href="#link">Sign Up</Nav.Link>
+                  <Link to = "/">
+                    Home
+                    </Link>
+                <Link to = "/signup">
+                 Signup
+                </Link>
                
                     <Nav.Link href="#link">Log In</Nav.Link>
                  
