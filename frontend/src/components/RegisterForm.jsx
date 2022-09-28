@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import styled, { css } from 'styled-components';
+import axios from 'axios';
 
 export default function App() {
   const {
@@ -8,8 +9,11 @@ export default function App() {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async (data) => {console.log(data);
   console.log(errors);
+
+  const {result} = await axios.post("/signup", {data})
+}
 
   return (
     <FormWrapper>
