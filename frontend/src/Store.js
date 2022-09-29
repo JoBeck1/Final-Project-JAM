@@ -10,6 +10,7 @@ function ContextProvider (props) {
     // onsubmit 
   const handelSignUp = async (data)=> {
  const {result} = await axios.post("/signup", {data})
+
   }
 
   
