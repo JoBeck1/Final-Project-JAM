@@ -14,3 +14,15 @@ body {
   height:50%;
 
 }
+
+.main_pic {
+  width: 100%;
+  height: 40%;
+  display: block;
+  padding: 5px;
+}
+.main_pic img {
+  height:calc(100vh-20vh )/2;
+  object-fit: cover;
+  width:100%;
+}

@@ -7,7 +7,7 @@ import {FaFacebook} from "react-icons/fa";
 
 function Footer() {
     return(
-        <>
+        
                 <Contain>
                 <div>
                 <Link href="#top">Contact</Link>    
@@ -26,15 +26,16 @@ function Footer() {
                     </div>
                  </SocialMedia>  
                 </Contain>
-        </>
+        
     )
 }
 
 export default Footer;
 
-const Contain= styled(Container)`
+const Contain= styled.div`
 
     position: absolute;
+
     top: 54vw;
     left: 10%;
 

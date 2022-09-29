@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useContext}from 'react'
 import Button from 'react-bootstrap/Button';
 import styled from 'styled-components'; 
 import Row from 'react-bootstrap/Row';
@@ -7,8 +7,9 @@ import Picture1 from '../assets/images/Picture1.jpg';
 import Picture2 from '../assets/images/Picture2.jpg';
 import DropdownMenu from './DropdownMenu.jsx'
 import Container from 'react-bootstrap/Container';
-
+import {Context} from "../Store"
 function Main() {
+ 
   return (
     <MainDiv className="fluid">
         <Row >
@@ -54,11 +55,16 @@ function Main() {
             AWESOME! Just <Button variant="success" size="sm">log in</Button> here and check how much you have learned already!
         </p></Col>
 
-        <Col md={3}>
-        <img src={Picture1} className="img-fluid" alt="Flashcards"/>
+        <Col md={3}> 
+        <div className="main_pic">
+            
+        <img src={Picture1}  alt="Flashcards"/>
 
-        <img src={Picture2} className="img-fluid" alt="Flags"/>
-    
+        </div>
+        <div className="main_pic">
+
+        <img src={Picture2} alt="Flags"/>
+        </div>
             
         
 
