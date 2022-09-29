@@ -10,10 +10,10 @@ export default function App() {
   return (
     <FormWarper>
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <StyledInput type="text" placeholder="Email" {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} />
+      <StyledInput type="email" placeholder="Email" {...register("Email", {required: true, pattern: /^\S+@\S+$/i})} />
       <StyledInput type="password" placeholder="password" {...register("password", {required: true, maxLength: 12})} />
 
-      <StyledButton type="submit" />
+      <StyledButton onSubmit={handleSubmit(onSubmit)} type="submit" >Login</StyledButton>
     </StyledForm>
     </FormWarper>
   );
