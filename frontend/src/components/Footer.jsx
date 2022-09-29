@@ -35,9 +35,11 @@ export default Footer;
 const Contain= styled.div`
 
     position: absolute;
-   bottom: 0;
-   width: 100vw ;
-  height: 10vh;
+
+    top: 54vw;
+    left: 10%;
+
+
     padding: 10px 0;
     
     display: flex;

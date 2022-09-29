@@ -15,8 +15,10 @@ export default function App() {
   const onSubmit = async (data) => {console.log(data);
   console.log(errors);
 
- handelSignUp(data);
+handelSignUp(data);
+
 }
+
 
   return (
     <FormWrapper>
