@@ -23,18 +23,17 @@ function Header() {
               
                   <Link to = "/">
                     Home
-                    </Link>
-                <Link to = "/signup">
-                 Signup
-                </Link>
-               
+                  </Link>
+                  <Link to = "/flashcardcreateNL">
+                    Start now!
+                  </Link>
+                  <Link to = "/signup">
+                    Signup
+                  </Link>
                     <Nav.Link href="#link">Log In</Nav.Link>
-                 
-              
               </Nav1>
             </Container>
           </Navbar>
-      
       </HeaderContainer>
     </>
   );
