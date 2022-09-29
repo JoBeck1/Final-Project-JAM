@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { useForm } from 'react-hook-form';
 import styled, { css } from 'styled-components';
 import axios from 'axios';
+import {Context} from "../Store"
 
 export default function App() {
+
+  const {handelSignUp}= useContext(Context)
   const {
     register,
     handleSubmit,
@@ -12,7 +15,7 @@ export default function App() {
   const onSubmit = async (data) => {console.log(data);
   console.log(errors);
 
-  const {result} = await axios.post("/signup", {data})
+ handelSignUp(data);
 }
 
   return (

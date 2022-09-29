@@ -47,6 +47,7 @@ const HeaderContainer = styled.div`
  margin-top: 10px;
  margin-left: 5px;
  margin-right: 5px;
+ height: 10vh;
 
  
 
