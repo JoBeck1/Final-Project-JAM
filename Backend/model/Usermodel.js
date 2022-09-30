@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema(
     
     Age: { type: Number },
     Password: { type: String, required: true },
-    ConfirmPassword: { type: String, required: true },
+   
   },
 
   { timestamps: true },
