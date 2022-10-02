@@ -4,6 +4,9 @@ const app = express();
 const cors = require('cors');
 app.use(express.json());
 const mongoose = require('mongoose');
+// used cookie to store the token
+const cookieParser= require("cookie-parser");
+app.use(cookieParser())
 
 app.use(cors())
 const port = process.env.Port || 5000; 
@@ -17,7 +20,7 @@ mongoose.connect("mongodb://localhost:27017/projecta?readPreference=primary&appn
 
 app.use("/test", testRouter);
 
-app.use("/signup", UserRouter);
+app.use("/", UserRouter);
 
 //Global error handler
 app.use((error, req, res, next)=>{
