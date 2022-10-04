@@ -82,7 +82,7 @@ const Title = styled.h1`
 `
 const MainDiv = styled.div` 
     /* background-color: #EAF8BF92; */
-    font-family: Times New Roman; 
+    font-family: Poppins, sans-serif; 
     margin-left: 5px;
     margin-right: 5px;
 
