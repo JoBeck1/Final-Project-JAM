@@ -28,9 +28,9 @@ function Header() {
                     Start now!
                   </Link>
                   <Link to = "/signup">
-                    Signup
+                    Sign up
                   </Link>
-                    <Link to ="login">Log In</Link>
+                    <Link to ="/login">Log in</Link>
               </Nav1>
             </Container>
           </Navbar>
@@ -43,10 +43,12 @@ export default Header;
 
 const HeaderContainer = styled.div`
   font-size: 1.3em;
- margin-top: 10px;
- margin-left: 5px;
+  font-family: Poppins, sans-serif; 
+ //margin-top: 10px;
+ //margin-left: 5px;
  margin-right: 5px;
  height: 10vh;
+ list-style: none;
 
  
 
@@ -57,14 +59,26 @@ const HeaderContainer = styled.div`
 `;
 
 const Nav1 = styled(Nav)`
- padding: 1rem;
+ //padding: 1rem;
  /* margin: 0 auto; */
- text-align: center;
+ //text-align: center;
  width: 100%;
  display: flex;
  justify-content: space-around;
  align-items: center;
  position: absolute;
  left: 30px;
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-family: Poppins, sans-serif;
+    &:hover {
+      color: #000;
+    }
+  }
+
+ 
  
 `;
