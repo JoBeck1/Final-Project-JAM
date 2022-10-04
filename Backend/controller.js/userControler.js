@@ -60,18 +60,28 @@ const login = async (req, res) => {
     if (!isUserExist) {
       return res.json({ message: 'User not found' });
     }
-    // check the data compare using bcrypt
-    const isPasswordCorrect = await bcrypt.compare(
-      Password,
-      isUserExist.Password
-    );
+    else {
 
-    if (!isPasswordCorrect) {
-      res.json({ message: 'invalid password' });
-    }
-    const token = jwt.sign({ Email: isUserExist.Email }, 'secret-key');
-    res.json({ token: token });
-    console.log(token);
+      const isPasswordCorrect = await bcrypt.compare(
+        Password,
+        isUserExist.Password
+      );
+  
+      if (!isPasswordCorrect) {
+        res.json({ message: 'invalid password' });
+      }
+      else {
+
+        const token = jwt.sign({ Email: isUserExist.Email }, 'secret-key');
+         // create cookie
+         res.cookie("myToken", token, {
+          // the cookie will expire in a month
+          maxAge:60*60*24*30*1000});
+      res.json("login success",)
+        console.log(token);
+      }
+      }
+    // check the data compare using bcrypt
   } catch (err) {
     res.json({ message: 'something is wrong' });
   }

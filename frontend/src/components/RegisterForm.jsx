@@ -1,6 +1,8 @@
 import React, {useContext} from 'react';
 import { useForm } from 'react-hook-form';
 import styled, { css } from 'styled-components';
+import {yupResolver} from "@hookform/resolvers"
+import * as yup from 'yup'
 
 import {Context} from "../Store"
 
