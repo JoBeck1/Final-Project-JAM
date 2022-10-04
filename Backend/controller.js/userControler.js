@@ -15,9 +15,11 @@ const signup = async (req, res) => {
     if (isUserExist) {
       return res.status(404).json({ message: 'user is already exist ' });
     }
-    if (Password !== ConfirmPassword) {
-      res.status(404).json({ message: 'password is not matched ' });
-    }
+    // this code is not working good the server is down when the password is not matched
+    // if (Password !== ConfirmPassword) {
+    //   res.status(404).json({ message: 'password is not matched ' });
+    // }
+    
     // hash the password and send it to database
     const hashedPassword = await bcrypt.hash(Password, 10);
     Password = hashedPassword;

@@ -63,7 +63,7 @@ const Flashcard = styled(Card)`
     position:absolute;
     top: 20vh;
     left: 6em;
-  }
+  
 `
 
 const FlashBody = styled(Card.Body)`
@@ -95,8 +95,6 @@ const InputFieldRow1 = styled(Row)`
   background-color: #222299;
   height: 80px;
 
-
-
 `
 
 const InputFieldRow2 = styled(Row)`
@@ -111,7 +109,6 @@ const MainDiv = styled.div`
   font-family: sans-serif; 
   margin-left: 5px;
   margin-right: 5px;
-
 `
 
 export default FlashcardCreate
