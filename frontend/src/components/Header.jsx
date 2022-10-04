@@ -30,7 +30,7 @@ function Header() {
                   <Link to = "/signup">
                     Signup
                   </Link>
-                    <Link to ="login">Log In</Link>
+                    <Link to ="/login">Log In</Link>
               </Nav1>
             </Container>
           </Navbar>
