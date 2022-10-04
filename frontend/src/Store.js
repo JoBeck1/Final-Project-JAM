@@ -10,6 +10,7 @@ function ContextProvider (props) {
     // onsubmit 
     // send the data to backend to rigister
   const handelSignUp = async (data)=> {
+    
  const {result} = await axios.post("/signup", {data})
 
   }
