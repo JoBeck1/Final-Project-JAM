@@ -13,8 +13,8 @@ router.post("/login", login)
 
 //  check  the token 
 
-router.get('/token', auth, function(req, res){
-    res.json("auth passed ")
+router.get('/profile', auth, function(req, res){
+    res.json("welcome in your profile ")
 })
 
 
