@@ -1,5 +1,6 @@
 import {createContext, useState} from "react";
 import axios from 'axios';
+import {toast} from "react-toastify"
 
 export  const Context= createContext()
 
@@ -11,9 +12,19 @@ function ContextProvider (props) {
     // send the data to backend to rigister
   const handelSignUp = async (data)=> {
 
- const {result} = await axios.post("/signup", {data})
-console.log(result.data)
-return result.data
+    try {
+   const result = await axios.post("/signup", {data})
+   await  console.log(result.data.message)
+   if (result.data.message==="user is already exist ") {
+    toast.error(" user is already exist ", {
+      position: toast.POSITION.TOP_CENTER
+    })
+   }
+  
+   
+ } catch (err) {
+ console.log(err)
+ }
   }
 
   const handelLogin= async (logindata)=> {
