@@ -43,7 +43,7 @@ function Main() {
         
         <h3>For advanced Users:</h3>
         <p>
-            Enjoy every merit of the JAM-Project by <Button variant="info" size="sm">registering</Button> on this website!
+            Enjoy every merit of the JAM-Project by <Button variant="info" size="sm"> registering</Button> on this website!
             
         </p>
 
@@ -108,6 +108,7 @@ const MainDiv = styled.div`
     box-shadow: 5px 5px 5px #79c1e2;
      margin: 0 auto; 
      width: 100%; 
+     height: 60%;
    
      img{
             width: 100%;
