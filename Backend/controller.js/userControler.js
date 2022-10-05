@@ -13,7 +13,7 @@ const signup = async (req, res) => {
     // verify in the user exist
     const isUserExist = await User.findOne({ Email });
     if (isUserExist) {
-      return res.status(404).json({ message: 'user is already exist ' });
+      return res.json({ message: 'user is already exist ' });
     }
     // this code is not working good the server is down when the password is not matched
     // if (Password !== ConfirmPassword) {
