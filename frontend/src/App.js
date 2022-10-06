@@ -2,10 +2,9 @@
 import Home from './components/Home';
 import RegisterForm from './components/RegisterForm';
 import FlashcardCreate from './components/FlashcardCreate';
-import {Routes, Route, useNavigate} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import LoginForm from './components/LoginForm';
-import './NavbarStyling.css';
-import Navbar from './components/Navbar';
+import './styles/NavbarStyling.css';
 
 import { ToastContainer} from "react-toastify"
 import Profile from "./components/Profile"

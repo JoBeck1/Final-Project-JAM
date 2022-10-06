@@ -110,6 +110,19 @@ const MainDiv = styled.div`
      margin: 0 auto; 
      width: 100%; 
      height: 60%;
+     overflow-x: hidden;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0 20px;
+        position: relative;
+        z-index: 1;
+        
+
+
    
      img{
             width: 100%;
