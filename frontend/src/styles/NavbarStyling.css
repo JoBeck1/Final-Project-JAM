@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 body {
-  background-color: white;
+  background-color: rgb(206, 22, 22);
   margin: auto;
   padding: 0px;
   overflow-x: hidden;
@@ -17,7 +17,7 @@ body {
 }
 img {
   max-width: 100%;
-  height: auto;
+  height: 50%;
 }
 
 .sec__one {
