@@ -5,7 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Picture1 from '../assets/images/Picture1.jpg';
 import Picture2 from '../assets/images/Picture2.jpg';
-import DropdownMenu from './DropdownMenu.jsx'
+import DropdownMenu from './DropdownMenu.jsx';
+
 
 function Main() {
  
@@ -43,7 +44,7 @@ function Main() {
         
         <h3>For advanced Users:</h3>
         <p>
-            Enjoy every merit of the JAM-Project by <Button variant="info" size="sm">registering</Button> on this website!
+            Enjoy every merit of the JAM-Project by <Button variant="info" size="sm"> registering</Button> on this website!
             
         </p>
 
@@ -108,6 +109,7 @@ const MainDiv = styled.div`
     box-shadow: 5px 5px 5px #79c1e2;
      margin: 0 auto; 
      width: 100%; 
+     height: 60%;
    
      img{
             width: 100%;

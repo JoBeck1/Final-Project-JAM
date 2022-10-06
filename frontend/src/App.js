@@ -4,15 +4,19 @@ import RegisterForm from './components/RegisterForm';
 import FlashcardCreate from './components/FlashcardCreate';
 import {Routes, Route, useNavigate} from 'react-router-dom'
 import LoginForm from './components/LoginForm';
+import './NavbarStyling.css';
+import Navbar from './components/Navbar';
+
 import { ToastContainer} from "react-toastify"
 import Profile from "./components/Profile"
 function App() {
   
   return (
-    <div className="App">
+    <div >
 
 
  <Routes>
+  
   <Route path= "/" element= {<Home/>}/>
   <Route path="/signup" element= {<RegisterForm />}/>
   <Route path="/flashcardcreateNL" element= {<FlashcardCreate />}/>
