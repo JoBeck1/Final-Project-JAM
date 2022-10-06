@@ -5,7 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Picture1 from '../assets/images/Picture1.jpg';
 import Picture2 from '../assets/images/Picture2.jpg';
-import DropdownMenu from './DropdownMenu.jsx'
+import DropdownMenu from './DropdownMenu.jsx';
+
 
 function Main() {
  

@@ -4,12 +4,16 @@ import RegisterForm from './components/RegisterForm';
 import FlashcardCreate from './components/FlashcardCreate';
 import {Routes, Route} from 'react-router-dom'
 import LoginForm from './components/LoginForm';
+import './NavbarStyling.css';
+import Navbar from './components/Navbar';
+
 function App() {
   return (
-    <div className="App">
+    <div >
 
 
  <Routes>
+  
   <Route path= "/" element= {<Home/>}/>
   <Route path="/signup" element= {<RegisterForm />}/>
   <Route path="/flashcardcreateNL" element= {<FlashcardCreate />}/>
