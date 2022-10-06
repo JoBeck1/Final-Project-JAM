@@ -74,10 +74,10 @@ const FlashcardContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: green;
   justify-content: center;
   align-items: center;
-  border: 5px solid red;
-  width: 100vw;
+  width: 100%;
 `
 const Flashcard = styled.div`
   width: 100%;
@@ -86,6 +86,7 @@ const Flashcard = styled.div`
   flex-direction: column;
   justify-content: space-around;
   fontSize: 25px;
+  background-color:white;
   color: green;
   margin: auto;
   lineHeight: center;
@@ -120,7 +121,7 @@ const FlashcardButton = styled.button`
 const ButtonContainer = styled.div`
   display: flex;
   margin-top: 30px;
-  width: 70vw;
+  width: 130%;
 `
 const ContainerButton = styled.button`
   display: block;

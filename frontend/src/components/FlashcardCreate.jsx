@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 import DropdownMenu from "./DropdownMenu.jsx";
 import Card from "react-bootstrap/Card";
 import Navbar from "./Navbar.jsx";
-
+import ReactCard from "./Flashcard.jsx";
 
 function FlashcardCreate() {
   return (
@@ -20,30 +20,7 @@ function FlashcardCreate() {
 
         <MainFlashCol md={6}>
           {/* Flashcard here */}
-          <Flashcard>
-            <FlashBody>
-              <FlashRow>
-                <Card.Title style={{ "font-size": "40px" }}>
-                  Card Title1
-                </Card.Title>
-              </FlashRow>
-
-              <FlashRow>
-                <Card.Title style={{ "font-size": "40px" }}>
-                  Card Title2
-                </Card.Title>
-              </FlashRow>
-            </FlashBody>
-          </Flashcard>
-          <InputField>
-            <InputFieldRow1>
-              <Button>Back to Frontside</Button>
-              <Button>Next Flashcard</Button>
-            </InputFieldRow1>
-            <InputFieldRow2>
-              <Button>Done with this deck</Button>
-            </InputFieldRow2>
-          </InputField>
+        <ReactCard />
         </MainFlashCol>
         <Col md={3}>{/* Info about the number of cards and decks */}</Col>
       </Row>
@@ -54,7 +31,6 @@ function FlashcardCreate() {
 //Style
 const MainFlashCol = styled(Col)`
   position: relative;
-  background-color: #123489;
   height: 100vh;
 `;
 
