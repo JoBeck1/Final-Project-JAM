@@ -122,13 +122,24 @@ const MainDiv = styled.div`
         z-index: 1;
         
 
-
    
      img{
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover{
+                transform: scale(1.05);
+                transition: 0.3s;
+            }
+
+            margin-bottom: 20px;
+            border-radius: 10px;
+            
+
         }
     .main_pic{
         margin-top: 10px;
@@ -144,6 +155,8 @@ const MainDiv = styled.div`
        
 
     }  
+
+    
 
 
 `
