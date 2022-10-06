@@ -3,9 +3,11 @@ import { useForm } from 'react-hook-form';
 import styled, { css } from 'styled-components';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup'
+import {toast} from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
 import Background from "../assets/images/background1.jpg"
 import "../styles/formStyling.css"
-
+import {useNavigate} from "react-router-dom"
 
 import {Context} from "../Store"
 
@@ -18,7 +20,7 @@ const schema= yup.object().shape({
   ConfirmPassword: yup.string().oneOf([yup.ref("Password"), null])
 })
 export default function RegisterForm() {
-
+  const navigate= useNavigate()
 
   const {handelSignUp}= useContext(Context)
   const {
@@ -31,7 +33,11 @@ export default function RegisterForm() {
   console.log(errors);
 
 
-handelSignUp(data);
+const resultRegister=  await handelSignUp(data);
+console.log(resultRegister);
+if (resultRegister==="register successfully") {
+ navigate("/profile")
+}
 
 }
 
