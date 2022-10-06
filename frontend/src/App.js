@@ -9,10 +9,12 @@ import Navbar from './components/Navbar';
 
 import { ToastContainer} from "react-toastify"
 import Profile from "./components/Profile"
+
 function App() {
   
   return (
     <div >
+
 
 
  <Routes>
