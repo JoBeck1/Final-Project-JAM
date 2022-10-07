@@ -97,14 +97,14 @@ const Flashcard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  fontSize: 25px;
+  font-Size: 25px;
   background-color:white;
   color: green;
   margin: auto;
-  lineheight: center;
-  borderradius: 50%;
+  line-height: center;
+  border-radius: 50%;
   border: 2px solid black;
-  textalign: center;
+  text-align: center;
   padding: 7rem 3rem;
 `;
 const FlashcardInput1 = styled.p`

@@ -37,14 +37,18 @@ function Main() {
         
         <h3>For Beginners:</h3>
         <p>
-            Feel free to <Button variant="primary" size="sm">start</Button> right away! No registration needed!
+            Feel free to <Button 
+            link href="/flashcardcreateNL"  
+            variant="primary" size="sm">start</Button> right away! No registration needed!
         </p>
         
         <hr />
         
         <h3>For advanced Users:</h3>
         <p>
-            Enjoy every merit of the JAM-Project by <Button variant="info" size="sm"> registering</Button> on this website!
+            Enjoy every merit of the JAM-Project by <Button
+            link href="/signup"
+            variant="info" size="sm"> registering</Button> on this website!
             
         </p>
 
@@ -52,7 +56,9 @@ function Main() {
         
         <h3>Already registered?</h3>
         <p>
-            AWESOME! Just <Button variant="success" size="sm">log in</Button> here and check how much you have learned already!
+            AWESOME! Just <Button
+            link href="/login"
+            variant="success" size="sm">log in</Button> here and check how much you have learned already!
         </p></Col>
 
         <Col md={3}> 
