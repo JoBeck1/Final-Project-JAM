@@ -6,13 +6,18 @@ import Col from 'react-bootstrap/Col';
 import Picture1 from '../assets/images/Picture1.jpg';
 import Picture2 from '../assets/images/Picture2.jpg';
 import DropdownMenu from './DropdownMenu.jsx';
+import videoBg from '../assets/videoBg.mp4';
+
 
 
 function Main() {
  
   return (
     <MainDiv className="fluid">
-        <Row >
+         <div className="overlay"></div>
+        <video src={videoBg} autoPlay loop muted />
+        <div className="content">
+            <Row >
         <Col md={3}>
         {/* Put Side bar here */}
         <DropdownMenu />
@@ -78,9 +83,13 @@ function Main() {
         </Col>
         </Row>
 
+        </div>
+       
     </MainDiv>
   )
 }
+
+
 
 const Title = styled.h1`
     font-size: 1.5em;
@@ -97,36 +106,96 @@ const Title = styled.h1`
     border-radius: 10px;
     border: 2px solid #c7e1ec;
     box-shadow: 5px 5px 5px #2f373b;
+    text-shadow: 2px 2px 2px #000000;
+
+    @media (max-width: 768px) {
+        font-size: 1.2em;
+    }
+
+    @media (max-width: 576px) {
+        font-size: 1em;
+    }
+
+    @media (max-width: 375px) {
+        font-size: 0.8em;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 0.6em;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 0.6em;
+    }
+
     
 
 `
 const MainDiv = styled.div` 
-    font-family: Poppins, sans-serif; 
-    font-size: 1.2em;
+    font-size: 1.3em;
+    font-family: Poppins, sans-serif;
+    font-weight: 400;
+    background-color: #96b5c4;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    text-decoration: none;
     color: #473e41;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #c7e1ec;
+    box-shadow: 5px 5px 5px #2f373b;
+    background: #fff;
+    position: relative;
+    z-index: 1;
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
     padding: 10px;
-    background-color: #96b5c4;
+    background-color: #128ecc;
     border-radius: 10px;
     border: 2px solid #c7e1ec;
-    box-shadow: 5px 5px 5px #79c1e2;
-     margin: 0 auto; 
-     width: 100%; 
-     height: 60%;
-     overflow-x: hidden;
-        overflow-y: auto;
+    box-shadow: 5px 5px 5px #2f373b;
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        z-index: 2;
+        opacity: 0.5;
+    }  
+
+    video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+        z-index: 1;
+
+    }
+    .content {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 0 20px;
-        position: relative;
-        z-index: 1;
-        
+        color: #fff;
+        padding: 0 1rem;
+    }
+
+    
 
    
      img{
@@ -161,9 +230,21 @@ const MainDiv = styled.div`
        
 
     }  
+    @media (max-width: 768px) {
+        font-size: 1.2em;
+    }
 
-    
+    @media (max-width: 576px) {
+        font-size: 1em;
+    }
 
+    @media (max-width: 375px) {
+        font-size: 0.8em;
+    }
+
+    @media (max-width: 320px) {
+        font-size: 0.6em;
+    }
 
 `
 
