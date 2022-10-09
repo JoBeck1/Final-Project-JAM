@@ -1,84 +1,111 @@
 import React from "react";
-import Dropdown from "react-bootstrap/Dropdown";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+
 import styled from "styled-components";
 
-function DropdownMenu() {
-  return (
-    <ContainerInDropdown className="position-absolute">
-      <Row className="position-absolute  start-30 d-flex flex-column w-70">
-        <Col>
-          <Form className="mb-2 ">
-            <Form.Group className="d-flex flex-row">
-              <Form.Control type="text" placeholder="Search" />
-              <Button type="submit" className="bg-info ">
-                {" "}
-                Search
-              </Button>
-            </Form.Group>
-          </Form>
-        </Col>
-        <Col>
-          <Dropdown>
-            <Dropdown.Toggle className="bg-info w-100">
-              {" "}
-              Our Recommendations{" "}
-            </Dropdown.Toggle>
-            <Dropdown.Menu className="bg-info w-100">
-              <Dropdown.Item href="/"> Books</Dropdown.Item>
-              <Dropdown.Item href="/"> Guides</Dropdown.Item>
-              <Dropdown.Item href="/"> Apps</Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Col>
-      </Row>
-    </ContainerInDropdown>
-  );
+class DropdownMenu extends React.Component {
+  handleClick = (action) => {
+    if (!action) return;
+
+    if (this.props.onClick) this.props.onClick(action);
+  };
+
+  render = () => {
+    return (
+      <StyledUl>
+        <StyledLi>
+          <StyledA link href="/" onClick={() => this.handleClick("/Home")}>
+            Home
+          </StyledA>
+        </StyledLi>
+        <DropDownLi>
+          <Dropbtn onClick={() => this.handleClick("DropDown")}>
+            Our Recommendations
+          </Dropbtn>
+          <DropDownContent>
+            {" "}
+            <SubA link href="/" onClick={() => this.handleClick("Link1")}>
+              Books
+            </SubA>
+            <SubA link href="/" onClick={() => this.handleClick("Link2")}>
+              Guides
+            </SubA>
+            <SubA link href="/" onClick={() => this.handleClick("Link3")}>
+              Apps
+            </SubA>
+          </DropDownContent>
+        </DropDownLi>
+      </StyledUl>
+    );
+  };
 }
 
-const ContainerInDropdown = styled(Container)`
-  padding: 15px;
-   width: 20vw;
-  .dropdown-item {
-    color: white;
+const StyledUl = styled.ul`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid #c7e1ec;
+  box-shadow: 5px 5px 5px #2f373b;
+  padding: 10px;
+  background: #fff;
+  background-color: #128ecc;
+`;
+
+const StyledLi = styled.li`
+  float: left;
+`;
+
+const Dropbtn = styled.div`
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+`;
+
+const DropDownContent = styled.div`
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+`;
+
+const DropDownLi = styled(StyledLi)`
+  display: inline-block;
+  &:hover {
+    background-color: #2d9ce6;
+    box-shadow: 5px 5px 5px #2f373b;
+    cursor: pointer;
   }
-  .dropdown-item:hover {
-    color: black;
+  &:hover ${DropDownContent} {
+    display: block;
   }
-  .dropdown-toggle {
-    color: white;
+`;
+
+const StyledA = styled.a`
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  &:hover {
+    background-color: #2d9ce6;
+    box-shadow: 5px 5px 5px #2f373b;
+    cursor: pointer;
   }
-  .dropdown {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 5px;
-    margin-right: 5px;
-    padding: 10px;
-    //background-color: #79c1e2;
-  }
-  .form-control {
-    background-color: #79c1e2;
-    color: #635a5a;
-  }
-  .btn {
-    background-color: #79c1e2;
-    color: #635a5a;
-    border: 1px solid #635a5a;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-  .btn:hover {
-    background-color: #635a5a;
-    color: #feffff;
-    border: 1px solid #79c1e2;
-    border-radius: 5px;
-    margin-left: 5px;
-    margin-right: 5px;
+`;
+
+const SubA = styled.a`
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  &:hover {
+    background-color: #f1f1f1;
   }
 `;
 

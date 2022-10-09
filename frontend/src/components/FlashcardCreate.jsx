@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import styled from "styled-components";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import DropdownMenu from "./DropdownMenu.jsx";
 import Card from "react-bootstrap/Card";
 import Navbar from "./Navbar.jsx";
 import ReactCard from "./Flashcard.jsx";
@@ -15,7 +14,7 @@ function FlashcardCreate() {
 
       <Row>
         <Col md={3}>
-          <DropdownMenu />
+          
         </Col>
 
         <MainFlashCol md={6}>

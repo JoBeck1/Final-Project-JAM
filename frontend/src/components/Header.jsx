@@ -4,8 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "../assets/images/unnamed.png";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+
 import { Link } from "react-router-dom";
 
 function Header() {
@@ -34,6 +33,7 @@ export default Header;
 
 const HeaderContainer = styled.div`
   font-size: 1.3em;
+
   font-family: Poppins, sans-serif;
   font-weight: 400;
   background-color: #96b5c4;
@@ -141,5 +141,11 @@ const HeaderContainer = styled.div`
 `;
 const LinkNav = styled(Link)`
   text-decoration: none;
-`;
+  color: #2f373b;
 
+  &:hover {
+    color: #45d69a;
+    transform: scale(1.55);
+    transition: 0.3s;
+  }
+`;
