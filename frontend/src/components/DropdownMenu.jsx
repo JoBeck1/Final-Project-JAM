@@ -67,9 +67,26 @@ const Dropbtn = styled.div`
 const DropDownContent = styled.div`
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: #c2d9e9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 5px 5px 5px #2f373b;
+  border-radius: 7px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+  animation: downOut 300ms ease-in-out forwards;
+  transform-origin: center center;
+
+  @keyframes downOut {
+    0% {
+      transform: translateZ(200px) transLateY(40px);
+    }
+    80% {
+      transform: translateZ(-10px) transLateY(0px);
+    }
+    100% {
+      transform: translateZ(0px) transLateY(0px);
+    }
+  }
+
   z-index: 1;
 `;
 
@@ -79,9 +96,13 @@ const DropDownLi = styled(StyledLi)`
     background-color: #2d9ce6;
     box-shadow: 5px 5px 5px #2f373b;
     cursor: pointer;
+    border-radius: 7px;
+
   }
   &:hover ${DropDownContent} {
     display: block;
+    transform: translateY(10px);
+
   }
 `;
 
@@ -95,6 +116,7 @@ const StyledA = styled.a`
     background-color: #2d9ce6;
     box-shadow: 5px 5px 5px #2f373b;
     cursor: pointer;
+    border-radius: 7px;
   }
 `;
 
@@ -104,8 +126,13 @@ const SubA = styled.a`
   text-decoration: none;
   display: block;
   text-align: left;
+  border-radius: 7px;
   &:hover {
-    background-color: #f1f1f1;
+    box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  z-index: 111;
+  transition: 0.4s all;
   }
 `;
 
