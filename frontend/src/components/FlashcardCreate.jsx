@@ -6,6 +6,8 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Navbar from "./Navbar.jsx";
 import ReactCard from "./Flashcard.jsx";
+import Sidebar from './Sidebar';
+
 
 function FlashcardCreate() {
   return (
@@ -14,6 +16,7 @@ function FlashcardCreate() {
 
       <Row>
         <Col md={3}>
+          <Sidebar />
           
         </Col>
 
