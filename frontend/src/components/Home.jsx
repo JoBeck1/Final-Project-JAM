@@ -4,15 +4,18 @@ import Header from "./Header.jsx"
 import Footer from "./Footer.jsx"
 
 
+
 function Home() {
   return (
     <div>
+   
+    
          <Header />
        
         <Main />
       
 
-        <Footer />
+        <Footer /> 
     </div>
 
   )
