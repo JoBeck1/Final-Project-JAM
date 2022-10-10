@@ -9,6 +9,9 @@ export  const Context= createContext()
 
 function ContextProvider (props) {
   const [isProfile, setIsProfile] = useState()
+  // flip card state 
+  const [flip, setFlip] = useState(false);
+  const [text, setText]= useState({frontSideLine1:"", frontSideLine2:"",backSideLine1:"", backSideLine2:"" })
   // const navigate = useNavigate()
     // onsubmit 
     // send the data to backend to rigister
@@ -47,7 +50,44 @@ function ContextProvider (props) {
   }
   
 
-    return <Context.Provider value={{ handelSignUp, handelLogin , isProfile}} > {props.children}</Context.Provider>
+  // flash card functions 
+  // flip card change side 
+  const handelFlip=(e)=>{
+    e.preventDefault()
+  setFlip(!flip)
+  }
+
+  // set the input field value 
+  const handleInputText= (e)=>{
+    setText()
+ setText({...text, [e.target.name]: e.target.value})
+ 
+  }
+  // set submit from flashcard  and send the data to backend 
+  const handleFlashCardSubmit= async (e)=>{
+    try{
+   
+      e.preventDefault()
+     
+      const response= await axios.post("/cardtest", {text})
+      console.log("the text is", text)
+      setText({frontSideLine1:"", frontSideLine2:"",backSideLine1:"", backSideLine2:""  })
+      console.log("the text is", text)
+      console.log(response.data.message)
+      if (response.data.message==="your card is created successfully"){
+
+        toast.success(response.data.message, {  position: toast.POSITION.TOP_CENTER})
+      } else {
+        toast.error("please fill all field", {  position: toast.POSITION.TOP_CENTER})
+
+      }
+    } catch (err) {
+   console.log(err)
+    }
+   
+   }
+
+    return <Context.Provider value={{ handelSignUp, handelLogin , isProfile, flip, setFlip, text, setText, handelFlip, handleFlashCardSubmit, handleInputText}} > {props.children}</Context.Provider>
 }
 
 

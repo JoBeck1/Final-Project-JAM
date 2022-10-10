@@ -12,7 +12,7 @@ export default function LoginForm() {
   console.log(errors);
  const loginResult= await handelLogin(data)
  if (loginResult==="login success") {
-navigate("/profile")
+navigate("/flashcardcreateNL")
  }
  console.log(loginResult);
   }
