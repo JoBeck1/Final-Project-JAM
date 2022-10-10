@@ -1,10 +1,12 @@
 
+
 import React, {useState, useContext, useEffect} from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import ReactCardFlip from 'react-card-flip';
 import {Context} from "../Store"
 import {toast} from "react-toastify"
+
 function ReactCard() {
  
   const {flip, setFlip, text, setText, handelFlip, handleFlashCardSubmit,handleInputText  } = useContext(Context)
@@ -18,6 +20,7 @@ function ReactCard() {
 // }, [text])
 
   return (
+
       <FlashcardContainer onSubmit={handleFlashCardSubmit}>
           <ReactCardFlip isFlipped={flip}
               flipDirection="horizontal"
@@ -115,6 +118,7 @@ function ReactCard() {
                   Next Flashcard
               </ContainerButton>
           </ButtonContainer>
+
       </FlashcardContainer>
   );
 }
@@ -125,7 +129,6 @@ const FlashcardContainer = styled.form`
   height: 100vh;
   justify-content: center;
   align-items: center;
-  border: 5px solid red;
 
 `
 const Flashcard = styled.div`
