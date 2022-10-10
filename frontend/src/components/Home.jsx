@@ -2,7 +2,6 @@ import React from 'react'
 import Main from './Main.jsx'
 import Header from "./Header.jsx"
 import Footer from "./Footer.jsx"
-import Flashcard from "./Flashcard.jsx"
 
 
 
@@ -11,11 +10,9 @@ function Home() {
     <div>
     
   
-        <Flashcard />
-
-         {/* <Header />
+         <Header />
        
-        <Main /> */}
+        <Main />
       
 
         <Footer /> 

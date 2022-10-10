@@ -129,7 +129,6 @@ const FlashcardContainer = styled.form`
   height: 100vh;
   justify-content: center;
   align-items: center;
-  border: 5px solid red;
 
 `
 const Flashcard = styled.div`
