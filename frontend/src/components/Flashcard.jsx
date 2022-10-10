@@ -26,105 +26,6 @@ function ReactCard() {
 // }, [text])
 
   return (
-<<<<<<< HEAD
-      <FlashcardContainer onSubmit={handleFlashCardSubmit}>
-          <ReactCardFlip isFlipped={flip}
-              flipDirection="horizontal"
-              flipSpeedBackToFront= "1.2"
-              flipSpeedFrontToBack= "1.2" >
-          {/* -----------Flashcard Front --------- */}
-              
-              <Flashcard>
-                <TopContainer>
-
-                </TopContainer>
-                <CircleWrapper>
-
-                  <Circle></Circle>
-                </CircleWrapper>
-                <TextContainer>
-
-                  <FlashcardInput1>
-                      <InputField type="text" name="frontSideLine1" value={text.frontSideLine1} style={{
-                      textAlign: 'center', width:"100%"}} onChange={ handleInputText}
-                      placeholder="write your word ....."
-                      />
-                   </FlashcardInput1>
-              {/* Second line of Flashcard input */}
-                  <FlashcardInput2>
-                      <InputField type="text" name="frontSideLine2" value={text.frontSideLine2} style={{
-                      textAlign: 'center', width:"100%"
-                      }}onChange={ handleInputText} placeholder="write your sentance.."
-                      />
-                   </FlashcardInput2>
-                  <FlashcardButton  onClick={handelFlip }>
-                      To Backside
-                  </FlashcardButton>
-                </TextContainer>
-                  
-                <ButtonContainers>
-
-</ButtonContainers>
-              {/* Backside/Frontside Button */}
-             
-                {/* <ButtonContainers>
-
-                </ButtonContainers> */}
-              {/* First line of Flashcard input */}
-              </Flashcard>
-          {/* ------------ Flashcard Back -----------------------*/}
-              <Flashcard>
-              <TopContainer>
-
-</TopContainer>
-<CircleWrapper>
-
-  <Circle></Circle>
-</CircleWrapper>
-<TextContainer>
-              {/* First line of Flashcard input */}
-                  <FlashcardInput1>
-                   
-                      <InputField type="text" name="backSideLine1" value={text.backSideLine1} style={{
-                      textAlign: 'center', width:"100%",
-                      }} onChange={ handleInputText}
-                      placeholder="write the meaning ..."
-                      />
-                   </FlashcardInput1>
-              {/* Second line of Flashcard input */}
-                  <FlashcardInput2>
-                 
-                      <InputField type="text" name="backSideLine2" value={text.backSideLine2} style={{
-                      textAlign: 'center', width:"100%", 
-                      }}onChange={ handleInputText}
-                      placeholder="write the meaning ..."
-                      />
-                   </FlashcardInput2>
-              {/* Backside/Frontside Button */}
-                  <FlashcardButton  onClick={handelFlip}>
-                      To Frontside
-                  </FlashcardButton>
-                  </TextContainer>
-                  <ButtonContainers>
-
-                 </ButtonContainers>
-              </Flashcard>
-             
-          </ReactCardFlip>
-          <ButtonContainer>
-              <ContainerButton
-            
-              >
-                  Previous Flashcard
-              </ContainerButton>
-              <ContainerButton
-              // onClick={}
-              type="submit"
-              >
-                  Next Flashcard
-              </ContainerButton>
-          </ButtonContainer>
-=======
     <>
       <Sidebar />
       <FlashcardContainer>
@@ -196,7 +97,6 @@ function ReactCard() {
             Next Flashcard
           </ContainerButton>
         </ButtonContainer>
->>>>>>> c405f923a43095ef17ab76e8c30eb8d0a4a46127
       </FlashcardContainer>
     </>
   );
