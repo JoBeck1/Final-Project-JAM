@@ -1,8 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+body {
+  background-color: rgb(226, 17, 17);
+  margin: auto;
+  padding: 0px;
+  overflow-x: hidden;
+  background-repeat: repeat;
+  font-family: 'Inter', sans-serif;
+  display: grid;
+}
+.container {
+  width: 100%;
+	padding-right:15px;
+	padding-left:15px;
+	margin-right:auto;
+	margin-left:auto;
+  background-color: rgb(89, 185, 223);
 
-
-
-
+}
 img {
   max-width: 100%;
   height: auto;
@@ -18,12 +32,12 @@ img {
   text-align: center;
   display: block;
   margin: 0 auto;
-  color: #cc4b18;
+  color: #07a8ff;
   font-family: 'Inter', sans-serif;
 }
 .navBar .logo img {
   float: left;
-  max-height: 12px;
+  max-height: 120px;
 }
 .is-active {
   color: #ff5800!important;
@@ -149,8 +163,8 @@ li {
 }
 
 .header__middle__logo img{
-  max-width: 207px;
-  margin: 17px 0 0 0;
+  max-width: 76px;
+  margin: 10px 0 0 0;
 }
 
 

@@ -1,0 +1,96 @@
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  #contact {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgb(54 54 54 / 60%);
+  }
+
+    .contact__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .contact__form__input {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .contact__form__input:focus {
+        border: 1px solid #07a8ff;
+    }
+
+    .contact__form__input::placeholder {
+        color: #ccc;
+    }
+
+
+    .contact__form__button {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        background-color: #07a8ff;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .contact__form__button:hover {
+        background-color: #07a8ff;
+        opacity: 0.8;
+    }
+
+    .contact__form__button:active {
+        background-color: #07a8ff;
+        opacity: 0.6;
+    }
+
+    .contact__form__button:focus {
+        background-color: #07a8ff;
+        opacity: 0.8;
+    }
+
+    .contact__form__button:disabled {
+        background-color: #ccc;
+        opacity: 1;
+    }
+    
+  
+  
+  .App-link {
+    color: #61dafb;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
