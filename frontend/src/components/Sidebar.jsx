@@ -35,46 +35,83 @@ return (
 }
 
 const SidebarContainer= styled.div`
-height:100vh;
-width:20vw;
-background-color:#2f4050; 
-opacity: .92;
-position: absolute;
+width: 100%;
+height: 100%;
+background-color: #0e0303;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+padding: 20px;
+margin: 20px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+@media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    }
 
 `
 const ListStyling= styled.ul`
-    height: auto;
-    width: 100%;
-    position:absolute;
-    top: 15%; 
+list-style: none;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
 
 `
 const ListItems = styled.li`
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin: 10px;
+padding: 10px;
+width: 100%;
+height: 100%;
+background-color: #615d5d;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+@media (max-width: 768px) {
     width: 100%;
-    height:50px;
-    list-style-type: none;
-    margin: 0;
-    display:flex;
-    align-items:center;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color : #fff;
-    :hover {
-     cursor: pointer;
-     background-color : #293846;
-     width: 100%;
+    align-items: center;
     }
+    
     
     
     
     `
 const LinkStyling= styled(Link)`
 
-    text-decoration: none;
-    color : #fff;
-    :hover{
-        color : #fff;
+text-decoration: none;
+color: #fff;
+font-size: 1.5rem;
+font-weight: 600;
+text-align: center;
+@media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
     }
+
    
 `
 
