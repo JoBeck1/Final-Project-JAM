@@ -5,6 +5,7 @@ const FlashcardSchema= new mongoose.Schema({
     frontSideLine2:{ type: String, required: [true, "please fill all fields "]},
     backSideLine1: { type: String, required: [true, "please fill all fields "]},
     backSideLine2:{ type: String, required: [true, "please fill all fields "]},
+    deckName: String
 })
 
 const FlashCard= mongoose.model('FlashCard', FlashcardSchema)

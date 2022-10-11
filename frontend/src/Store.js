@@ -11,7 +11,14 @@ function ContextProvider (props) {
   const [isProfile, setIsProfile] = useState()
   // flip card state 
   const [flip, setFlip] = useState(false);
+  const [deckName, setDeckName]= useState("")
+
+// state for hide the input field after entering the name 
+const [isInputExist, setIsInputExist]= useState(true)
+
   const [text, setText]= useState({frontSideLine1:"", frontSideLine2:"",backSideLine1:"", backSideLine2:"" })
+// set number for how many flash card has been created
+  const [count, setCount] = useState(0)
   // const navigate = useNavigate()
     // onsubmit 
     // send the data to backend to rigister
@@ -69,7 +76,7 @@ function ContextProvider (props) {
    
       e.preventDefault()
      
-      const response= await axios.post("/cardtest", {text})
+      const response= await axios.post("/flashcardcreateNL/flipCreate", {text, deckName})
       console.log("the text is", text)
       setText({frontSideLine1:"", frontSideLine2:"",backSideLine1:"", backSideLine2:""  })
       console.log("the text is", text)
@@ -77,6 +84,7 @@ function ContextProvider (props) {
       if (response.data.message==="your card is created successfully"){
 
         toast.success(response.data.message, {  position: toast.POSITION.TOP_CENTER})
+        setCount(count+1)
       } else {
         toast.error("please fill all field", {  position: toast.POSITION.TOP_CENTER})
 
@@ -87,7 +95,19 @@ function ContextProvider (props) {
    
    }
 
-    return <Context.Provider value={{ handelSignUp, handelLogin , isProfile, flip, setFlip, text, setText, handelFlip, handleFlashCardSubmit, handleInputText}} > {props.children}</Context.Provider>
+   // function to store the name if deck 
+   const handelNameOnDickCard =(e)=> {
+    setDeckName( e.target.value)
+   }
+   // function to handel the input field and reset the value inside the deck 
+   const handelDeckNameSubmit= (e)=> {
+    e.preventDefault()
+    setIsInputExist(false)
+   e.target.reset()
+   
+}
+
+    return <Context.Provider value={{ handelSignUp, handelLogin , isProfile, flip, setFlip, text, setText, handelFlip, handleFlashCardSubmit, handleInputText, count, deckName, setDeckName, handelNameOnDickCard, handelDeckNameSubmit, isInputExist, setIsInputExist}} > {props.children}</Context.Provider>
 }
 
 

@@ -19,6 +19,6 @@ router.post("/login", login)
 router.get('/profile', auth, function(req, res){
     res.json("welcome in your profile ")
 })
-router.post("/cardtest", flashcardController)
+router.post("/flashcardcreateNL/flipCreate", flashcardController)
 
 module.exports = router;

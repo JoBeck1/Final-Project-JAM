@@ -25,6 +25,7 @@ body {
   height: calc(100vh-20vh) / 2;
   object-fit: cover;
   width: 100%;
+  
 }
 
 video {
