@@ -133,9 +133,8 @@ const FlashcardContainer = styled.form`
   align-items: center;
   background-color: #8b8888;
   border-radius: 10px;
-  box-shadow: 5px 5px 5px #2f373b;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  margin: 10px;
   width: 100%;
   text-decoration: none;
   color: #473e41;

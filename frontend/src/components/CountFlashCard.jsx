@@ -34,7 +34,6 @@ background-color: #fff;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 padding: 20px;
-margin: 20px;
 
 @media (max-width: 768px) {
   width: 100%;
