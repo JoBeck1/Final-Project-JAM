@@ -8,6 +8,7 @@ import './styles/NavbarStyling.css';
 
 import { ToastContainer} from "react-toastify"
 import Profile from "./components/Profile"
+import ContactForm from './components/ContactForm';
 
 function App() {
   
@@ -23,6 +24,8 @@ function App() {
   <Route path="/flashcardcreateNL" element= {<FlashcardCreate />}/>
   <Route path= "/login"  element= {<LoginForm />}/>
   <Route path= "/profile" element= {<Profile />}/>
+  <Route path= "/contact" element= {<ContactForm />}/>
+
  </Routes>
  <ToastContainer/>
     </div>

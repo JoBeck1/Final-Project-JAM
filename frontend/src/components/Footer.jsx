@@ -2,12 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import { FaTwitter } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import  { Link }  from  "react-router-dom" ;
 
 function Footer() {
   return (
     <Contain>
       <div>
-        <Link href="">Contact</Link>
+        <LinkStyle to="/contact" style={{cursor: "pointer"}}>Contact</LinkStyle>
         {/* Contactform is needed! */}
       </div>
       <div>&copy; 2022 by JAM</div>
@@ -62,7 +63,7 @@ const SocialMedia = styled.div`
   font-size: 1.2rem;
   cursor: pointer;
 `;
-const Link = styled.a`
+const LinkStyle = styled(Link)`
   color: #f1e8e8;
   text-decoration: none;
   font-size: 1.2em;
