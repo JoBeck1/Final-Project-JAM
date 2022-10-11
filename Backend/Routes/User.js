@@ -21,4 +21,7 @@ router.get('/profile', auth, function(req, res){
 })
 router.post("/flashcardcreateNL/flipCreate", flashcardController)
 
+
+  
+
 module.exports = router;

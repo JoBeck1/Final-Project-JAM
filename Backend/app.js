@@ -4,6 +4,11 @@ const app = express();
 const cors = require('cors');
 app.use(express.json());
 const mongoose = require('mongoose');
+
+
+
+
+
 // used cookie to store the token
 const cookieParser= require("cookie-parser");
 app.use(cookieParser())
@@ -31,6 +36,12 @@ app.use((error, req, res, next)=>{
         }
     })
 })
+
+
+
+
+
+
 
 app.listen(port, ()=>{console.log(`Listening to server on port ${port}.`)})
 
