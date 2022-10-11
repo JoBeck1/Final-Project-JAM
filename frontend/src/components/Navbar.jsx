@@ -98,7 +98,7 @@ const Navbar = () => {
                       <NavLink
                         onClick={toggleClass}
                         activeClassName="is-active"
-                        to={`/Online`}
+                        to={`/Setting`}
                       >
                         {" "}
                         Setting{" "}
@@ -108,7 +108,7 @@ const Navbar = () => {
                       <NavLink
                         onClick={toggleClass}
                         activeClassName="is-active"
-                        to={`/Offline`}
+                        to={`/Logout`}
                       >
                         {" "}
                         Log Out{" "}
