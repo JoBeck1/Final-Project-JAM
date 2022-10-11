@@ -2,10 +2,12 @@
 
 import React, {useState, useContext, useEffect} from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
+
 import ReactCardFlip from 'react-card-flip';
 import {Context} from "../Store"
+
 import {toast} from "react-toastify"
+
 
 function ReactCard() {
  

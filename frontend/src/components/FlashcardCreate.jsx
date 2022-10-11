@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import Navbar from "./Navbar.jsx";
 import ReactCard from "./Flashcard.jsx";
 import Sidebar from './Sidebar';
+import CountFlashCard from "./CountFlashCard"
 
 
 function FlashcardCreate() {
@@ -24,7 +25,9 @@ function FlashcardCreate() {
           {/* Flashcard here */}
         <ReactCard />
         </MainFlashCol>
-        <Col md={3}>{/* Info about the number of cards and decks */}</Col>
+        <Col md={3}>{/* Info about the number of cards and decks */}
+        <CountFlashCard/>
+        </Col>
       </Row>
     </MainDiv>
   );
