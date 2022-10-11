@@ -7,7 +7,7 @@ function Footer() {
   return (
     <Contain>
       <div>
-        <Link href="#top">Contact</Link>
+        <Link href="">Contact</Link>
         {/* Contactform is needed! */}
       </div>
       <div>&copy; 2022 by JAM</div>
