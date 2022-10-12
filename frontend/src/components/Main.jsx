@@ -156,11 +156,7 @@ const MainDiv = styled.div`
     margin-bottom: 10px;
     margin-left: 5px;
     margin-right: 5px;
-    padding: 10px;
-    background-color: #128ecc;
-    border-radius: 10px;
-    border: 2px solid #c7e1ec;
-    box-shadow: 5px 5px 5px #2f373b;
+  
     .overlay {
         position: absolute;
         top: 0;

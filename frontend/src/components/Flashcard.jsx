@@ -131,8 +131,22 @@ const FlashcardContainer = styled.form`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: #8b8888;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 100%;
+  text-decoration: none;
+  color: #473e41;
+ 
 
-`
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+
 const Flashcard = styled.div`
   width: 500px;
   height: 500px;
@@ -148,7 +162,6 @@ const Flashcard = styled.div`
   
   text-align: center;
   padding: 2rem 3rem;
-  box-shadow: 0 2px 7px 2px rgba(31,31,31,0.2);
 
 `
 const FlashcardInput1 = styled.p`
@@ -186,20 +199,39 @@ const FlashcardButton = styled.button`
 `
 const ButtonContainer = styled.div`
   display: flex;
-  margin-top: 30px;
-  width: 70vw;
-`
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
+`;
 const ContainerButton = styled.button`
+
   display: block;
-  width: 20%;
+  width: 30%;
+  height: 50%;
   margin: 0 auto;
   text-align: center;
-  padding: 10px;
-  font-size: 20px;
-  background-color: #9ed86e;
+  padding:10px ;
+
+  font-Size: 15px;
+  background-color:#9ed86e;
   font-weight: bold;
   border-Radius: 5px;
-`
+  transition: 1s ease-in-out;
+  :hover {  
+    transform:translateY(-3px) ;
+    background-color: #78ca34;
+  }
+`;
+
+ 
+
+  
 const CircleWrapper= styled.div`
 position: absolute;
 top: 0;
@@ -225,7 +257,9 @@ background-color: #e6c823;
 const TopContainer= styled.div`
 width: 100%;
 display:flex;
-flex:1.2;
+flex: 1;
+justify-content: center;
+align-items: center;
 position: relative;
 align-items: center;
 justify-content:flex-end;
@@ -252,9 +286,20 @@ const InputField= styled.input`
   border: none;
   border-radius: 5px;
   background-color: #9ed86e;
-  opacity: 0.9;
-  color: #fff;
+  opacity: 0.8;
+  color: #473e41;
+  font-size: 20px;
+  font-weight: 800;
+  padding: 10px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  :focus {
+    outline: none;
+  }
 `
+
+ 
 
 
 export default ReactCard;
