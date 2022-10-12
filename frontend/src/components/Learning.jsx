@@ -24,19 +24,19 @@ console.log(index);
     <FlashcardContainer > 
       <Carousel  className="carousel"> 
   
-  
+      
        {ArrayOfCardinfo.map((item,i)=>{
   
          return (
-      <div>
+    
   <ReactCardFlip isFlipped={flip}
     flipDirection="horizontal"
       flipSpeedBackToFront= "1.2"
    flipSpeedFrontToBack= "1.2">
 
-       <div onClick={handelFlip } className="slide" >
+       <div onClick={handelFlip } className="test" >
 
-          {console.log("this inside map===>",i, "=", index)}
+        
 
                 <TopContainer>
 
@@ -71,7 +71,7 @@ console.log(index);
 
 
 
-              <div onClick={handelFlip }>
+              <div onClick={handelFlip } className="test">
                 <TopContainer>
 
                 </TopContainer>
@@ -99,9 +99,10 @@ console.log(index);
  
   
     </ReactCardFlip>
-    </div>
+  
          )
         })}
+
     </Carousel>
   
 
@@ -115,6 +116,13 @@ const FlashcardContainer = styled.div`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  /* background-color: #8b8888; */
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 100%;
+  text-decoration: none;
+  color: #473e41;
 
 `
 
