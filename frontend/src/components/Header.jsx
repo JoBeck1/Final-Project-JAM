@@ -34,20 +34,20 @@ export default Header;
 const HeaderContainer = styled.div`
   font-size: 1.3em;
   background-color: #c7e1ec;
-
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  overflow-x: hidden;
-  overflow-y: auto;
+  position: sticky;
+  overflow-y: hidden;
+  top: 0;
+  z-index: 1;
+
+  
 
   .navbar {
     border-radius: 10px;
-    border: 2px solid #c7e1ec;
-    box-shadow: 5px 5px 5px #79c1e2;
+   
     margin: 0 auto;
-    width: 100%;
-    height: 60%;
-    overflow-x: hidden;
+       overflow-x: hidden;
     overflow-y: auto;
     display: flex;
     text-decoration: none;
@@ -59,7 +59,6 @@ const HeaderContainer = styled.div`
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 100%;
     text-decoration: none;
   }
 

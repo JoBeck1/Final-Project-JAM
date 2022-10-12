@@ -40,6 +40,9 @@ const Contain = styled.div`
   margin-left: 5px;
   margin-right: 5px;
   border-radius: 10px;
+  width: 100%;
+  height:2.5rem;
+ 
 
   .social:hover {
     color: #151616;
@@ -58,7 +61,6 @@ const SocialMedia = styled.div`
   justify-content: space-between;
   align-items: left;
 
-  background-color: #79c1e2;
   color: white;
   font-size: 1.2rem;
   cursor: pointer;
