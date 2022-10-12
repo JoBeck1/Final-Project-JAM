@@ -203,8 +203,11 @@ const FlashcardButton = styled.button`
   border-Radius: 5px;
   transition: 1s ease-in-out;
   :hover {
-    transform:translateY(-3px) ;
     background-color: #78ca34;
+    animation: flip 5s infinite;
+    animation-duration: 3s;
+    
+
   }
 `
 const ButtonContainer = styled.div`
@@ -234,8 +237,10 @@ const ContainerButton = styled.button`
   border-Radius: 5px;
   transition: 1s ease-in-out;
   :hover {  
-    transform:translateY(-3px) ;
-    background-color: #78ca34;
+    background-color: #579fda;
+    animation: fadeOut 3s infinite;
+    animation-duration: 2s;
+
   }
 `;
 
