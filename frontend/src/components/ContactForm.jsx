@@ -140,6 +140,8 @@ export default class ContactUs extends Component {
                 fontWeight: "bold",
                 letterSpacing: "1px",
                 textTransform: "uppercase",
+                animation: "flip 1s infinite",
+                animationDuration: "3s",
               }}
               type="submit"
             >
