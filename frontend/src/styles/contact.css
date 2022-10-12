@@ -1,3 +1,7 @@
+
+
+
+
 .App-header {
     background-color: #282c34;
     min-height: 100vh;
@@ -47,18 +51,6 @@
     }
 
 
-    .contact__form__button {
-        width: 100%;
-        margin: 10px 0;
-        padding: 10px;
-        border: none;
-        border-radius: 5px;
-        outline: none;
-        background-color: #07a8ff;
-        color: #fff;
-        cursor: pointer;
-    }
-
     .contact__form__button:hover {
         background-color: #07a8ff;
         opacity: 0.8;
@@ -93,4 +85,5 @@
       transform: rotate(360deg);
     }
   }
+
   
