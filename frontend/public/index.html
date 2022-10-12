@@ -40,5 +40,14 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script type="text/javascript">
+      const btn = document.querySelector("#btn");
+      const btnText = document.querySelector("#btnText");
+
+      btn.onclick = () => {
+          btnText.innerHTML = "Thanks";
+          btn.classList.add("active");
+      };
+  </script>
   </body>
 </html>
