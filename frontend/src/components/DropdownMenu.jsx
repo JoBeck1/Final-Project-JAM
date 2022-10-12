@@ -41,13 +41,12 @@ class DropdownMenu extends React.Component {
 
 const StyledUl = styled.ul`
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin: 10px;
   overflow: hidden;
   border-radius: 10px;
   border: 2px solid #c7e1ec;
   box-shadow: 5px 5px 5px #2f373b;
-  padding: 10px;
+  padding: 7px;
   background: #fff;
   background-color: #128ecc;
 `;
