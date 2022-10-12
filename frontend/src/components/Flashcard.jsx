@@ -7,19 +7,24 @@ import ReactCardFlip from 'react-card-flip';
 import {Context} from "../Store"
 
 import {toast} from "react-toastify"
+import {useNavigate} from "react-router-dom"
+import axios from 'axios';
 
 
 function ReactCard() {
- 
+  const navigate= useNavigate()
   const {flip, setFlip, text, setText, handelFlip, handleFlashCardSubmit,handleInputText  } = useContext(Context)
+  const [learningData, setLearningData]= useState({})
+
+const navigateToLearning= async()=> {
+  let data = await axios.get("/flashcardcreate/learning") 
+  setLearningData(data.data)
+  console.log(data.data);
+  navigate("/flashcardcreate/learning")
+}
 
 
 
-
-
-//  useEffect(()=>{
-//  
-// }, [text])
 
   return (
 
@@ -113,6 +118,11 @@ function ReactCard() {
               >
                   Previous Flashcard
               </ContainerButton>
+              <ContainerButton
+            onClick={navigateToLearning}
+            >
+               Done Flashcard
+            </ContainerButton>
               <ContainerButton
               // onClick={}
               type="submit"

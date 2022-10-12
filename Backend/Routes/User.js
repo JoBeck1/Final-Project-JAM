@@ -21,7 +21,12 @@ router.get('/profile', auth, function(req, res){
 })
 router.post("/flashcardcreateNL/flipCreate", flashcardController)
 
+router.get('/flashcardcreate/learning', async(req, res)=>{
+const data= await FlashCard.find()
+console.log(data);
+res.json(data)
 
+})
   
 
 module.exports = router;
