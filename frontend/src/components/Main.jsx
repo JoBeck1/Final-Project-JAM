@@ -148,6 +148,7 @@ const MainDiv = styled.div`
     border-radius: 10px;
     border: 2px solid #c7e1ec;
     box-shadow: 5px 5px 5px #2f373b;
+
     background: #fff;
     position: relative;
     z-index: 1;
