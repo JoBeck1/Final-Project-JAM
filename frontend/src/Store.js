@@ -12,7 +12,7 @@ function ContextProvider(props) {
   const [flip, setFlip] = useState(false);
   const [deckName, setDeckName] = useState('');
 
-  // state for hide the input field after entering the name
+  // state for hide Deckname the input field after entering the name
   const [isInputExist, setIsInputExist] = useState(true);
 
   const [text, setText] = useState({
@@ -31,6 +31,12 @@ function ContextProvider(props) {
   const [cardInfo, setCardInfo] = useLocalStorage('cardInfo', []);
   // set state to make array of card info in learning page
   const [cardInfoArray, setCardInfoArray]= useState([])
+
+
+  // set state to items inside sidebar 
+  const [nextStage, setNextStage] = useState({
+    title: ""
+  })
   const handelSignUp = async (data) => {
     try {
       const result = await axios.post('/signup', { data });
@@ -147,6 +153,8 @@ function ContextProvider(props) {
         setIsInputExist,
         cardInfo,
         setCardInfo,
+        nextStage,
+       setNextStage,
       }}
     >
       {' '}
