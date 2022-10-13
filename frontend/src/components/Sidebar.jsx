@@ -1,17 +1,33 @@
-import React from 'react'
+import React , {useContext} from 'react'
 import { TbWriting } from "react-icons/tb";
 import { RiStackFill } from "react-icons/ri";
 import { ImStatsDots} from "react-icons/im";
 import styled from 'styled-components';
 import {Link} from "react-router-dom"
+import {Context} from "../Store"
 const SidebarData = [
-    { title: 'Creating', icon: <TbWriting/>, link: "/create" },
-    { title: 'Learning', icon: <RiStackFill/>, link: "/create" },
-    { title: 'Testing', icon: <ImStatsDots/>, link: "/create" },
+    { title: 'Creating', icon: <TbWriting/> },
+    { title: 'Learning', icon: <RiStackFill/> },
+    { title: 'Testing', icon: <ImStatsDots/>},
 
 ]
 
 function Sidebar() {
+    const {nextStage, setNextStage}= useContext(Context)
+
+    const sidebarStage= (title)=>{
+        if (title==='Learning') {
+
+            setNextStage({title: "Learning"});
+        }
+        if (title==="Creating") {
+            setNextStage({title: "Creating"});
+        }
+        if (title==="Testing") {
+            setNextStage({title: "Testing"});
+        }
+}
+console.log("tolearningPage",nextStage.title);
   return (
     < SidebarContainer>
         <ListStyling>
@@ -19,8 +35,10 @@ function Sidebar() {
 return (
    <ListItems key={key}>
     <div style={{flex:"20%", display:"grid" , placeItems:"center"}}> {item.icon}</div>
-    <div style={{flex:"80%", display:"grid" }}> 
-    <LinkStyling>
+    <div style={{flex:"80%", display:"grid" }} > 
+
+   
+   <LinkStyling  onClick={()=>sidebarStage(item.title)}>
     {item.title}
     </LinkStyling>
     </div>

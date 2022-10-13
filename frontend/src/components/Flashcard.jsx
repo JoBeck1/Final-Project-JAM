@@ -13,14 +13,16 @@ import axios from 'axios';
 
 function ReactCard() {
   const navigate= useNavigate()
-  const {flip, setFlip, text, setText, handelFlip, handleFlashCardSubmit,handleInputText  } = useContext(Context)
+  const {flip, setFlip, text, setText, handelFlip, handleFlashCardSubmit,handleInputText, nextStage, setNextStage } = useContext(Context)
   const [learningData, setLearningData]= useState({})
+ 
 
 const navigateToLearning= async()=> {
   let data = await axios.get("/flashcardcreate/learning") 
   setLearningData(data.data)
   console.log(data.data);
-  navigate("/flashcardcreate/learning")
+ setNextStage({title: 'Learning'})
+  toast.success("welcome to learn Stage", {position:toast.POSITION.TOP_CENTER})
 }
 
 
@@ -28,6 +30,7 @@ const navigateToLearning= async()=> {
 
   return (
 
+<div>
       <FlashcardContainer onSubmit={handleFlashCardSubmit}>
           <ReactCardFlip isFlipped={flip}
               flipDirection="horizontal"
@@ -119,11 +122,6 @@ const navigateToLearning= async()=> {
                   Previous Flashcard
               </ContainerButton>
               <ContainerButton
-            onClick={navigateToLearning}
-            >
-               Done Flashcard
-            </ContainerButton>
-              <ContainerButton
               // onClick={}
               type="submit"
               >
@@ -132,16 +130,22 @@ const navigateToLearning= async()=> {
           </ButtonContainer>
 
       </FlashcardContainer>
+              <ContainerButton
+            onClick={navigateToLearning}
+            >
+               Done Flashcard
+            </ContainerButton>
+      </div>
   );
 }
 // Styling
 const FlashcardContainer = styled.form`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 65vh;
   justify-content: center;
   align-items: center;
-  background-color: #8b8888;
+  /* background-color: #8b8888; */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
