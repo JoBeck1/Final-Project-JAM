@@ -18,10 +18,14 @@ function Footer() {
 
       <SocialMedia>
         <div className="social">
+          <a href="https://twitter.com/JamProject22">
           <FaTwitter />
+          </a>
         </div>
         <div className="social">
+          <a href="https://facebook.com/profile.php?id=100087149580347">
           <FaFacebook />
+          </a>
         </div>
       </SocialMedia>
     </Contain>
