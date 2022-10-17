@@ -5,13 +5,15 @@ import { FaFacebook } from "react-icons/fa";
 import  { Link }  from  "react-router-dom" ;
 
 function Footer() {
+ 
+  
   return (
     <Contain>
       <div>
         <LinkStyle to="/contact" style={{cursor: "pointer"}}>Contact</LinkStyle>
         {/* Contactform is needed! */}
       </div>
-      <div>&copy; 2022 by JAM</div>
+      <div>&copy; {(new Date().getFullYear())} by JAM</div>
       {/* Implement an "About"-page? */}
 
       <SocialMedia>

@@ -6,6 +6,7 @@ import "../styles/LearningStyling.css";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 function Learning() {
   const { cardInfo, flip, handelFlip } = useContext(Context);
   const [index, setIndex] = useState(0);
@@ -78,7 +79,7 @@ const FlashcardContainer = styled.div`
   height: 65vh;
   justify-content: center;
   align-items: center;
-  /* background-color: #8b8888; */
+  background-color: #8b8888; 
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
