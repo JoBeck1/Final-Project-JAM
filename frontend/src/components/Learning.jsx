@@ -17,7 +17,7 @@ function Learning() {
   // useEffect= (()=>{
   // }, [index])
 
-  console.log(index);
+
 
   return (
     <FlashcardContainer>
@@ -76,7 +76,7 @@ function Learning() {
 const FlashcardContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 65vh;
   justify-content: center;
   align-items: center;
   background-color: #8b8888; 
