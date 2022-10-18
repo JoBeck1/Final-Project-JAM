@@ -98,7 +98,7 @@ const Navbar = () => {
                       <NavLink
                         onClick={toggleClass}
                         activeClassName="is-active"
-                        to={`/Setting`}
+                        to={`/Userprofile`}
                       >
                         {" "}
                         Setting{" "}
