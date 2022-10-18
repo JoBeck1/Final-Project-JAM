@@ -144,7 +144,7 @@ const MainDiv = styled.div`
   font-size: 1.3em;
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  background-color: #96b5c4;
+  //background-color: #96b5c4;
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0 auto;
@@ -157,14 +157,12 @@ const MainDiv = styled.div`
   border-radius: 10px;
   border: 2px solid #c7e1ec;
   box-shadow: 5px 5px 5px #2f373b;
-
-  background: #fff;
   position: relative;
-  z-index: 1;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
+  z-index: 0;
+  //margin-top: 10px;
+  //margin-bottom: 10px;
+  //margin-left: 5px;
+  //margin-right: 5px;
 
   .overlay {
     position: absolute;

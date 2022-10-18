@@ -1,18 +1,4 @@
 
-
-
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
   #contact {
     
     display: flex;
@@ -42,48 +28,13 @@
         outline: none;
     }
 
-    .contact__form__input:focus {
-        border: 1px solid #07a8ff;
-    }
+    
 
-    .contact__form__input::placeholder {
-        color: #ccc;
+    button:hover, a:hover {
+      opacity: 0.7;
     }
 
 
-    .contact__form__button:hover {
-        background-color: #07a8ff;
-        opacity: 0.8;
-    }
-
-    .contact__form__button:active {
-        background-color: #07a8ff;
-        opacity: 0.6;
-    }
-
-    .contact__form__button:focus {
-        background-color: #07a8ff;
-        opacity: 0.8;
-    }
-
-    .contact__form__button:disabled {
-        background-color: #ccc;
-        opacity: 1;
-    }
     
   
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-
   

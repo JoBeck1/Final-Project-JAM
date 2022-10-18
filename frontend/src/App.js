@@ -10,6 +10,7 @@ import Learning from './components/Learning';
 import { ToastContainer} from "react-toastify"
 import Profile from "./components/Profile"
 import ContactForm from './components/ContactForm';
+import UserProfile from './components/UserProfile';
 
 
 
@@ -30,6 +31,7 @@ function App() {
   <Route path="/flashcardcreate/learning" element= {<Learning />}/>
   <Route path= "/login"  element= {<LoginForm />}/>
   <Route path= "/profile" element= {<Profile />}/>
+  <Route path= "/userprofile" element= {<UserProfile />}/>
   <Route path= "/contact" element= {<ContactForm />}/>
 
  </Routes>
