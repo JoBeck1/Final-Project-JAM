@@ -1,7 +1,7 @@
 import React , {useContext} from 'react';
 import { useForm } from 'react-hook-form';
 import styled, { css } from 'styled-components';
-import {Context} from "../Store"
+import {Context} from "../store/Store"
 import {useNavigate} from "react-router-dom"
 import "../styles/formStyling.css"
 

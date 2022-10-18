@@ -4,9 +4,11 @@ import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 
+
 export const Context = createContext();
 
 function ContextProvider(props) {
+  
   const [isProfile, setIsProfile] = useState();
   // flip card state
   const [flip, setFlip] = useState(false);
@@ -72,6 +74,7 @@ function ContextProvider(props) {
   // flash card functions
   // flip card change side
   const handelFlip = (e) => {
+
     e.preventDefault();
     setFlip(!flip);
   };
@@ -90,18 +93,18 @@ function ContextProvider(props) {
         text,
         deckName,
       });
-      console.log('the text is', text);
+    
       setText({
         frontSideLine1: '',
         frontSideLine2: '',
         backSideLine1: '',
         backSideLine2: '',
       });
-      console.log('the text is', text);
-      console.log(response.data.message);
+      
+      
       if (response.data.message === 'your card is created successfully') {
-        console.log('res====>', cardInfo);
-        // let arr= cardInfo.push(JSON.stringify(response.data.data))
+       
+       
         cardInfoArray.push(response.data.data);
         setCardInfoArray(cardInfoArray)
         //cardInfoArray.push(JSON.stringify(response.data.data));
@@ -119,7 +122,7 @@ function ContextProvider(props) {
       console.log(err);
     }
   };
-  console.log(cardInfo);
+  
   // function to store the name if deck
   const handelNameOnDickCard = (e) => {
     setDeckName(e.target.value);
@@ -130,6 +133,79 @@ function ContextProvider(props) {
     setIsInputExist(false);
     e.target.reset();
   };
+  // state to get all created card from backend 
+  const [learningData, setLearningData]= useState({})
+  // function to done with flash card and go to the learning stage 
+  const navigateToLearning= async()=> {
+    let data = await axios.get("/flashcardcreate/learning") 
+    setLearningData(data.data)
+    console.log(data.data);
+   setNextStage({title: 'Learning'})
+    toast.success("welcome to learn Stage", {position:toast.POSITION.TOP_CENTER})
+  }
+  // state for counting result of testing
+const [test, setTest]= useState({yes:0, no:0,notSure: 0})
+const [delay, setDelay] = useState(false)
+const [toNextCardIndex, setToNextCardIndex] = useState(0)
+const [popup, setPopup] = useState(false)
+// function to count answers in the testing page 
+let ArrayOfCardInfo= JSON.parse(cardInfo)
+let numberOfFlashCards=ArrayOfCardInfo.length
+const countAnswer= (buttonName)=>{
+  if (toNextCardIndex<numberOfFlashCards-1) {
+    if (buttonName==="yes") {
+      
+      setTest({...test, yes:test.yes+1 })
+      setFlip(!flip)
+      setDelay(!delay)
+    } if (buttonName==="no") {
+      
+      setTest({...test, no:test.no+1 })
+      setFlip(!flip)
+      setDelay(!delay)
+    } if (buttonName==="not sure") {
+      setTest({...test, notSure:test.notSure+1})
+      setFlip(!flip)
+      setDelay(!delay)
+    }
+    setToNextCardIndex(toNextCardIndex+1)
+  }
+  if (toNextCardIndex===numberOfFlashCards-1) {
+
+    setToNextCardIndex(0)
+
+    if (buttonName==="yes") {
+      
+      setTest({...test, yes:test.yes+1 })
+      setFlip(!flip)
+      setDelay(!delay)
+    } if (buttonName==="no") {
+      
+      setTest({...test, no:test.no+1 })
+      setFlip(!flip)
+      setDelay(!delay)
+    } if (buttonName==="not sure") {
+      setTest({...test, notSure:test.notSure+1})
+      setFlip(!flip)
+      setDelay(!delay)
+    }
+    setPopup(!popup)
+  }
+  
+  }
+  // state to set message for successfully passed or failed 
+  const [finalResult,setFinalResult]= useState("")
+  const [toChartPage, setToChartPage] = useState(false)
+  let calcTheResult= ()=> {
+    setPopup(!popup)
+    setToChartPage(!toChartPage)
+    let sum=Object.values(test).reduce((sum,a)=>sum+a, 0)
+   if (test.yes>=sum/2) {
+    setFinalResult("you are successfully passed the test keep learning")
+   } else {
+    setFinalResult("unfortunately you failed to pass the test but keep learning")
+   }
+  }
 
   return (
     <Context.Provider
@@ -155,6 +231,10 @@ function ContextProvider(props) {
         setCardInfo,
         nextStage,
        setNextStage,
+       navigateToLearning,
+       countAnswer, toNextCardIndex, test,
+       setDelay,
+       delay, finalResult,toChartPage, calcTheResult, popup
       }}
     >
       {' '}

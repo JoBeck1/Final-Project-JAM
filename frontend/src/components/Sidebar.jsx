@@ -4,7 +4,7 @@ import { RiStackFill } from "react-icons/ri";
 import { ImStatsDots} from "react-icons/im";
 import styled from 'styled-components';
 import {Link} from "react-router-dom"
-import {Context} from "../Store"
+import {Context} from "../store/Store"
 const SidebarData = [
     { title: 'Creating', icon: <TbWriting/> },
     { title: 'Learning', icon: <RiStackFill/> },
@@ -27,7 +27,7 @@ function Sidebar() {
             setNextStage({title: "Testing"});
         }
 }
-console.log("tolearningPage",nextStage.title);
+
   return (
     < SidebarContainer>
         <ListStyling>
