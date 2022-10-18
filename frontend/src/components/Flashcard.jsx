@@ -1,29 +1,13 @@
 
-
 import React, {useState, useContext, useEffect} from 'react';
 import styled from 'styled-components';
-
 import ReactCardFlip from 'react-card-flip';
-import {Context} from "../Store"
-
-import {toast} from "react-toastify"
-import {useNavigate} from "react-router-dom"
-import axios from 'axios';
-
+import {Context} from "../store/Store"
 
 function ReactCard() {
-  const navigate= useNavigate()
-  const {flip, setFlip, text, setText, handelFlip, handleFlashCardSubmit,handleInputText, nextStage, setNextStage } = useContext(Context)
-  const [learningData, setLearningData]= useState({})
  
-
-const navigateToLearning= async()=> {
-  let data = await axios.get("/flashcardcreate/learning") 
-  setLearningData(data.data)
-  console.log(data.data);
- setNextStage({title: 'Learning'})
-  toast.success("welcome to learn Stage", {position:toast.POSITION.TOP_CENTER})
-}
+  const {flip,  text, setText, handelFlip, handleFlashCardSubmit,handleInputText, nextStage, setNextStage, navigateToLearning } = useContext(Context)
+ 
 
 
 

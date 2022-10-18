@@ -10,13 +10,17 @@ import Learning from './components/Learning';
 import { ToastContainer} from "react-toastify"
 import Profile from "./components/Profile"
 import ContactForm from './components/ContactForm';
+
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import UserProfile from './components/UserProfile';
+
 
 
 
 function App() {
 
-  
+  console.log("123")
   
   return (
     <div >
@@ -25,14 +29,17 @@ function App() {
 
  <Routes>
   
-  <Route path= "/" element= {<Home/>}/>
+   <Route path= "/" element= {<Home/>}/>
   <Route path="/signup" element= {<RegisterForm />}/>
   <Route path="/flashcardcreateNL" element= {<FlashcardCreate />}/>
   <Route path="/flashcardcreate/learning" element= {<Learning />}/>
   <Route path= "/login"  element= {<LoginForm />}/>
   <Route path= "/profile" element= {<Profile />}/>
+
+
   <Route path= "/userprofile" element= {<UserProfile />}/>
   <Route path= "/contact" element= {<ContactForm />}/>
+
 
  </Routes>
  <ToastContainer/>

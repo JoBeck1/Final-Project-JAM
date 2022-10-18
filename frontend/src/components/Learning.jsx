@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
-import { Context } from "../Store";
+import { Context } from "../store/Store";
 import ReactCardFlip from "react-card-flip";
 import "../styles/LearningStyling.css";
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
@@ -9,7 +9,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Learning() {
   const { cardInfo, flip, handelFlip } = useContext(Context);
-  const [index, setIndex] = useState(0);
+ 
   const ArrayOfCardinfo = JSON.parse(cardInfo);
   console.log("cardinfo===>", ArrayOfCardinfo);
   console.log();
