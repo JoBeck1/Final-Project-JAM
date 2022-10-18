@@ -23,13 +23,13 @@ class DropdownMenu extends React.Component {
           </Dropbtn>
           <DropDownContent>
             {" "}
-            <SubA link href="/" onClick={() => this.handleClick("Link1")}>
+            <SubA link href="https://www.fluentu.com/blog/best-language-learning-books/" onClick={() => this.handleClick("Link1")}>
               Books
             </SubA>
-            <SubA link href="/" onClick={() => this.handleClick("Link2")}>
+            <SubA link href="https://collegeinfogeek.com/flash-card-study-tips/" onClick={() => this.handleClick("Link2")}>
               Guides
             </SubA>
-            <SubA link href="/" onClick={() => this.handleClick("Link3")}>
+            <SubA link href="https://collegeinfogeek.com/flashcard-apps/" onClick={() => this.handleClick("Link3")}>
               Apps
             </SubA>
           </DropDownContent>

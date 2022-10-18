@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "react-bootstrap/Button";
 import styled from "styled-components";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -8,7 +7,7 @@ import Picture2 from "../assets/images/Picture2.jpg";
 import DropdownMenu from "./DropdownMenu.jsx";
 import videoBg from "../assets/videoBg.mp4";
 
-function Main() {
+function LogOut() {
   return (
     <MainDiv className="fluid">
       <div className="overlay"></div>
@@ -24,63 +23,21 @@ function Main() {
           <Col md={6}>
             <Title>
               <h1 className="animate__animated animate__backInDown">
-                Welcome to the JAM-Project!
+                Thank you for using the JAM-Project!
               </h1>
             </Title>
 
             <p>
-              JAM - that is an acronym of the creators: Jochen, Ahmed and
-              Mohammed.
+              Please come back later again and enjoy your progress!
             </p>
             <p>
-              For our final project in our web development course at DCI, we
-              came up with the idea, to provide language learners with a simple
-              and pleasant way to memorize vocabulary and grammar.
+              See you soon!
             </p>
             <p>
-              On this webpage, you can create your own flashcards, save it on
-              your own personal account and test your learning progress by
-              different methods.
+              Jochen, Ahmed and Mohammed
             </p>
 
             <hr />
-
-            <h3>For Beginners:</h3>
-            <p>
-              Feel free to{" "}
-              <Button
-                link
-                href="/flashcardcreateNL"
-                variant="primary"
-                size="sm"
-              >
-                start
-              </Button>{" "}
-              right away! No registration needed!
-            </p>
-
-            <hr />
-
-            <h3>For advanced Users:</h3>
-            <p>
-              Enjoy every merit of the JAM-Project by{" "}
-              <Button link href="/signup" variant="info" size="sm">
-                {" "}
-                registering
-              </Button>{" "}
-              on this website!
-            </p>
-
-            <hr />
-
-            <h3>Already registered?</h3>
-            <p>
-              AWESOME! Just{" "}
-              <Button link href="/login" variant="success" size="sm">
-                log in
-              </Button>{" "}
-              here and check how much you have learned already!
-            </p>
           </Col>
 
           <Col md={3}>
@@ -95,7 +52,7 @@ function Main() {
               <img src={Picture2} alt="Flags" />
             </div>
 
-            {/* Put Pictures here */}
+
           </Col>
         </Row>
       </div>
@@ -144,7 +101,7 @@ const MainDiv = styled.div`
   font-size: 1.3em;
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  //background-color: #96b5c4;
+  background-color: #96b5c4;
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0 auto;
@@ -157,12 +114,14 @@ const MainDiv = styled.div`
   border-radius: 10px;
   border: 2px solid #c7e1ec;
   box-shadow: 5px 5px 5px #2f373b;
+
+  background: #fff;
   position: relative;
-  z-index: 0;
-  //margin-top: 10px;
-  //margin-bottom: 10px;
-  //margin-left: 5px;
-  //margin-right: 5px;
+  z-index: 1;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 
   .overlay {
     position: absolute;
@@ -247,4 +206,4 @@ const MainDiv = styled.div`
 
 // Here is a test
 
-export default Main;
+export default LogOut;
