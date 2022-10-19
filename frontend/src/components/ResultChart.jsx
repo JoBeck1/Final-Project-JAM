@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Context } from '../store/Store';
 import { Bar} from 'react-chartjs-2';
 import { Chart as ChartJs } from 'chart.js/auto';
+import '../styles/resultChart.css';
 
 function ResultChart() {
   const { test, finalResult } = useContext(Context);
@@ -34,10 +35,10 @@ function ResultChart() {
     ],
   });
   return (
-  <div style={{width: '700px'}}>
-    <Bar data={userData} options={options} />
-    <div >
-    <h2>{finalResult}</h2>
+  <div className='container' style={{width: '700px'}}>
+    <Bar className='chart' data={userData} options={options} />
+    <div className='final_result' >
+    <h2 className='final_result'>{finalResult}</h2>
     </div>
     </div>);
 }
