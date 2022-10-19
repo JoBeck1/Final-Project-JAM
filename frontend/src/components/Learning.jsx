@@ -8,21 +8,17 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Learning() {
-  const { cardInfo, flip, handelFlip } = useContext(Context);
+  const { cardInfo, flip, handelFlip , resetPages} = useContext(Context);
  
-  const ArrayOfCardinfo = JSON.parse(cardInfo);
-  console.log("cardinfo===>", ArrayOfCardinfo);
-  console.log();
-
-  // useEffect= (()=>{
-  // }, [index])
-
+  const ArrayOfCardinfo =JSON.parse(cardInfo) 
+ console.log("resetpages===>", resetPages)
 
 
   return (
     <FlashcardContainer>
-      <Carousel className="carousel">
-        {ArrayOfCardinfo.map((item, i) => {
+      {resetPages? <div> <h2> no card exist</h2></div>: <Carousel className="carousel">
+        
+        { ArrayOfCardinfo.map((item, i) => {
           return (
             <ReactCardFlip
               isFlipped={flip}
@@ -36,6 +32,7 @@ function Learning() {
                   <Circle></Circle>
                 </CircleWrapper>
                 <TextContainer>
+                  <h2>frontside</h2>
                   <FlashcardInput1>
                     <TextField>{item.frontSideLine1}</TextField>
                   </FlashcardInput1>
@@ -68,7 +65,8 @@ function Learning() {
             </ReactCardFlip>
           );
         })}
-      </Carousel>
+      </Carousel>}
+      
     </FlashcardContainer>
   );
 }
