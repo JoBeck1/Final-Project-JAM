@@ -39,11 +39,14 @@ const Contain = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  
   background-color: #79c1e2;
   color: white;
-  padding: 10px;
   margin-top: 10px;
-  margin-left: 5px;
+ // margin-left: 5px;
   margin-right: 5px;
   border-radius: 10px;
   width: 100%;
@@ -66,10 +69,22 @@ const SocialMedia = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: left;
-
+  
+  padding: 0;
+ 
+    a {
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+  :hover {
+    color: #151616;
+  }
+
+
+
+}
 `;
 const LinkStyle = styled(Link)`
   color: #f1e8e8;
@@ -80,4 +95,6 @@ const LinkStyle = styled(Link)`
   &:hover {
     color: #151616;
   }
+
+
 `;
