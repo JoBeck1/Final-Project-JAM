@@ -18,8 +18,10 @@ useEffect(()=>{
 }, 5000)
     
 },[test])
+
 let buttonsNames= [{buttonName: 'yes'},{buttonName: 'not sure'},{buttonName: 'no'}]
 console.log(flip);
+
   return (
    
     <FlashcardContainer >
@@ -111,6 +113,34 @@ console.log(flip);
      
           
           }
+
+          {delay&&flip&& <button  style={{
+              width: "250px",
+              height: "50px",
+              backgroundColor: "#494d58",
+              color: "white",
+              border: "none",
+              outline: "none",
+              fontSize: "20px",
+              borderRadius: "40px",
+              cursor: "pointer",
+              textAlign: "center",
+              boxShadow: " 0 6px 20px -5px rgba(0,0,0,0.4)",
+              position: "relative",
+              overflow: "hidden",
+              transition: "all 0.3s ease",
+              zIndex: "0",
+              marginTop: "20px",
+              marginBottom: "20px",
+              textDecoration: "none",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontWeight: "bold",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+
+            }}>done with decks</button>}
 
           {delay&&flip&& <button>done with decks</button>}
           </div> }

@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { Context } from '../store/Store';
 import { Bar} from 'react-chartjs-2';
 import { Chart as ChartJs } from 'chart.js/auto';
+import '../styles/resultChart.css';
 
 import {useNavigate} from "react-router-dom"
 function ResultChart() {
@@ -42,6 +43,7 @@ const refreshAndBackToHome= async()=> {
 
 
   return (
+  
   <div style={{width: '700px'}}>
     <Bar data={userData} options={options} />
     <div >
