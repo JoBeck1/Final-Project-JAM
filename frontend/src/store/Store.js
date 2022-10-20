@@ -228,6 +228,7 @@ const countAnswer= (buttonName)=>{
     setFinalResult("unfortunately you failed to pass the test but keep learning")
    }
   }
+  console.log(test)
   const [resetPages, setResetPages]= useState(true)
  
   const repeatTheTest= ()=>{
