@@ -228,6 +228,7 @@ const countAnswer= (buttonName)=>{
     setFinalResult("Unfortunately !! You couldn't make it but keep learning")
    }
   }
+  console.log(test)
   const [resetPages, setResetPages]= useState(true)
  
   const repeatTheTest= ()=>{

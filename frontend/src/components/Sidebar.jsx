@@ -13,7 +13,7 @@ const SidebarData = [
 ]
 
 function Sidebar() {
-    const {nextStage, setNextStage}= useContext(Context)
+    const {nextStage, setNextStage, setFlip}= useContext(Context)
 
     const sidebarStage= (title)=>{
         if (title==='Learning') {
@@ -25,6 +25,7 @@ function Sidebar() {
         }
         if (title==="Testing") {
             setNextStage({title: "Testing"});
+            setFlip(true)
         }
 }
 

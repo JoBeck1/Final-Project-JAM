@@ -18,13 +18,16 @@ useEffect(()=>{
 }, 5000)
     
 },[test])
-let buttonsNames= [{buttonName: 'Yes'},{buttonName: 'Not sure'},{buttonName: 'No'}]
+
+let buttonsNames= [{buttonName: 'yes'},{buttonName: 'not sure'},{buttonName: 'no'}]
+console.log(flip);
 
   return (
    
     <FlashcardContainer >
       {resetPages? <div><h2> no card exist</h2></div>: <div>
         <ReactCardFlip isFlipped={flip}
+        
             flipDirection="horizontal"
             flipSpeedBackToFront= "1.2"
             flipSpeedFrontToBack= "1.2" >
@@ -41,6 +44,7 @@ let buttonsNames= [{buttonName: 'Yes'},{buttonName: 'Not sure'},{buttonName: 'No
               <TextContainer>
 
                 <FlashcardInput1>
+                  <h2 style={{color: 'white'}}> front side</h2>
                 <TextField > {ArrayOfCardInfo[toNextCardIndex].frontSideLine1}</TextField>
                  </FlashcardInput1>
             {/* Second line of Flashcard input */}
@@ -91,7 +95,7 @@ let buttonsNames= [{buttonName: 'Yes'},{buttonName: 'Not sure'},{buttonName: 'No
            
         </ReactCardFlip>
         {delay&& flip&& <h3> have you Known the card ??</h3>}
-          {delay&& flip&& 
+          {delay&& flip&&
         
 
               <ButtonContainer>
@@ -137,7 +141,7 @@ let buttonsNames= [{buttonName: 'Yes'},{buttonName: 'Not sure'},{buttonName: 'No
               textTransform: "uppercase",
 
             }}>done with decks</button>}
-=======
+
           {delay&&flip&& <button>done with decks</button>}
           </div> }
      
