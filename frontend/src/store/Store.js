@@ -223,9 +223,9 @@ const countAnswer= (buttonName)=>{
     setToChartPage(!toChartPage)
     let sum=Object.values(test).reduce((sum,a)=>sum+a, 0)
    if (test.yes>=sum/2) {
-    setFinalResult("you are successfully passed the test keep learning")
+    setFinalResult("You are successfully passed the test keep learning !!")
    } else {
-    setFinalResult("unfortunately you failed to pass the test but keep learning")
+    setFinalResult("Unfortunately !! You couldn't make it but keep learning")
    }
   }
   const [resetPages, setResetPages]= useState(true)
