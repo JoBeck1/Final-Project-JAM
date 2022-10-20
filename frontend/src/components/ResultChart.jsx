@@ -28,7 +28,10 @@ function ResultChart() {
     datasets: [
       {
         label: 'your Final result',
+
+        // This data must be an array:
         data: Object.values(test),
+        
         backgroundColor: ['#34d21f', '#d02929', '#dfe320'],
       },
     ],

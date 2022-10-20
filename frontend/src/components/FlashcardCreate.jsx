@@ -31,7 +31,8 @@ function FlashcardCreate() {
 
         <MainFlashCol md={6}>
           {/* Flashcard here */}
-         {toChartPage? <ResultChart />:<div>
+         {toChartPage? <ResultChart />:
+         <div>
         {nextStage.title==="Learning"&&  <Learning/>  }
         {nextStage.title==="Creating" && <ReactCard/>}
         {nextStage.title==="Testing" && <Testing/>}
