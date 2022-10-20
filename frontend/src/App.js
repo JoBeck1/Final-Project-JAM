@@ -20,7 +20,6 @@ import UserProfile from './components/UserProfile';
 
 function App() {
 
-  console.log("123")
   
   return (
     <div >

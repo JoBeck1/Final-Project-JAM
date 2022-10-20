@@ -5,13 +5,13 @@ import styled from 'styled-components';
 
 
 function Testing() {
-    const {cardInfo,flip, test, handelFlip,  countAnswer, toNextCardIndex, setDelay, delay} = useContext(Context)
-    let ArrayOfCardInfo= JSON.parse(cardInfo)
+    const {cardInfo,flip, test, handelFlip,  countAnswer, toNextCardIndex, setDelay, delay, resetPages} = useContext(Context)
+    let ArrayOfCardInfo= JSON.parse(cardInfo)? JSON.parse(cardInfo):[]
    
 
  
 useEffect(()=>{
-  console.log("\u001b[32m"+delay + "\u001b[0m");
+  
   
     setTimeout(()=>{
     setDelay(!delay)
@@ -23,6 +23,7 @@ let buttonsNames= [{buttonName: 'Yes'},{buttonName: 'Not sure'},{buttonName: 'No
   return (
    
     <FlashcardContainer >
+      {resetPages? <div><h2> no card exist</h2></div>: <div>
         <ReactCardFlip isFlipped={flip}
             flipDirection="horizontal"
             flipSpeedBackToFront= "1.2"
@@ -136,6 +137,10 @@ let buttonsNames= [{buttonName: 'Yes'},{buttonName: 'Not sure'},{buttonName: 'No
               textTransform: "uppercase",
 
             }}>done with decks</button>}
+=======
+          {delay&&flip&& <button>done with decks</button>}
+          </div> }
+     
     </FlashcardContainer>
   
   )

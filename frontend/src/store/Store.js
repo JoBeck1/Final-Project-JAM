@@ -84,6 +84,15 @@ function ContextProvider(props) {
     setText();
     setText({ ...text, [e.target.name]: e.target.value });
   };
+  const createNewCard =(e)=>{
+    e.preventDefault();
+ 
+     setResetPages(!resetPages)
+     setToChartPage(!toChartPage)
+   setCardInfo(JSON.stringify([]))
+    // window.location.reload()
+    
+  }
   // set submit from flashcard  and send the data to backend
   const handleFlashCardSubmit = async (e) => {
     try {
@@ -134,14 +143,25 @@ function ContextProvider(props) {
     e.target.reset();
   };
   // state to get all created card from backend 
+
   const [learningData, setLearningData]= useState({})
+
   // function to done with flash card and go to the learning stage 
+
   const navigateToLearning= async()=> {
     let data = await axios.get("/flashcardcreate/learning") 
     setLearningData(data.data)
-    console.log(data.data);
-   setNextStage({title: 'Learning'})
-    toast.success("welcome to learn Stage", {position:toast.POSITION.TOP_CENTER})
+    // user can go to next step learning and testing if he just click on done with decks 
+    if (numberOfFlashCards>0) {
+      setResetPages(!resetPages)
+
+     setNextStage({title: 'Learning'})
+      toast.success("welcome to learn Stage", {position:toast.POSITION.TOP_CENTER})
+   } else if (numberOfFlashCards===0) {
+    toast.error('please create a flash card ', {
+      position: toast.POSITION.TOP_CENTER,
+    })
+   }
   }
   // state for counting result of testing
 const [test, setTest]= useState({yes:0, no:0,notSure: 0})
@@ -149,8 +169,10 @@ const [delay, setDelay] = useState(false)
 const [toNextCardIndex, setToNextCardIndex] = useState(0)
 const [popup, setPopup] = useState(false)
 // function to count answers in the testing page 
-let ArrayOfCardInfo= JSON.parse(cardInfo)
+
+let ArrayOfCardInfo= (cardInfo!==[]) ? JSON.parse(cardInfo) : []
 let numberOfFlashCards=ArrayOfCardInfo.length
+console.log(numberOfFlashCards);
 const countAnswer= (buttonName)=>{
   if (toNextCardIndex<numberOfFlashCards-1) {
     if (buttonName==="yes") {
@@ -206,7 +228,12 @@ const countAnswer= (buttonName)=>{
     setFinalResult("Unfortunately !! You couldn't make it but keep learning")
    }
   }
-
+  const [resetPages, setResetPages]= useState(true)
+ 
+  const repeatTheTest= ()=>{
+    setToChartPage(!toChartPage)
+    setTest({yes:0, no:0,notSure: 0})
+  }
   return (
     <Context.Provider
       value={{
@@ -234,7 +261,8 @@ const countAnswer= (buttonName)=>{
        navigateToLearning,
        countAnswer, toNextCardIndex, test,
        setDelay,
-       delay, finalResult,toChartPage, calcTheResult, popup
+       delay, finalResult,toChartPage, calcTheResult, popup,
+        resetPages, repeatTheTest, createNewCard
       }}
     >
       {' '}

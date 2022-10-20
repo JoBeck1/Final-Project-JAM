@@ -4,10 +4,16 @@ import { Bar} from 'react-chartjs-2';
 import { Chart as ChartJs } from 'chart.js/auto';
 import '../styles/resultChart.css';
 
+import {useNavigate} from "react-router-dom"
 function ResultChart() {
-  const { test, finalResult } = useContext(Context);
+  const navigate= useNavigate()
+  // const [cardInfo, setCardInfo] = useLocalStorage('cardInfo', []);
+  const { test, finalResult,  repeatTheTest, createNewCard} = useContext(Context);
 
-  Object.values(test)
+const refreshAndBackToHome= async()=> {
+  navigate("/")
+  await window.location.reload()
+}
 
 
   const options = {
@@ -22,7 +28,7 @@ function ResultChart() {
       },
     },
   };
-  console.log(parseInt(test.yes), 'YES');
+
   const [userData, setUserData] = useState({
     labels: ['Yes', 'No', 'Not Sure'],
    
@@ -34,11 +40,17 @@ function ResultChart() {
       },
     ],
   });
+
+
   return (
-  <div className='container' style={{width: '700px'}}>
-    <Bar className='chart' data={userData} options={options} />
-    <div className='final_result' >
-    <h2 className='final_result'>{finalResult}</h2>
+  
+  <div style={{width: '700px'}}>
+    <Bar data={userData} options={options} />
+    <div >
+    <h2>{finalResult}</h2>
+    <button onClick={createNewCard}> create new </button>
+    <button onClick={repeatTheTest}> repeat the test</button>
+    <button onClick={refreshAndBackToHome}> done </button>
     </div>
     </div>);
 }
