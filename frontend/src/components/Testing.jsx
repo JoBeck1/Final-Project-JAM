@@ -5,25 +5,29 @@ import styled from 'styled-components';
 
 
 function Testing() {
-    const {cardInfo,flip, test, handelFlip,  countAnswer, toNextCardIndex, setDelay, delay} = useContext(Context)
-    let ArrayOfCardInfo= JSON.parse(cardInfo)
+    const {cardInfo,flip, test, handelFlip,  countAnswer, toNextCardIndex, setDelay, delay, resetPages} = useContext(Context)
+    let ArrayOfCardInfo= JSON.parse(cardInfo)? JSON.parse(cardInfo):[]
    
 
  
 useEffect(()=>{
-  console.log("\u001b[32m"+delay + "\u001b[0m");
+  
   
     setTimeout(()=>{
     setDelay(!delay)
 }, 5000)
     
 },[test])
+
 let buttonsNames= [{buttonName: 'yes'},{buttonName: 'not sure'},{buttonName: 'no'}]
+console.log(flip);
 
   return (
    
     <FlashcardContainer >
+      {resetPages? <div><h2> no card exist</h2></div>: <div>
         <ReactCardFlip isFlipped={flip}
+        
             flipDirection="horizontal"
             flipSpeedBackToFront= "1.2"
             flipSpeedFrontToBack= "1.2" >
@@ -40,6 +44,7 @@ let buttonsNames= [{buttonName: 'yes'},{buttonName: 'not sure'},{buttonName: 'no
               <TextContainer>
 
                 <FlashcardInput1>
+                  <h2 style={{color: 'white'}}> front side</h2>
                 <TextField > {ArrayOfCardInfo[toNextCardIndex].frontSideLine1}</TextField>
                  </FlashcardInput1>
             {/* Second line of Flashcard input */}
@@ -90,7 +95,7 @@ let buttonsNames= [{buttonName: 'yes'},{buttonName: 'not sure'},{buttonName: 'no
            
         </ReactCardFlip>
         {delay&& flip&& <h3> have you Known the card ??</h3>}
-          {delay&& flip&& 
+          {delay&& flip&&
         
 
               <ButtonContainer>
@@ -109,7 +114,37 @@ let buttonsNames= [{buttonName: 'yes'},{buttonName: 'not sure'},{buttonName: 'no
           
           }
 
+          {delay&&flip&& <button  style={{
+              width: "250px",
+              height: "50px",
+              backgroundColor: "#494d58",
+              color: "white",
+              border: "none",
+              outline: "none",
+              fontSize: "20px",
+              borderRadius: "40px",
+              cursor: "pointer",
+              textAlign: "center",
+              boxShadow: " 0 6px 20px -5px rgba(0,0,0,0.4)",
+              position: "relative",
+              overflow: "hidden",
+              transition: "all 0.3s ease",
+              zIndex: "0",
+              marginTop: "20px",
+              marginBottom: "20px",
+              textDecoration: "none",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontWeight: "bold",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+
+            }}>done with decks</button>}
+
           {delay&&flip&& <button>done with decks</button>}
+          </div> }
+     
     </FlashcardContainer>
   
   )

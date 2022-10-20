@@ -16,9 +16,8 @@ import ResultChart from "./ResultChart"
 
 
 function FlashcardCreate() {
-  const {nextStage,popup ,toChartPage}= useContext(Context)
-  console.log("popup===>",popup);
-  console.log("toChartPage==",toChartPage);
+  const {nextStage,popup ,toChartPage, resetPages}= useContext(Context)
+
   return (
     <MainDiv className="fluid">
      <Navbar />
@@ -31,8 +30,7 @@ function FlashcardCreate() {
 
         <MainFlashCol md={6}>
           {/* Flashcard here */}
-         {toChartPage? <ResultChart />:
-         <div>
+         {toChartPage?  <ResultChart />:<div>
         {nextStage.title==="Learning"&&  <Learning/>  }
         {nextStage.title==="Creating" && <ReactCard/>}
         {nextStage.title==="Testing" && <Testing/>}
