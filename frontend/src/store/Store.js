@@ -8,7 +8,7 @@ import useLocalStorage from 'react-use-localstorage';
 export const Context = createContext();
 
 function ContextProvider(props) {
-  
+  const [user, setUser]= useState(null)
   const [isProfile, setIsProfile] = useState();
   // flip card state
   const [flip, setFlip] = useState(false);
@@ -49,7 +49,8 @@ function ContextProvider(props) {
         });
       }
       console.log(result.data);
-      return result.data;
+      setUser(result.data.user)
+      return result.data.message;
     } catch (err) {
       console.log(err);
     }
@@ -58,14 +59,16 @@ function ContextProvider(props) {
   const handelLogin = async (logindata) => {
     try {
       const resultLoginData = await axios.post('/login', { logindata });
-      console.log(resultLoginData.data);
+  
       setIsProfile(resultLoginData.data);
       if (resultLoginData.data.message === 'invalid password') {
         toast.error('wrong Email or password', {
           position: toast.POSITION.TOP_CENTER,
         });
       }
-      return resultLoginData.data;
+      setUser(resultLoginData.data.user);
+       return resultLoginData.data.message;
+
     } catch (err) {
       console.log(err);
     }
@@ -263,7 +266,7 @@ const countAnswer= (buttonName)=>{
        countAnswer, toNextCardIndex, test,
        setDelay,
        delay, finalResult,toChartPage, calcTheResult, popup,
-        resetPages, repeatTheTest, createNewCard
+        resetPages, repeatTheTest, createNewCard, setUser, user
       }}
     >
       {' '}
