@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Context } from '../store/Store';
-import { Bar} from 'react-chartjs-2';
+import { Bar, Pie} from 'react-chartjs-2';
 import { Chart as ChartJs } from 'chart.js/auto';
 
 import {useNavigate} from "react-router-dom"
