@@ -8,11 +8,11 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Learning() {
-  const { cardInfo, flip, handelFlip , resetPages} = useContext(Context);
+  const { cardInfo, flip, handelFlip , resetPages, learningData} = useContext(Context);
  
   const ArrayOfCardinfo =JSON.parse(cardInfo) 
  console.log("resetpages===>", resetPages)
-
+ console.log("learningData", learningData)
 
   return (
     <FlashcardContainer>

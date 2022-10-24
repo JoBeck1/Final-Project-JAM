@@ -39,7 +39,7 @@ return (
     <div style={{flex:"80%", display:"grid" }} > 
 
    
-   <LinkStyling  onClick={()=>sidebarStage(item.title)}>
+   <LinkStyling  onClick={()=>sidebarStage(item.title)} >
     {item.title}
     </LinkStyling>
     </div>

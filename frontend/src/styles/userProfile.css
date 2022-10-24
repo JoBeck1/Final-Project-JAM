@@ -1,10 +1,20 @@
+.main-profile-container{
+
+    background-image: url(../assets/images/background1.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
 .userContainer {
     margin: 0;
     padding: 0;
-    width: 100%;
-    height: 100vh;
+   
+   
   box-sizing: border-box;
-background: linear-gradient(to right, #2c5364, #203a43 )
+/* background: linear-gradient(to right, #2c5364, #203a43 ) */
 
 }
 .box-container {
@@ -18,7 +28,7 @@ background: linear-gradient(to right, #2c5364, #203a43 )
 
 .box{
   
-    background-color: #fff;
+   background-color: rgba(119, 220, 98, 0.26);
    
    padding: 3rem 5rem;
    
@@ -42,5 +52,34 @@ background: linear-gradient(to right, #2c5364, #203a43 )
 
 }
 .not-login h2 {
-    color: red; 
+    color: rgb(230, 195, 22); 
+}
+@media  screen and (max-width:420px){
+    .main-profile-container{
+        width: 100vw;
+        height: 100vh;
+    }
+    .box{
+        max-width: 80vw;
+        font-size: 20px;
+        
+    }
+    .inside-card{
+        width:80%;
+    
+        line-height:100%;
+      
+    }
+    .inside-card h4{
+        padding-top: 0;
+        line-height:100%;
+        width:100%;
+        ;
+        font-size: 18px;
+    }
+    
+    
+}
+.click-hier{
+    margin-bottom: 1rem;
 }
