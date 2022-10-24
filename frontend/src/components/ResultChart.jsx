@@ -45,7 +45,7 @@ const refreshAndBackToHome= async()=> {
   return (
   
   <div style={{width: '700px'}}>
-    <Bar data={userData} options={options} />
+    <Pie data={userData} options={options} />
     <div >
     <h2>{finalResult}</h2>
     <button onClick={createNewCard}> create new </button>
