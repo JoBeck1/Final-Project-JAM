@@ -18,7 +18,9 @@ function UserProfile() {
     console.log(user);
   }, []);
   // const {user}= useContext(Context)
+
   let text = "click on Your name to see your information⬇️";
+
 
   let letters = Array.from(text);
   const clickHierContainer = {
@@ -64,6 +66,7 @@ function UserProfile() {
     <div className="main-profile-container">
       {user ? (
         <div className="userContainer">
+
           <motion.div
             className="click-hier"
             variants={clickHierContainer}
@@ -79,6 +82,7 @@ function UserProfile() {
               </motion.span>
             ))}{" "}
           </motion.div>
+
           <div className="box-container">
             <motion.div
               className="box"
