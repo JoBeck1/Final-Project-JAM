@@ -41,13 +41,18 @@ class DropdownMenu extends React.Component {
 const StyledUl = styled.ul`
   list-style-type: none;
   margin: 10px;
-  overflow: hidden;
+  overflow: auto;
   border-radius: 10px;
   border: 2px solid #c7e1ec;
   box-shadow: 5px 5px 5px #2f373b;
   padding: 7px;
   background: #fff;
   background-color: #128ecc;
+
+  @media (max-width: 1144px) and (min-width: 768px) {
+    font-size: 0.86rem;
+    margin: 0;
+  }
 `;
 
 const StyledLi = styled.li`
@@ -57,9 +62,11 @@ const StyledLi = styled.li`
 const Dropbtn = styled.div`
   display: inline-block;
   color: white;
-  text-align: center;
+  width: 100%;
+  text-align: left;
   padding: 14px 16px;
   text-decoration: none;
+  
 `;
 
 const DropDownContent = styled.div`
@@ -84,8 +91,12 @@ const DropDownContent = styled.div`
       transform: translateZ(0px) transLateY(0px);
     }
   }
-
   z-index: 1;
+
+  @media (max-width: 1144px) and (min-width: 768px) {
+    min-width: 120px;
+    padding: 5px;
+  }
 `;
 
 const DropDownLi = styled(StyledLi)`
@@ -102,6 +113,7 @@ const DropDownLi = styled(StyledLi)`
     transform: translateY(10px);
 
   }
+ 
 `;
 
 const StyledA = styled.a`
@@ -132,6 +144,7 @@ const SubA = styled.a`
   z-index: 111;
   transition: 0.4s all;
   }
+
 `;
 
 export default DropdownMenu;

@@ -128,7 +128,6 @@ const LinkStyling = styled(Link)`
   font-weight: 600;
   text-align: center;
   :focus {
-    color: #27c557;
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
