@@ -60,6 +60,7 @@ function UserProfile() {
   const handleClick = () => {
     // 👇️ navigate programmatically
     navigate("/");
+    
   };
 
   return (
