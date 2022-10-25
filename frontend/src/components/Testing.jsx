@@ -94,7 +94,8 @@ console.log(flip);
             </Flashcard>
            
         </ReactCardFlip>
-        {delay&& flip&& <h3> have you Known the card ??</h3>}
+        {delay&& flip&& <h3 style={{
+          color:"red", alignItem:"center"}}> Did you know the card ??</h3>}
           {delay&& flip&&
         
 
@@ -114,35 +115,7 @@ console.log(flip);
           
           }
 
-          {delay&&flip&& <button  style={{
-              width: "250px",
-              height: "50px",
-              backgroundColor: "#494d58",
-              color: "white",
-              border: "none",
-              outline: "none",
-              fontSize: "20px",
-              borderRadius: "40px",
-              cursor: "pointer",
-              textAlign: "center",
-              boxShadow: " 0 6px 20px -5px rgba(0,0,0,0.4)",
-              position: "relative",
-              overflow: "hidden",
-              transition: "all 0.3s ease",
-              zIndex: "0",
-              marginTop: "20px",
-              marginBottom: "20px",
-              textDecoration: "none",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              fontWeight: "bold",
-              letterSpacing: "1px",
-              textTransform: "uppercase",
-
-            }}>done with decks</button>}
-
-          {delay&&flip&& <button>done with decks</button>}
+         
           </div> }
      
     </FlashcardContainer>
@@ -152,12 +125,11 @@ console.log(flip);
 
 // Styling
 const FlashcardContainer = styled.div`
-  display: flex;
+ display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 65vh;
   justify-content: center;
   align-items: center;
-  /* background-color: #8b8888; */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;

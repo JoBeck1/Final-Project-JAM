@@ -42,7 +42,11 @@ const signup = async (req, res) => {
     res.cookie("myToken", token, {
         // the cookie will expire in a month
         maxAge:60*60*24*30*1000});
+
+
+
     res.json({message:"register successfully", user: result})
+
    
   } catch (error) {
     res.status(500).json({ message: 'something is wrong ' });
@@ -77,10 +81,12 @@ const login = async (req, res) => {
          res.cookie("myToken", token, {
           // the cookie will expire in a month
           maxAge:60*60*24*30*1000});
+
           req.session.user= isUserExist
           req.session.save();
       res.json({ message:"login success",user:isUserExist })
         console.log(req.session.user);
+
       }
       }
     // check the data compare using bcrypt
