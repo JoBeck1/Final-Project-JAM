@@ -11,11 +11,7 @@ class DropdownMenu extends React.Component {
   render = () => {
     return (
       <StyledUl>
-        <StyledLi>
-          <StyledA link href="/" onClick={() => this.handleClick("/Home")}>
-            Home
-          </StyledA>
-        </StyledLi>
+
         <DropDownLi>
           <Dropbtn onClick={() => this.handleClick("DropDown")}>
             Our Recommendations
@@ -55,9 +51,7 @@ const StyledUl = styled.ul`
   }
 `;
 
-const StyledLi = styled.li`
-  float: left;
-`;
+
 
 const Dropbtn = styled.div`
   display: inline-block;
@@ -99,7 +93,10 @@ const DropDownContent = styled.div`
   }
 `;
 
-const DropDownLi = styled(StyledLi)`
+
+
+const DropDownLi = styled.li`
+  float: left;
   display: inline-block;
   &:hover {
     background-color: #2d9ce6;
@@ -116,19 +113,7 @@ const DropDownLi = styled(StyledLi)`
  
 `;
 
-const StyledA = styled.a`
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  &:hover {
-    background-color: #2d9ce6;
-    box-shadow: 5px 5px 5px #2f373b;
-    cursor: pointer;
-    border-radius: 7px;
-  }
-`;
+
 
 const SubA = styled.a`
   color: black;
