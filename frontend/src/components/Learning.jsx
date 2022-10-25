@@ -8,11 +8,11 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Learning() {
-  const { cardInfo, flip, handelFlip , resetPages} = useContext(Context);
+  const { cardInfo, flip, handelFlip , resetPages, learningData} = useContext(Context);
  
   const ArrayOfCardinfo =JSON.parse(cardInfo) 
  console.log("resetpages===>", resetPages)
-
+ console.log("learningData", learningData)
 
   return (
     <FlashcardContainer>
@@ -77,7 +77,6 @@ const FlashcardContainer = styled.div`
   height: 65vh;
   justify-content: center;
   align-items: center;
-  background-color: #8b8888; 
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;

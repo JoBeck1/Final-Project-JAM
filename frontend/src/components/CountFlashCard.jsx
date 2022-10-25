@@ -42,7 +42,7 @@ const CardContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #131010;
+  background-color: #2b2a2a97;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;

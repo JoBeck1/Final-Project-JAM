@@ -1,46 +1,109 @@
+.main-profile-container {
+  background-image: url(../assets/images/background1.jpg);
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 .userContainer {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100vh;
-  box-sizing: border-box;
-background: linear-gradient(to right, #2c5364, #203a43 )
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 20px;
 }
 .box-container {
- width: 100%;
- height: 100%;
- padding: 1rem;
- display:flex;
- align-items: center;
- justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.box{
-  
-    background-color: #fff;
-   
-   padding: 3rem 5rem;
-   
-    
+.box {
+  background-color: rgba(119, 220, 98, 0.26);
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  margin: 20px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.1rem;
 }
-.inside-card{
-    width:35rem
+.click-hier {
+  margin: 20px;
+  padding: 20px;
+}
+.inside-card {
+  width: 35rem;
 }
 
-.inside-card h4{
-    padding-top: 1rem;
-    line-height:150%;
-    ;
+.inside-card h4 {
+  padding-top: 1rem;
+  line-height: 150%;
 }
 .not-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top:5rem;
-
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5rem;
 }
 .not-login h2 {
-    color: red; 
+
+    color: #48aeda; 
 }
+.click-hier{
+    margin-bottom: 1rem;
+}
+@media  screen and (max-width:420px){
+    .main-profile-container{
+        width: 100vw;
+        height: 100vh;
+    }
+    .box{
+        max-width: 80vw;
+        font-size: 20px;
+        
+    }
+    .inside-card{
+        width:80%;
+    
+        line-height:100%;
+      
+    }
+    .inside-card h4{
+        padding-top: 0;
+        line-height:100%;
+        width:100%;
+        ;
+        font-size: 18px;
+    }
+  
+    .click-hier span{
+        font-size:.7rem;
+    }
+    
+  }
+

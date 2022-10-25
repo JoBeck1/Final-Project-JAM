@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import axios from 'axios';
+import axios, { Axios } from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
@@ -23,6 +23,7 @@ function ContextProvider(props) {
     backSideLine1: '',
     backSideLine2: '',
   });
+  axios.defaults.withCredentials=true;
   // set number for how many flash card has been created
   const [count, setCount] = useState(0);
   // const navigate = useNavigate()
@@ -65,8 +66,10 @@ function ContextProvider(props) {
         toast.error('wrong Email or password', {
           position: toast.POSITION.TOP_CENTER,
         });
+      }else{
+        setUser(resultLoginData.data.user);
       }
-      setUser(resultLoginData.data.user);
+      
        return resultLoginData.data.message;
 
     } catch (err) {
@@ -266,7 +269,7 @@ const countAnswer= (buttonName)=>{
        countAnswer, toNextCardIndex, test,
        setDelay,
        delay, finalResult,toChartPage, calcTheResult, popup,
-        resetPages, repeatTheTest, createNewCard, setUser, user
+        resetPages, repeatTheTest, createNewCard, setUser, user,learningData
       }}
     >
       {' '}
