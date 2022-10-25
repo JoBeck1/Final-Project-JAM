@@ -52,7 +52,10 @@
 
 }
 .not-login h2 {
-    color: rgb(230, 195, 22); 
+    color: #48aeda; 
+}
+.click-hier{
+    margin-bottom: 1rem;
 }
 @media  screen and (max-width:420px){
     .main-profile-container{
@@ -77,9 +80,10 @@
         ;
         font-size: 18px;
     }
+  
+    .click-hier span{
+        font-size:.7rem;
+    }
     
     
-}
-.click-hier{
-    margin-bottom: 1rem;
 }
