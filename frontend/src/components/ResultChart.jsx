@@ -37,6 +37,7 @@ const refreshAndBackToHome= async()=> {
         label: 'your Final result',
         data: Object.values(test),
         backgroundColor: ['#34d21f', '#d02929', '#dfe320'],
+        hoverOffset: 4,
       },
     ],
   });
@@ -44,13 +45,13 @@ const refreshAndBackToHome= async()=> {
 
   return (
   
-  <div style={{width: '700px'}}>
-    <Pie data={userData} options={options} />
+  <div className='pie' style={{width: '700px'}}>
+    <Pie className='pie_chart' data={userData} options={options} />
     <div >
-    <h2>{finalResult}</h2>
-    <button onClick={createNewCard}> create new </button>
-    <button onClick={repeatTheTest}> repeat the test</button>
-    <button onClick={refreshAndBackToHome}> done </button>
+    <h2 className='final_result'>{finalResult}</h2>
+    <button className='button' onClick={createNewCard}> create new </button>
+    <button className='button' onClick={repeatTheTest}> repeat the test</button>
+    <button className='button'onClick={refreshAndBackToHome}> done </button>
     </div>
     </div>);
 }

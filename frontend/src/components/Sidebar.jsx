@@ -56,7 +56,7 @@ return (
 const SidebarContainer= styled.div`
 width: 100%;
 height: 100%;
-background-color: #0e0303;
+background-color: #2b2a2a97;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 padding: 20px;
@@ -64,6 +64,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
 @media (max-width: 768px) {
     width: 100%;
     height: 100%;
@@ -84,6 +85,10 @@ justify-content: center;
 align-items: center;
 
 
+
+
+
+
 `
 const ListItems = styled.li`
 display: flex;
@@ -97,6 +102,18 @@ height: 100%;
 background-color: #615d5d;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+:hover{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    animation: 1s ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+    }
+    
+        
+
 
 @media (max-width: 768px) {
     width: 100%;
@@ -119,6 +136,17 @@ color: #fff;
 font-size: 1.5rem;
 font-weight: 600;
 text-align: center;
+:focus{
+        color: #27c557;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-align: center;
+        animation: 1s ease-in-out;
+        transform: scale(1.1);
+        cursor: pointer;
+        }
+
+
 @media (max-width: 768px) {
     width: 100%;
     height: 100%;

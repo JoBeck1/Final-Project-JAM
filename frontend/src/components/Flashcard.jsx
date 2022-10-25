@@ -103,13 +103,13 @@ function ReactCard() {
               <ContainerButton
             
               >
-                  Previous Flashcard
+                  Previous Card
               </ContainerButton>
               <ContainerButton
               // onClick={}
               type="submit"
               >
-                  Next Flashcard
+                  Next Card 
               </ContainerButton>
           </ButtonContainer>
 
@@ -161,7 +161,54 @@ const Flashcard = styled.div`
   text-align: center;
   padding: 2rem 3rem;
 
-`
+  @media  (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem;
+    margin: 0;
+  }
+  @media  (max-width: 1280px) {
+    width: 100%;
+    height: 100%;
+    
+  }
+  @media  (max-width: 980px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 320px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 280px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 240px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 200px) {
+    width: 100%;
+    height: 100%;
+  }
+
+
+  `;
 const FlashcardInput1 = styled.p`
   
 display: block;
@@ -197,6 +244,12 @@ const FlashcardButton = styled.button`
     
 
   }
+  @media  (max-width: 600px) {
+    width: 50%;
+    height: 100%;
+
+    
+  }
 `
 const ButtonContainer = styled.div`
   display: flex;
@@ -206,19 +259,18 @@ const ButtonContainer = styled.div`
   margin: 10px;
   padding: 10px;
   @media (max-width: 768px) {
-    width: 100%;
+    width: 80%;
     height: 100%;
   }
 `;
 const ContainerButton = styled.button`
 
   display: block;
-  width: 30%;
-  height: 50%;
+  width: 20%;
+  height: 60%;
   margin: 0 auto;
   text-align: center;
   padding:10px ;
-
   font-Size: 15px;
   background-color:#9ed86e;
   font-weight: bold;
@@ -229,6 +281,32 @@ const ContainerButton = styled.button`
     animation: fadeOut 3s infinite;
     animation-duration: 2s;
 
+  }
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
+  @media  (max-width: 980px) {
+    width: 40%;
+    height: 100%;
+
+    
+  }
+  @media (max-width: 600px) {
+    width: 80%;
+    height: 100%;
+  }
+  @media  (max-width: 1024px) {
+    width: 30%;
+    height: 100%;
+    
+  }
+  @media  (max-width: 1280px) {
+    width: 30%;
+    height: 100%;
+    padding: 1rem 1rem;
+    
+    
   }
 `;
 
