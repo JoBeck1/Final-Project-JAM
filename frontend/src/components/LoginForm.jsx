@@ -8,7 +8,7 @@ import "../styles/formStyling.css"
 
 export default function LoginForm() {
   const navigate= useNavigate()
-    const {handelLogin} = useContext(Context)
+    const {handelLogin, learningData} = useContext(Context)
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = async data => {console.log(data);
   console.log(errors);
@@ -17,6 +17,7 @@ export default function LoginForm() {
 navigate("/flashcardcreateNL")
  }
  console.log(loginResult);
+ 
   }
   return (
     <FormWrapper className="form-wrapper" >
