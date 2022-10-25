@@ -1,10 +1,12 @@
-import React , {useContext} from 'react'
+import React , {useContext, useState} from 'react'
 import { TbWriting } from "react-icons/tb";
 import { RiStackFill } from "react-icons/ri";
 import { ImStatsDots} from "react-icons/im";
 import styled from 'styled-components';
-import {Link} from "react-router-dom"
-import {Context} from "../store/Store"
+import {Link} from "react-router-dom";
+import {Context} from "../store/Store";
+import "../styles/buttonStyling.css";
+
 const SidebarData = [
     { title: 'Creating', icon: <TbWriting/> },
     { title: 'Learning', icon: <RiStackFill/> },
@@ -14,41 +16,42 @@ const SidebarData = [
 
 function Sidebar() {
     const {nextStage, setNextStage, setFlip}= useContext(Context)
-
+    const [active, setActive]= useState()
     const sidebarStage= (title)=>{
         if (title==='Learning') {
 
             setNextStage({title: "Learning"});
+            setActive("Learning")
         }
+
         if (title==="Creating") {
             setNextStage({title: "Creating"});
+            setActive("Creating")
+
         }
         if (title==="Testing") {
             setNextStage({title: "Testing"});
             setFlip(true)
+            setActive("Testing")
+
         }
 }
 
   return (
     < SidebarContainer>
-        <ListStyling>
-    {SidebarData.map((item, key)=>{
-return (
-   <ListItems key={key}>
-    <div style={{flex:"20%", display:"grid" , placeItems:"center"}}> {item.icon}</div>
-    <div style={{flex:"80%", display:"grid" }} > 
+                <ListStyling>
+                    {SidebarData.map((item, key)=>(
+                        
+                    <ListItems className={item.title === active ? "buttonActive" : "buttonNonActive"} key={key}>
+                        <div style={{flex:"20%", display:"grid" , placeItems:"center"}}> {item.icon}</div>
+                        <div style={{flex:"80%", display:"grid" }} > 
 
-   
-   <LinkStyling  onClick={()=>sidebarStage(item.title)}>
-    {item.title}
-    </LinkStyling>
-    </div>
+                        <LinkStyling  onClick={()=>sidebarStage(item.title)}  >{item.title}</LinkStyling>
+                        </div>
 
-   </ListItems>
-)
-
-    })}
-        </ListStyling>
+                    </ListItems>
+                        ))}
+                </ListStyling>
     </SidebarContainer>
   )
 }
@@ -64,6 +67,9 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+
+
 @media (max-width: 768px) {
     width: 100%;
     height: 100%;
@@ -94,7 +100,8 @@ margin: 10px;
 padding: 10px;
 width: 100%;
 height: 100%;
-background-color: #615d5d;
+background-color: grey;
+
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
@@ -107,9 +114,6 @@ box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     justify-content: center;
     align-items: center;
     }
-    
-    
-    
     
     `
 const LinkStyling= styled(Link)`

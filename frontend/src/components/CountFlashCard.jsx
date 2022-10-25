@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { Context } from "../store/Store";
+
+
 function CountFlashCard() {
   const {
     count,
