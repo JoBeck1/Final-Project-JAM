@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { Context } from '../store/Store';
 import { motion, useAnimation } from 'framer-motion';
+import { useNavigate } from "react-router-dom";
 import '../styles/userProfile.css';
 
 // const userData = await axios.get("/user/profile")
@@ -17,7 +18,7 @@ function UserProfile() {
     console.log(user);
   }, []);
   // const {user}= useContext(Context)
-  let text="click to on the name to see your information⬇️"
+  let text="click on Your name to see your information⬇️"
 
   let letters= Array.from(text)
   const clickHierContainer= {
@@ -52,6 +53,13 @@ function UserProfile() {
   
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    // 👇️ navigate programmatically
+    navigate("/");
+  };
 
   return (
     <div className="main-profile-container">
@@ -107,6 +115,41 @@ function UserProfile() {
           <h2> you are not registered </h2>
         </div>
       )}
+
+      <div>
+      <button
+            style={{
+              width: "250px",
+              height: "50px",
+              backgroundColor: "#494d58",
+              color: "white",
+              border: "none",
+              outline: "none",
+              fontSize: "20px",
+              borderRadius: "40px",
+              cursor: "pointer",
+              textAlign: "center",
+              boxShadow: " 0 6px 20px -5px rgba(0,0,0,0.4)",
+              position: "relative",
+              overflow: "hidden",
+              transition: "all 0.3s ease",
+              zIndex: "0",
+              marginTop: "20px",
+              marginBottom: "20px",
+              textDecoration: "none",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontWeight: "bold",
+              letterSpacing: "1px",
+              textTransform: "uppercase",
+
+            }}
+            onClick={handleClick}
+          >
+            Back to Home
+          </button>
+      </div>
     </div>
   );
 }

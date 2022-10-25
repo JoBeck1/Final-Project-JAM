@@ -4,8 +4,15 @@
     align-items: center;
     padding: 20px;
   }
-  .profileContainer {
+  .main-profile-container {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    
+
     margin: 20px;
   }
   @media only screen and (max-width: 768px) {
