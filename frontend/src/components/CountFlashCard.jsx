@@ -46,7 +46,7 @@ const CardContainer = styled.div`
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-
+   
   @media (max-width: 768px) {
     width: 100%;
     background-color: aqua;
@@ -68,6 +68,9 @@ const CardBody = styled.div`
   &:hover {
     transform: scale(1.1);
   }
+  @media (max-width:1100px) {
+       
+      }
   h2 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -75,6 +78,11 @@ const CardBody = styled.div`
     text-align: left;
     margin: 20px 0;
     padding: 20px;
+    @media (max-width:1100px) {
+       padding:5px;
+       margin: 5px;
+       font-size: 1.2rem;
+      }
   }
   p {
     font-size: 1.2rem;
@@ -83,6 +91,9 @@ const CardBody = styled.div`
     text-align: center;
     margin: 0;
     padding: 0;
+    @media (max-width:1100px) {
+     font-size: .8rem;
+      }
   }
   span {
     color: #ffffff;
@@ -92,6 +103,9 @@ const CardBody = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width:1100px) {
+       flex-direction: column;
+      }
     input {
       width: 100%;
       height: 30px;
@@ -105,6 +119,10 @@ const CardBody = styled.div`
       font-weight: 600;
       color: #5c5757;
       text-align: center;
+      @media (max-width:1100px) {
+        display:block;
+        width: 130px;
+      }
     }
     button {
       width: 100px;
@@ -122,6 +140,10 @@ const CardBody = styled.div`
       padding: 0;
       background-color: #adb2b3b0;
       cursor: pointer;
+      @media (max-width:1100px) {
+        display:block;
+        width: 80px;
+      }
     }
   }
 `;

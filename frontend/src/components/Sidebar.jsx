@@ -23,17 +23,19 @@ function Sidebar() {
     }
 
 
-            setNextStage({title: "Learning"});
-        
-        if (title==="Creating") {
-            setNextStage({title: "Creating"});
-        }
-        if (title==="Testing") {
-            setNextStage({title: "Testing"});
-          
-        }
+    if (title === "Creating") {
+      setNextStage({ title: "Creating" });
+      setActive("Creating");
 
-      }
+    }
+    if (title === "Testing") {
+      setNextStage({ title: "Testing" });
+      setActive("Testing");
+
+    }
+  };
+
+      
 
   return (
     <SidebarContainer>
@@ -59,8 +61,8 @@ function Sidebar() {
       </ListStyling>
     </SidebarContainer>
   );
+          
           }
-
 const SidebarContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -83,6 +85,7 @@ const SidebarContainer = styled.div`
     align-items: center;
     margin: 0;
   }
+ 
 `;
 const ListStyling = styled.ul`
   list-style: none;
@@ -112,7 +115,9 @@ const ListItems = styled.li`
     transform: scale(1.1);
     cursor: pointer;
   }
-
+@media  (max-width:1000px) {
+  width:80%
+}
   @media (max-width: 768px) {
     width: 100%;
     height: 100%;
@@ -137,6 +142,11 @@ const LinkStyling = styled(Link)`
     transform: scale(1.1);
     cursor: pointer;
   }
+  @media  (max-width:1080) {
+
+height: 80px;
+font-size: 15px;
+}
 
   @media (max-width: 768px) {
     width: 100%;

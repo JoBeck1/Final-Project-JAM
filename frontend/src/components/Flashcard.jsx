@@ -168,27 +168,27 @@ const Flashcard = styled.div`
     margin: 0;
   }
   @media  (max-width: 1280px) {
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
     
   }
   @media  (max-width: 980px) {
-    width: 100%;
-    height: 100%;
+    width: 330px;
+    height: 330px;
   }
 
   @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 350px;
   }
 
   @media (max-width: 480px) {
-    width: 100%;
-    height: 100%;
+    width: 350px;
+    height: 300px;
   }
 
   @media (max-width: 320px) {
-    width: 100%;
+    width: 100vw;
     height: 100%;
   }
 
@@ -244,10 +244,19 @@ const FlashcardButton = styled.button`
     
 
   }
-  @media  (max-width: 600px) {
+  @media  (max-width: 1280px) {
     width: 50%;
-    height: 100%;
-
+    height: 40%;
+    padding: 0;
+    font-size:10px;
+    
+  }
+  @media  (max-width: 600px) {
+    width: 30%;
+    height: 30%;
+    padding: 5px;
+    font-size:10px;
+    
     
   }
 `
@@ -255,18 +264,19 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 100px;
+  height: 100%;
   margin: 10px;
   padding: 10px;
   @media (max-width: 768px) {
     width: 80%;
-    height: 100%;
+    height: 80px;
+    font-size:10px;
   }
 `;
 const ContainerButton = styled.button`
 
   display: block;
-  width: 20%;
+  width: 30%;
   height: 60%;
   margin: 0 auto;
   text-align: center;
@@ -283,30 +293,37 @@ const ContainerButton = styled.button`
 
   }
   @media (max-width: 768px) {
-    width: 100%;
-    height: 100%;
+    width: 80px;
+    height: 100px;
   }
   @media  (max-width: 980px) {
-    width: 40%;
-    height: 100%;
+    width: 30%;
+    height: 20%;
+    font-size: 10px;
 
     
   }
   @media (max-width: 600px) {
-    width: 80%;
-    height: 100%;
+    width: 80px;
+    height: 100px;
   }
   @media  (max-width: 1024px) {
     width: 30%;
-    height: 100%;
+    height: 20%;
     
   }
   @media  (max-width: 1280px) {
     width: 30%;
-    height: 100%;
+    height: 20%;
     padding: 1rem 1rem;
+    font-size: 10px;
     
     
+  }
+  @media (max-width: 480px) {
+    width: 80px;
+    height: 50px;
+    font-size: 8px;
   }
 `;
 
