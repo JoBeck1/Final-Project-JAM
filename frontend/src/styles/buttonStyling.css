@@ -1,0 +1,9 @@
+.buttonActive {
+    background-color: rgba(32, 204, 32, 0.705);
+
+}
+
+.buttonNonActive {
+    background-color: grey;
+
+}

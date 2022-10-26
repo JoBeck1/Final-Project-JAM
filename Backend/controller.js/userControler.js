@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 // used cookie to store the token
 const cookieParser= require("cookie-parser");
 
-// rigister the user
+// register the user
 const signup = async (req, res) => {
   // git the information of the user
   let { firstName, Surname, Email, Age, Password, ConfirmPassword } =

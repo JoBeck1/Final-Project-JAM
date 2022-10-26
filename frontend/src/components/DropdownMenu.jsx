@@ -1,5 +1,4 @@
 import React from "react";
-
 import styled from "styled-components";
 
 class DropdownMenu extends React.Component {
@@ -12,11 +11,7 @@ class DropdownMenu extends React.Component {
   render = () => {
     return (
       <StyledUl>
-        <StyledLi>
-          <StyledA link href="/" onClick={() => this.handleClick("/Home")}>
-            Home
-          </StyledA>
-        </StyledLi>
+
         <DropDownLi>
           <Dropbtn onClick={() => this.handleClick("DropDown")}>
             Our Recommendations
@@ -42,25 +37,30 @@ class DropdownMenu extends React.Component {
 const StyledUl = styled.ul`
   list-style-type: none;
   margin: 10px;
-  overflow: hidden;
+  overflow: auto;
   border-radius: 10px;
   border: 2px solid #c7e1ec;
   box-shadow: 5px 5px 5px #2f373b;
   padding: 7px;
   background: #fff;
   background-color: #128ecc;
+
+  @media (max-width: 1144px) and (min-width: 768px) {
+    font-size: 0.86rem;
+    margin: 0;
+  }
 `;
 
-const StyledLi = styled.li`
-  float: left;
-`;
+
 
 const Dropbtn = styled.div`
   display: inline-block;
   color: white;
-  text-align: center;
+  width: 100%;
+  text-align: left;
   padding: 14px 16px;
   text-decoration: none;
+  
 `;
 
 const DropDownContent = styled.div`
@@ -85,11 +85,18 @@ const DropDownContent = styled.div`
       transform: translateZ(0px) transLateY(0px);
     }
   }
-
   z-index: 1;
+
+  @media (max-width: 1144px) and (min-width: 768px) {
+    min-width: 120px;
+    padding: 5px;
+  }
 `;
 
-const DropDownLi = styled(StyledLi)`
+
+
+const DropDownLi = styled.li`
+  float: left;
   display: inline-block;
   &:hover {
     background-color: #2d9ce6;
@@ -103,21 +110,10 @@ const DropDownLi = styled(StyledLi)`
     transform: translateY(10px);
 
   }
+ 
 `;
 
-const StyledA = styled.a`
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  &:hover {
-    background-color: #2d9ce6;
-    box-shadow: 5px 5px 5px #2f373b;
-    cursor: pointer;
-    border-radius: 7px;
-  }
-`;
+
 
 const SubA = styled.a`
   color: black;
@@ -133,6 +129,7 @@ const SubA = styled.a`
   z-index: 111;
   transition: 0.4s all;
   }
+
 `;
 
 export default DropdownMenu;
