@@ -23,16 +23,17 @@ function Sidebar() {
     }
 
 
-            setNextStage({title: "Learning"});
-        }
-        if (title==="Creating") {
-            setNextStage({title: "Creating"});
-        }
-        if (title==="Testing") {
-            setNextStage({title: "Testing"});
-          
-        }
-}
+    if (title === "Creating") {
+      setNextStage({ title: "Creating" });
+      setActive("Creating");
+
+    }
+    if (title === "Testing") {
+      setNextStage({ title: "Testing" });
+      setActive("Testing");
+
+    }
+  };
 
 
   return (
