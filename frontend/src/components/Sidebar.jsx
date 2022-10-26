@@ -22,16 +22,18 @@ function Sidebar() {
       setActive("Learning");
     }
 
-    if (title === "Creating") {
-      setNextStage({ title: "Creating" });
-      setActive("Creating");
-    }
-    if (title === "Testing") {
-      setNextStage({ title: "Testing" });
-      setFlip(true);
-      setActive("Testing");
-    }
-  };
+
+            setNextStage({title: "Learning"});
+        }
+        if (title==="Creating") {
+            setNextStage({title: "Creating"});
+        }
+        if (title==="Testing") {
+            setNextStage({title: "Testing"});
+          
+        }
+}
+
 
   return (
     <SidebarContainer>
