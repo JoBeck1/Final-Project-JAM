@@ -4,30 +4,133 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "../assets/images/unnamed.png";
+import  { useState } from "react";
+import { NavLink, Link } from "react-router-dom";
+import { FiAlignRight, FiXCircle, FiChevronDown } from "react-icons/fi";
+import "../styles/NavbarStyling.css";
 
-import { Link } from "react-router-dom";
+
 
 function Header() {
+  const [isMenu, setisMenu] = useState(false);
+  const [isResponsiveclose, setResponsiveclose] = useState(false);
+  const toggleClass = () => {
+    setisMenu(isMenu === false ? true : false);
+    setResponsiveclose(isResponsiveclose === false ? true : false);
+  };
+
+  let boxClass = ["main-menu menu-right menuq1"];
+  if (isMenu) {
+    boxClass.push("menuq2");
+  } else {
+    boxClass.push("");
+  }
+
+  const [isMenuSubMenu, setMenuSubMenu] = useState(false);
+
+  const toggleSubmenu = () => {
+    setMenuSubMenu(isMenuSubMenu === false ? true : false);
+  };
+
+  let boxClassSubMenu = ["sub__menus"];
+  if (isMenuSubMenu) {
+    boxClassSubMenu.push("sub__menus__Active");
+  } else {
+    boxClassSubMenu.push("");
+  }
+
   return (
-    <>
-      <HeaderContainer>
-        <Navbar>
-          <div>
-            <img src={Image} alt="logo" />
+    <header className="header__middle">
+      <div className="container">
+          {/* Add Logo  */}
+
+          <div className="header__middle__menus">
+            {" "}
+            <div className="header__middle__logo">
+              <NavLink exact activeClassName="is-active" to="/">
+                <img src={Image} alt="logo" />
+              </NavLink>
+            </div>
+            <nav className="main-nav ">
+              {/* Responsive Menu Button */}
+              {isResponsiveclose === true ? (
+                <>
+                  <span
+                    className="menubar__button"
+                    style={{ display: "none" , position:"absolute", top:"0", right:"0"}}
+                    onClick={toggleClass}
+                  >
+                    {" "}
+                    <FiXCircle />{" "}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span
+                    className="menubar__button"
+                    style={{ display: "none", position:"absolute", top:"0", right:"0" }}
+                    onClick={toggleClass}
+                  >
+                    {" "}
+                    <FiAlignRight />{" "}
+                  </span>
+                </>
+              )}
+
+              <ul className={boxClass.join(" ")}>
+                <li className="menu-item">
+                  <NavLink
+                    exact
+                    activeClassName="is-active"
+                    onClick={toggleClass}
+                    to={`/`}
+                  >
+                    {" "}
+                    Home{" "}
+                  </NavLink>
+                </li>
+               
+                <li className="menu-item">
+                  <NavLink
+                    exact
+                    activeClassName="is-active"
+                    onClick={toggleClass}
+                    to={`/flashcardcreateNL`}
+                  >
+                    {" "}
+                    Start Now{" "}
+                  </NavLink>
+                </li>
+                <li className="menu-item">
+                  <NavLink
+                    exact
+                    activeClassName="is-active"
+                    onClick={toggleClass}
+                    to={`/signup`}
+                  >
+                    {" "}
+                    SignUp{" "}
+                  </NavLink>
+                </li>
+                <li className="menu-item">
+                  <NavLink
+                    exact
+                    activeClassName="is-active"
+                    onClick={toggleClass}
+                    to={`/login`}
+                  >
+                    {" "}
+                    Log in{" "}
+                  </NavLink>
+                </li>
+               
+              </ul>
+            </nav>
           </div>
-          <Container className="text-center">
-            <Nav>
-              <LinkNav to="/">Home</LinkNav>
-              <LinkNav to="/flashcardcreateNL">Start now!</LinkNav>
-              <LinkNav to="/signup">Sign up</LinkNav>
-              <LinkNav to="/login">Log in</LinkNav>
-            </Nav>
-          </Container>
-        </Navbar>
-      </HeaderContainer>
-    </>
+        </div>
+    </header>
   );
-}
+};
 
 export default Header;
 

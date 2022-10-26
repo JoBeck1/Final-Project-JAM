@@ -27,6 +27,8 @@ function Sidebar() {
       setNextStage({ title: "Creating" });
       setActive("Creating");
 
+
+
     }
     if (title === "Testing") {
       setNextStage({ title: "Testing" });
