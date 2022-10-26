@@ -25,7 +25,7 @@ function Sidebar() {
         }
         if (title==="Testing") {
             setNextStage({title: "Testing"});
-            setFlip(true)
+          
         }
 }
 
