@@ -42,7 +42,7 @@ const StyledUl = styled.ul`
   border: 2px solid #c7e1ec;
   box-shadow: 5px 5px 5px #2f373b;
   padding: 7px;
-  background: #fff;
+  background: white;
   background-color: #128ecc;
 
   @media (max-width: 1144px) and (min-width: 768px) {
