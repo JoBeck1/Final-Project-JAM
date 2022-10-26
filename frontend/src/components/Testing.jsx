@@ -160,6 +160,52 @@ const Flashcard = styled.div`
   
   text-align: center;
   padding: 2rem 3rem;
+  @media  (max-width: 1024px) {
+    width: 100%;
+    height: 100%;
+    padding: 1rem 1rem;
+    margin: 0;
+  }
+  @media  (max-width: 1280px) {
+    width: 350px;
+    height: 350px;
+    
+  }
+  @media  (max-width: 980px) {
+    width: 330px;
+    height: 330px;
+  }
+
+  @media (max-width: 768px) {
+    width: 350px;
+    height: 350px;
+  }
+
+  @media (max-width: 480px) {
+    width: 350;
+    height: 300px;
+  }
+
+  @media (max-width: 320px) {
+    width: 100vw;
+    height: 100%;
+  }
+
+  @media (max-width: 280px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 240px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 200px) {
+    width: 100%;
+    height: 100%;
+  }
+
 
 `
 const FlashcardInput1 = styled.p`

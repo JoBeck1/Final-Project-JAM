@@ -43,16 +43,33 @@
   animation: gradient 15s ease infinite;
 }
 
-  
+  @media screen and (max-width:1100px) {
+    .carousel{
+      width:400px;
+      height:400px;
+    }
+    .test{
+      width:380px;
+      height:380px
+    }
+  }
+  @media screen and (max-width:420px) {
+    .test{
+      width:350px;
+      height:350px
+    }
+  }
+  @media screen and (max-width:395px) {
+    .test{
+      width:280px;
+      height:350px
+    }
+  }
   
  .control-arrow{
   height:500px;
   width:50px;
   border-radius: 25px;
- 
- 
-
-
 
 
  }
