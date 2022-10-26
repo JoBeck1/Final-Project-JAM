@@ -25,11 +25,13 @@ function Sidebar() {
     if (title === "Creating") {
       setNextStage({ title: "Creating" });
       setActive("Creating");
+    //   test
     }
     if (title === "Testing") {
       setNextStage({ title: "Testing" });
       setFlip(true);
       setActive("Testing");
+    //   test
     }
   };
 
