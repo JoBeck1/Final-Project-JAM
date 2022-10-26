@@ -24,7 +24,7 @@ function Sidebar() {
 
 
             setNextStage({title: "Learning"});
-        }
+        
         if (title==="Creating") {
             setNextStage({title: "Creating"});
         }
@@ -32,8 +32,8 @@ function Sidebar() {
             setNextStage({title: "Testing"});
           
         }
-}
 
+      }
 
   return (
     <SidebarContainer>
@@ -59,7 +59,7 @@ function Sidebar() {
       </ListStyling>
     </SidebarContainer>
   );
-}
+          }
 
 const SidebarContainer = styled.div`
   width: 100%;
