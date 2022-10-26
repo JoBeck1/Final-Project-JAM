@@ -50,7 +50,7 @@ const Navbar = () => {
                 <>
                   <span
                     className="menubar__button"
-                    style={{ display: "none" }}
+                    style={{ display: "none", position:"absolute", top:"0", right:"0" }}
                     onClick={toggleClass}
                   >
                     {" "}
@@ -61,7 +61,7 @@ const Navbar = () => {
                 <>
                   <span
                     className="menubar__button"
-                    style={{ display: "none" }}
+                    style={{ display: "none",position:"absolute", top:"0", right:"0" }}
                     onClick={toggleClass}
                   >
                     {" "}
