@@ -1,4 +1,4 @@
-import "../styles/contact.css";
+import "../contact/contact.css";
 import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
@@ -25,8 +25,6 @@ const Contact = () => {
         height: "300px",
         backgroundColor: "#146fb9",
         zIndex: "1",
-
-
       }}
     >
       <div id="contact">
@@ -148,7 +146,6 @@ const Contact = () => {
               letterSpacing: "1px",
               textTransform: "uppercase",
               margin: "0 23px",
-
             }}
             type="submit"
           >
@@ -183,7 +180,6 @@ const Contact = () => {
               fontWeight: "bold",
               letterSpacing: "1px",
               textTransform: "uppercase",
-
             }}
             onClick={handleClick}
           >
