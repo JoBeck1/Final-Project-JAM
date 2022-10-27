@@ -25,6 +25,19 @@ function ResultChart() {
       title: {
         display: true,
         text: "chart for your result ",
+        color: "black",
+        fullSize: true,
+        font: {
+          size: 20,
+          weight: "bold",
+          family: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
+          lineHeight: 1.2,
+        },
+      },
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
       },
     },
   };
@@ -34,20 +47,27 @@ function ResultChart() {
 
     datasets: [
       {
-        label: "your Final result",
+        label: "Your Final Result",
 
         // This data must be an array:
         data: Object.values(test),
 
         backgroundColor: ["#34d21f", "#d02929", "#dfe320"],
         hoverOffset: 4,
+        borderWidth: 2,
+        hoverBorderColor: "black",
+        hoverBorderRadius: 10,
+        borderSkipped: "bottom",
+        minBarLength: 6,
+        barThickness: 50,
+        hoverBackgroundColor: "black",
       },
     ],
   });
 
   return (
     <div className="pie">
-      <Pie className="pie_chart" data={userData} options={options} />
+      <Bar className="pie_chart" data={userData} options={options} />
       <div>
         <h2 className="final_result">{finalResult}</h2>
         <button className="button" onClick={createNewCard}>
