@@ -2,33 +2,44 @@ import React , {useContext, useState, useEffect}from 'react'
 import {Context} from "../../store/Store"
 import "../../styles/AllwordStyling.css"
 import {motion, AnimatePresence} from "framer-motion"
+import axios from "axios";
 function Allwords() {
     const {learningData,user} = useContext(Context)
-const [filtered, setFiltered]= useState()
+const [filtered, setFiltered]= useState([])
 const [buttonStyle, setButtonStyle]= useState()
 const [indexNumber, setIndexNumber] = useState(0)
-
+const [allcards, setAllcards] = useState()
+useEffect( async()=>{
+  const AllCards = await axios.get("/allcards")
+   setAllcards(AllCards.data)
+   setFiltered(AllCards.data)
+   console.log(AllCards.data)
+   
+ }, []);
 const onClickHandlers =(activeButton)=> {
   setButtonStyle(activeButton)
   if (activeButton===0) {
-      setFiltered(learningData)
+      setFiltered(allcards)
   } else if (activeButton===1 )
    {
      setIndexNumber(0)
-       setFiltered(learningData.slice(0, 10))
+       setFiltered(allcards.slice(0, 10))
        console.log("just10====>",indexNumber)
       }
     else  if (activeButton===2  ) {
       const tempIndex= indexNumber+10
           setIndexNumber(indexNumber+10)
-          setFiltered(learningData.slice(tempIndex, tempIndex+10))
+          setFiltered(allcards.slice(tempIndex, tempIndex+10))
       
       console.log("next10===>",indexNumber)
   }
 }
+
    useEffect(()=>{
     onClickHandlers(0)
    }, [])
+
+  
 
   return (
     <div>
@@ -49,9 +60,19 @@ const onClickHandlers =(activeButton)=> {
                     animate={{opacity: 1, scale:1}}
                     initial={{opacity: 0, scale:0}}
                     exist={{opacity:0, scale:1}}
+                    
                     transition={{duration:1}}
                 
-                    key={i} className="innerCard"> <h2>cardNum{i}  {word.frontSideLine1}</h2></motion.div>)
+                    key={i} className="innerCard"> <div>
+                      <h2>cardNum{word.deckName}  </h2>
+                      <h3> Frontside</h3>
+                      <p> word <span style={{color: 'green'}}> {word.frontSideLine1}</span></p>
+                      <p> sentance <span style={{color: 'green'}}> {word.frontSideLine2}</span></p>
+                      <h3> Backside</h3>
+                      <p> word <span style={{color: 'green'}}> {word.backSideLine1}</span></p>
+                      <p> sentance <span style={{color: 'green'}}> {word.backSideLine2}</span></p>
+                    </div>
+                    </motion.div>)
             })}
             </AnimatePresence>
         </motion.div> </div>: <div> you are not allowed to enter </div>}

@@ -11,6 +11,7 @@ import { ToastContainer} from "react-toastify"
 import Profile from "./components/Profile"
 import ContactForm from './components/contact/ContactForm';
 import Allwords from "./components/WordCollection/Allwords"
+import UserCards from "./components/WordCollection/UserCards"
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -39,6 +40,8 @@ function App() {
 
   <Route path= "/userprofile/" element= {<UserProfile />}/>
   <Route path= "/contact" element= {<ContactForm />}/>
+  <Route path= "/allWords" element= {<Allwords/>}/>
+  <Route path= "/userCards" element= {<UserCards/>}/>
 
 
  </Routes>

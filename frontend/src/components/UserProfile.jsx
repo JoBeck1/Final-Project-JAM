@@ -1,4 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
+
+import React, {  useState, useEffect, useContext } from "react";
+
+
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/Store";
@@ -10,15 +13,17 @@ import "../styles/userProfile.css";
 // const user = userData.user
 
 function UserProfile() {
-  let [user, setUser] = useState();
-  useEffect(async () => {
-    const userData = await axios.get("/profile");
-    //user = userData.data.user;
-    setUser(userData.data.user);
-    console.log(user);
+  const {userSissionData, GetUserData}= useContext(Context)
+ 
+  useEffect( () => {
+    // const userData = await axios.get("/profile");
+    // //user = userData.data.user;
+    // setUser(userData.data.user);
+    // console.log(user);
+    GetUserData()
   }, []);
   // const {user}= useContext(Context)
-
+console.log(userSissionData);
   let text = "click on Your name to see your information⬇️";
 
 
@@ -66,7 +71,7 @@ function UserProfile() {
 
   return (
     <div className="main-profile-container">
-      {user ? (
+      {userSissionData? (
         <div className="userContainer">
 
           <motion.div
@@ -103,7 +108,7 @@ function UserProfile() {
             >
               <motion.h2 layout="position">
                 {" "}
-                Hi {`${user.firstName} ${user.Surname}`}{" "}
+                Hi {`${userSissionData.firstName} ${userSissionData.Surname}`}{" "}
               </motion.h2>
               {isOpen && (
                 <motion.div
@@ -116,10 +121,10 @@ function UserProfile() {
                   }}
                   initial={{ x: "-100px", opacity: 0 }}
                 >
-                  <h4> your name : {user.firstName} </h4>
-                  <h4> your Surname: {user.Surname}</h4>
-                  <h4> your Email: {user.Email} </h4>
-                  <h4> your Age: {user.Age} </h4>
+                  <h4> your name : {userSissionData.firstName} </h4>
+                  <h4> your Surname: {userSissionData.Surname}</h4>
+                  <h4> your Email: {userSissionData.Email} </h4>
+                  <h4> your Age: {userSissionData.Age} </h4>
                 </motion.div>
               )}
             </motion.div>
