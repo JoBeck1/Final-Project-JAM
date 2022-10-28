@@ -1,4 +1,7 @@
+
 import React, {  useState, useEffect, useContext } from "react";
+
+
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/Store";
@@ -62,6 +65,7 @@ console.log(userSissionData);
   const handleClick = () => {
     // 👇️ navigate programmatically
     navigate("/");
+    window.location.reload();
     
   };
 

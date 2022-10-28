@@ -9,7 +9,7 @@ import Learning from './components/Learning';
 
 import { ToastContainer} from "react-toastify"
 import Profile from "./components/Profile"
-import ContactForm from './components/ContactForm';
+import ContactForm from './components/contact/ContactForm';
 import Allwords from "./components/WordCollection/Allwords"
 import UserCards from "./components/WordCollection/UserCards"
 
