@@ -6,7 +6,7 @@ const {signup, login}= require('../controller.js/userControler')
 const {auth} = require('../middelware/auth')
 const FlashCard = require('../model/Flashcard')
 const { body, validationResult } = require('express-validator');
-const {flashcardController, myCards} = require('../controller.js/flashcardController')
+const {flashcardController, myCards, AllCards} = require('../controller.js/flashcardController')
 const {upDate} = require('../controller.js/upDateControler')
 // git the information from user
 
@@ -24,16 +24,16 @@ router.get('/profile', auth, function(req, res){
 })
 router.post("/flashcardcreateNL/flipCreate", flashcardController)
 
-router.get('/flashcardcreate/learning', async(req, res)=>{
-const data= await FlashCard.find()
-console.log(data);
-res.json(data)
+// router.get('/flashcardcreate/learning', async(req, res)=>{
+// const data= await FlashCard.find()
+// console.log(data);
+// res.json(data)
 
-})
+// })
 
 router.get("/mycards", auth,myCards)
   
-
+router.get("/allcards", auth,AllCards)
 router.post("/userprofile", auth,upDate )
 
 module.exports = router;

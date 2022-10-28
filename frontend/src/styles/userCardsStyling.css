@@ -1,0 +1,18 @@
+.userCard-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.deck-container{
+margin:10px;
+background-color: aquamarine;
+
+
+}
+
+.choosed-Container{
+    background-color:red;
+}

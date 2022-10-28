@@ -155,9 +155,8 @@ function ContextProvider(props) {
   // function to done with flash card and go to the learning stage 
 
   const navigateToLearning= async()=> {
-    let data = await axios.get("/flashcardcreate/learning") 
-    setLearningData(data.data)
-    // user can go to next step learning and testing if he just click on done with decks 
+    // let data = await axios.get("/flashcardcreate/learning") 
+  
     if (numberOfFlashCards>0) {
       setResetPages(!resetPages)
 
@@ -168,6 +167,13 @@ function ContextProvider(props) {
       position: toast.POSITION.TOP_CENTER,
     })
    }
+  }
+
+  // function to userprofile data and check if we have a user profile
+  const[userSissionData, setUserSissionData] =useState()
+  const GetUserData = async()=> {
+    const userData = await axios.get("/profile");
+    setUserSissionData(userData.data.user)
   }
   // state for counting result of testing
 const [test, setTest]= useState({yes:0, no:0,notSure: 0})
@@ -269,7 +275,7 @@ const countAnswer= (buttonName)=>{
        countAnswer, toNextCardIndex, test,
        setDelay,
        delay, finalResult,toChartPage, calcTheResult, popup,
-        resetPages, repeatTheTest, createNewCard, setUser, user,learningData
+        resetPages, repeatTheTest, createNewCard, setUser, user,learningData,userSissionData, GetUserData
       }}
     >
       {' '}

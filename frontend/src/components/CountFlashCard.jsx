@@ -1,18 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState , useEffect} from "react";
 import styled from "styled-components";
 import { Context } from "../store/Store";
+import {Link}  from  "react-router-dom" ;
 
 
 function CountFlashCard() {
   const {
     count,
     deckName,
-    setDeckName,
+   
     handelNameOnDickCard,
     handelDeckNameSubmit,
     isInputExist,
+    userSissionData, GetUserData
   } = useContext(Context);
-
+console.log(userSissionData)
+useEffect(()=>{
+GetUserData()
+}, [])
   return (
     <CardContainer>
       <CardBody>
@@ -33,11 +38,17 @@ function CountFlashCard() {
           you created <span> {count}</span> FlashCards
         </p>
       </CardBody>
+      {userSissionData&& <CardBody> 
+        <h2> import Decks</h2>
+     <p><Link to="/allWords"> our collections</Link></p>  
+        <p> <Link to="/userCards"> my Cards </Link></p>
+      </CardBody>}
     </CardContainer>
   );
 }
 const CardContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: 100%;

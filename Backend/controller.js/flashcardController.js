@@ -28,17 +28,30 @@ const flashcardController = async (req, res) => {
 
 const myCards= async (req, res) => {
   try {
-    if (req.session.user) {
+     if (req.session.user) {
        console.log(req.session.user)
       const card = await FlashCard.find({user: req.session.user._id}).populate("user")
-      console.log(card);
+      console.log("myacrd===>",card);
 
       res.json(card)
-    }
+     }
       } catch (err) {
     console.log(err)
     res.json({ message: err.message });
   }
 }
 
-module.exports = { flashcardController , myCards};
+const AllCards= async (req, res) => {
+  try {
+    if (req.session.user) {
+      const allCards = await FlashCard.find()
+      res.json(allCards)
+
+    }
+  } catch (err) {
+    res.json({ message: err.message });
+    console.log(err);
+  }
+}
+
+module.exports = { flashcardController , myCards, AllCards};
