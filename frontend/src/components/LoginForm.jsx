@@ -2,13 +2,19 @@ import React , {useContext} from 'react';
 import { useForm } from 'react-hook-form';
 import styled, { css } from 'styled-components';
 import {Context} from "../Store"
+import {useNavigate} from "react-router-dom"
 import "../styles/formStyling.css"
 export default function LoginForm() {
+  const navigate= useNavigate()
     const {handelLogin} = useContext(Context)
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => {console.log(data);
+  const onSubmit = async data => {console.log(data);
   console.log(errors);
-  handelLogin(data)
+ const loginResult= await handelLogin(data)
+ if (loginResult==="login success") {
+navigate("/profile")
+ }
+ console.log(loginResult);
   }
   return (
     <FormWrapper className="form-wrapper" >

@@ -42,7 +42,7 @@ function DropdownMenu() {
 
 const ContainerInDropdown = styled(Container)`
   padding: 15px;
-
+   width: 20vw;
   .dropdown-item {
     color: white;
   }

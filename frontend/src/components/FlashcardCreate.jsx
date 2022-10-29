@@ -1,162 +1,108 @@
-import React, {useState} from 'react';
-import styled from 'styled-components';
-import ReactCardFlip from 'react-card-flip';
-
-function ReactCard() {
-    const [flip, setFlip] = useState(false);
-    return (
-        <FlashcardContainer>
-            <ReactCardFlip isFlipped={flip}
-                flipDirection="vertical" >
-
-            {/* -----------Flashcard Front --------- */}
-                <Flashcard>
-                {/* First line of Flashcard input */}
-                    <FlashcardInput1>
-                        <input type="text" name="name" style={{
-                        textAlign: 'center',
-                        }}
-                        />
-                     </FlashcardInput1>
-
-                {/* Second line of Flashcard input */}
-                    <FlashcardInput2>
-                        <input type="text" name="name" style={{
-                        textAlign: 'center',
-                        }}
-                        />
-                     </FlashcardInput2>
-            
-                {/* Backside/Frontside Button */}
-                    <FlashcardButton style={{
-
-                        }} onClick={() => setFlip(!flip)}>
-                        To Backside
-                    </FlashcardButton>                  
-                </Flashcard>
+import React from "react";
+import Button from "react-bootstrap/Button";
+import styled from "styled-components";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import DropdownMenu from "./DropdownMenu.jsx";
+import Card from "react-bootstrap/Card";
+import Navbar from "./Navbar.jsx";
 
 
-            {/* ------------ Flashcard Back -----------------------*/}
-                <Flashcard>
-                {/* First line of Flashcard input */}
-                    <FlashcardInput1>
-                        <input type="text" name="name" style={{
-                        textAlign: 'center',
-                        }}
-                        />
-                     </FlashcardInput1>
+function FlashcardCreate() {
+  return (
+    <MainDiv className="fluid">
+     <Navbar />
 
-                {/* Second line of Flashcard input */}
-                    <FlashcardInput2>
-                        <input type="text" name="name" style={{
-                        textAlign: 'center',
-                        }}
-                        />
-                     </FlashcardInput2>
-            
-                {/* Backside/Frontside Button */}
-                    <FlashcardButton style={{
+      <Row>
+        <Col md={3}>
+          <DropdownMenu />
+        </Col>
 
-                        }} onClick={() => setFlip(!flip)}>
-                        To Frontside
-                    </FlashcardButton>                    
-                </Flashcard>
-            </ReactCardFlip>
-        
-            <ButtonContainer>
-                <ContainerButton 
-                // onClick={}
-                >
-                    Previous Flashcard
-                </ContainerButton>
+        <MainFlashCol md={6}>
+          {/* Flashcard here */}
+          <Flashcard>
+            <FlashBody>
+              <FlashRow>
+                <Card.Title style={{ "font-size": "40px" }}>
+                  Card Title1
+                </Card.Title>
+              </FlashRow>
 
-                <ContainerButton 
-                // onClick={}
-                >
-                    Next Flashcard
-                </ContainerButton>
-
-            </ButtonContainer>        
-        </FlashcardContainer>
-    );
+              <FlashRow>
+                <Card.Title style={{ "font-size": "40px" }}>
+                  Card Title2
+                </Card.Title>
+              </FlashRow>
+            </FlashBody>
+          </Flashcard>
+          <InputField>
+            <InputFieldRow1>
+              <Button>Back to Frontside</Button>
+              <Button>Next Flashcard</Button>
+            </InputFieldRow1>
+            <InputFieldRow2>
+              <Button>Done with this deck</Button>
+            </InputFieldRow2>
+          </InputField>
+        </MainFlashCol>
+        <Col md={3}>{/* Info about the number of cards and decks */}</Col>
+      </Row>
+    </MainDiv>
+  );
 }
 
-// Styling
-const FlashcardContainer = styled.div`
-    display: flex;
-    flex-direction: column;
+//Style
+const MainFlashCol = styled(Col)`
+  position: relative;
+  background-color: #123489;
+  height: 100vh;
+`;
 
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
+const Flashcard = styled(Card)`
+  width: 40vw;
+  position: absolute;
+  top: 20vh;
+  left: 6em;
+`;
 
-    border: 5px solid red;
-    width: 100vw;
-`
+const FlashBody = styled(Card.Body)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50vh;
+`;
 
-const Flashcard = styled.div`
-    width: 100%;
-    height: 100%;
+const FlashRow = styled(Row)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 15rem;
+`;
+const InputField = styled.div`
+  width: 50rem;
+  background-color: #222299;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 75vh;
+  left: 10vh;
+`;
+const InputFieldRow1 = styled(Row)`
+  background-color: #222299;
+  height: 80px;
+`;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+const InputFieldRow2 = styled(Row)`
+  background-color: #2fff20;
+  height: 40px;
+`;
 
-    fontSize: 25px;
-    color: green;
-    margin: auto;
+const MainDiv = styled.div`
+  /* background-color: #EAF8BF92; */
+  font-family: sans-serif;
+  margin-left: 5px;
+  margin-right: 5px;
+`;
 
-    lineHeight: center;
-    borderRadius: 50%;
-    border: 2px solid black;
-    textAlign: center;
-    padding: 7rem 3rem;
-`
-
-const FlashcardInput1 = styled.p`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 40px
-`
-
-const FlashcardInput2 = styled.p`
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    font-size: 40px
-`
-
-const FlashcardButton = styled.button`
-    display: block;
-    width: 40%;
-    margin: 0 auto;
-    text-align: center;
-
-    padding: 10px;
-    font-Size: 20px;
-    background-color: #f5d9fa;
-    font-weight: bold;
-    border-Radius: 5px
-`
-
-const ButtonContainer = styled.div`
-    display: flex;
-    margin-top: 30px;
-    width: 70vw;
-`
-
-const ContainerButton = styled.button`
-    display: block;
-    width: 20%;
-    margin: 0 auto;
-    text-align: center;
-
-    padding: 10px;
-    font-size: 20px;
-    background-color: #f5d9fa;
-    font-weight: bold;
-    border-Radius: 5px
-`
-
-export default ReactCard;
+export default FlashcardCreate;
