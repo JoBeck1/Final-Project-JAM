@@ -1,20 +1,23 @@
 import React , {useContext} from 'react';
 import { useForm } from 'react-hook-form';
 import styled, { css } from 'styled-components';
-import {Context} from "../Store"
+import {Context} from "../store/Store"
 import {useNavigate} from "react-router-dom"
 import "../styles/formStyling.css"
+
+
 export default function LoginForm() {
   const navigate= useNavigate()
-    const {handelLogin} = useContext(Context)
+    const {handelLogin, learningData} = useContext(Context)
   const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = async data => {console.log(data);
   console.log(errors);
  const loginResult= await handelLogin(data)
  if (loginResult==="login success") {
-navigate("/profile")
+navigate("/flashcardcreateNL")
  }
  console.log(loginResult);
+ 
   }
   return (
     <FormWrapper className="form-wrapper" >

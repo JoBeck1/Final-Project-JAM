@@ -23,7 +23,8 @@ function Profile() {
         </Col>
         <Col md={6}>
         <Title><h1>Welcome to the JAM-Project!</h1></Title>
-        <StyleP> you created successfully your  account pls <StyledLink to="/login"> Login </StyledLink> to your account</StyleP>
+        <StyleP> Thank you...</StyleP>
+        <StyleP> Your Account created successfully  please <StyledLink to="/login"> Login </StyledLink> here</StyleP>
         </Col>
         <Col md={3}> 
         <div className="main_pic">

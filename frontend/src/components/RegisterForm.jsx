@@ -9,7 +9,7 @@ import Background from "../assets/images/background1.jpg"
 import "../styles/formStyling.css"
 import {useNavigate} from "react-router-dom"
 
-import {Context} from "../Store"
+import {Context} from "../store/Store"
 
 const schema= yup.object().shape({
   firstName: yup.string().required("enter the name !!!"),

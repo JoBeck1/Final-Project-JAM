@@ -1,81 +1,164 @@
-import React from 'react'
+import React, { useContext, useState } from "react";
 import { TbWriting } from "react-icons/tb";
 import { RiStackFill } from "react-icons/ri";
-import { ImStatsDots} from "react-icons/im";
-import styled from 'styled-components';
-import {Link} from "react-router-dom"
-const SidebarData = [
-    { title: 'Creating', icon: <TbWriting/>, link: "/create" },
-    { title: 'Learning', icon: <RiStackFill/>, link: "/create" },
-    { title: 'Testing', icon: <ImStatsDots/>, link: "/create" },
+import { ImStatsDots } from "react-icons/im";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { Context } from "../store/Store";
+import "../styles/buttonStyling.css";
 
-]
+const SidebarData = [
+  { title: "Creating", icon: <TbWriting /> },
+  { title: "Learning", icon: <RiStackFill /> },
+  { title: "Testing", icon: <ImStatsDots /> },
+];
 
 function Sidebar() {
+  const { nextStage, setNextStage, setFlip } = useContext(Context);
+  const [active, setActive] = useState();
+  const sidebarStage = (title) => {
+    if (title === "Learning") {
+      setNextStage({ title: "Learning" });
+      setActive("Learning");
+    }
+
+
+    if (title === "Creating") {
+      setNextStage({ title: "Creating" });
+      setActive("Creating");
+
+
+
+    }
+    if (title === "Testing") {
+      setNextStage({ title: "Testing" });
+      setActive("Testing");
+
+    }
+  };
+
+      
+
   return (
-    < SidebarContainer>
-        <ListStyling>
-    {SidebarData.map((item, key)=>{
-return (
-   <ListItems key={key}>
-    <div style={{flex:"20%", display:"grid" , placeItems:"center"}}> {item.icon}</div>
-    <div style={{flex:"80%", display:"grid" }}> 
-    <LinkStyling>
-    {item.title}
-    </LinkStyling>
-    </div>
-
-   </ListItems>
-)
-
-    })}
-        </ListStyling>
+    <SidebarContainer>
+      <ListStyling>
+        {SidebarData.map((item, key) => (
+          <ListItems
+            className={
+              item.title === active ? "buttonActive" : "buttonNonActive"
+            }
+            key={key}
+          >
+            <div style={{ flex: "20%", display: "grid", placeItems: "center" }}>
+              {" "}
+              {item.icon}
+            </div>
+            <div style={{ flex: "80%", display: "grid" }}>
+              <LinkStyling onClick={() => sidebarStage(item.title)}>
+                {item.title}
+              </LinkStyling>
+            </div>
+          </ListItems>
+        ))}
+      </ListStyling>
     </SidebarContainer>
-  )
+  );
+          
+          }
+const SidebarContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #2b2a2a97;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+ 
+`;
+const ListStyling = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+const ListItems = styled.li`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  :hover {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    animation: 1s ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+@media  (max-width:1000px) {
+  width:80%
+}
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+const LinkStyling = styled(Link)`
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  :focus {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    animation: 1s ease-in-out;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  @media  (max-width:1080) {
+
+height: 80px;
+font-size: 15px;
 }
 
-const SidebarContainer= styled.div`
-height:100vh;
-width:20vw;
-background-color:#2f4050; 
-opacity: .92;
-position: absolute;
-
-`
-const ListStyling= styled.ul`
-    height: auto;
+  @media (max-width: 768px) {
     width: 100%;
-    position:absolute;
-    top: 15%; 
-
-`
-const ListItems = styled.li`
-    width: 100%;
-    height:50px;
-    list-style-type: none;
-    margin: 0;
-    display:flex;
-    align-items:center;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color : #fff;
-    :hover {
-     cursor: pointer;
-     background-color : #293846;
-     width: 100%;
-    }
-    
-    
-    
-    `
-const LinkStyling= styled(Link)`
+    align-items: center;
+  }
+`;
 
-    text-decoration: none;
-    color : #fff;
-    :hover{
-        color : #fff;
-    }
-   
-`
-
-export default Sidebar
+export default Sidebar;
