@@ -1,16 +1,23 @@
 .allCard-container{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-column-gap: 1rem;
+    grid-column-gap: 1.5rem;
     grid-row-gap: 2rem;
 }
 .innerCard{
-    width: 15rem;
+    /* width: 15rem; */
+  
     height: 20rem;
-    background-color: rgb(197, 81, 81);
+    background-color: rgb(170, 231, 134);
     border-radius:1rem;
     margin: 1rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
     
+}
+.innerCard h3{
+color:#fff;
 }
 .filter-container button{
     margin: 2rem;

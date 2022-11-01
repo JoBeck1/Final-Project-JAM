@@ -68,7 +68,7 @@ function ResultChart() {
   return (
     <div className="pie">
       <Bar className="pie_chart" data={userData} options={options} />
-      <div>
+      <div className="button-div" >
         <h2 className="final_result">{finalResult}</h2>
         <button className="button" onClick={createNewCard}>
           {" "}
