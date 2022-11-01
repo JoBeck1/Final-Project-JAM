@@ -94,7 +94,7 @@ margin-bottom: 7px;
 
 @media screen and (max-width: 768px) {
     .pie{
-        width: 550px;
+        width: 100%;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -114,6 +114,7 @@ margin-bottom: 7px;
        
     }
 }
+  
     
 @media screen and (max-width: 320px) {
     .pie{
@@ -124,14 +125,7 @@ margin-bottom: 7px;
 }
 
 
-@media screen and (max-width: 768px) {
-    .pie_chart{
-        width: 100%;
-        height: 100%;
-       
-    }
-}
-    
+ 
 @media screen and (max-width: 480px) {
     .pie_chart{
         width: 100%;

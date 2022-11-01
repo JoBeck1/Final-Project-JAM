@@ -1,18 +1,23 @@
 .userCard-container{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: row; */
+    /* flex-direction: column; */
+    /* flex-wrap: wrap; */
     justify-content: center;
     align-items: center;
-
+   
+    
 }
+.userCard-innerContainer{
 
-.deck-container{
-margin:10px;
-background-color: aquamarine;
-
-
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
-
-.choosed-Container{
-    background-color:red;
+@media screen and (max-width: 768px){
+  .userCard-innerContainer {
+    justify-content: center;
+    width: 65%;
+  }
+  
 }

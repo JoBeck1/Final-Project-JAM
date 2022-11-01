@@ -64,13 +64,13 @@ const onClickHandlers =(activeButton)=> {
                     transition={{duration:1}}
                 
                     key={i} className="innerCard"> <div>
-                      <h2>cardNum{word.deckName}  </h2>
+                     
                       <h3> Frontside</h3>
-                      <p> word <span style={{color: 'green'}}> {word.frontSideLine1}</span></p>
-                      <p> sentance <span style={{color: 'green'}}> {word.frontSideLine2}</span></p>
+                      <p> word <span style={{color: 'white'}}> {word.frontSideLine1}</span></p>
+                      <p> sentance <span style={{color: 'white'}}> {word.frontSideLine2}</span></p>
                       <h3> Backside</h3>
-                      <p> word <span style={{color: 'green'}}> {word.backSideLine1}</span></p>
-                      <p> sentance <span style={{color: 'green'}}> {word.backSideLine2}</span></p>
+                      <p> word <span style={{color: "white"}}> {word.backSideLine1}</span></p>
+                      <p> sentance <span style={{color: 'white'}}> {word.backSideLine2}</span></p>
                     </div>
                     </motion.div>)
             })}
