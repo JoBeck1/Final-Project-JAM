@@ -55,7 +55,7 @@ const CardContainer = styled.div`
   width: 100%;
   height: 100%;
   background-color: #D9AFD9;
-background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%); 
   
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

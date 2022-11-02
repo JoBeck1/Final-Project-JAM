@@ -125,6 +125,7 @@
 
 .btn:hover::before {
   opacity: 1;
+
 }
 
 .btn::after {

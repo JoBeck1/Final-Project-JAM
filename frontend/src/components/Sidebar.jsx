@@ -116,7 +116,7 @@ const ListItems = styled.li`
   :hover {
     background: linear-gradient(to left, orange, tomato);
     text-align: right;
-    padding-right: 20%;
+    padding-left: 5%;
     transform: perspective(500px) rotateY(-35deg);
     cursor: pointer;
   }
@@ -139,6 +139,7 @@ const LinkStyling = styled(Link)`
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
+  
   :focus {
    
     cursor: pointer;
