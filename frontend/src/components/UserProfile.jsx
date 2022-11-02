@@ -1,7 +1,4 @@
-
-import React, {  useState, useEffect, useContext } from "react";
-
-
+import React, { useContext, useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/Store";
@@ -13,17 +10,15 @@ import "../styles/userProfile.css";
 // const user = userData.user
 
 function UserProfile() {
-  const {userSissionData, GetUserData}= useContext(Context)
- 
-  useEffect( () => {
-    // const userData = await axios.get("/profile");
-    // //user = userData.data.user;
-    // setUser(userData.data.user);
-    // console.log(user);
-    GetUserData()
+  let [user, setUser] = useState();
+  useEffect(async () => {
+    const userData = await axios.get("/profile");
+    //user = userData.data.user;
+    setUser(userData.data.user);
+    console.log(user);
   }, []);
   // const {user}= useContext(Context)
-console.log(userSissionData);
+
   let text = "click on Your name to see your information⬇️";
 
 
@@ -71,7 +66,7 @@ console.log(userSissionData);
 
   return (
     <div className="main-profile-container">
-      {userSissionData? (
+      {user ? (
         <div className="userContainer">
 
           <motion.div
@@ -108,7 +103,7 @@ console.log(userSissionData);
             >
               <motion.h2 layout="position">
                 {" "}
-                Hi {`${userSissionData.firstName} ${userSissionData.Surname}`}{" "}
+                Hi {`${user.firstName} ${user.Surname}`}{" "}
               </motion.h2>
               {isOpen && (
                 <motion.div
@@ -121,10 +116,10 @@ console.log(userSissionData);
                   }}
                   initial={{ x: "-100px", opacity: 0 }}
                 >
-                  <h4> your name : {userSissionData.firstName} </h4>
-                  <h4> your Surname: {userSissionData.Surname}</h4>
-                  <h4> your Email: {userSissionData.Email} </h4>
-                  <h4> your Age: {userSissionData.Age} </h4>
+                  <h4> your name : {user.firstName} </h4>
+                  <h4> your Surname: {user.Surname}</h4>
+                  <h4> your Email: {user.Email} </h4>
+                  <h4> your Age: {user.Age} </h4>
                 </motion.div>
               )}
             </motion.div>
@@ -139,32 +134,7 @@ console.log(userSissionData);
 
       <div>
         <button
-          style={{
-            width: "250px",
-            height: "50px",
-            backgroundColor: "#494d58",
-            color: "white",
-            border: "none",
-            outline: "none",
-            fontSize: "20px",
-            borderRadius: "40px",
-            cursor: "pointer",
-            textAlign: "center",
-            boxShadow: " 0 6px 20px -5px rgba(0,0,0,0.4)",
-            position: "relative",
-            overflow: "hidden",
-            transition: "all 0.3s ease",
-            zIndex: "0",
-            marginTop: "20px",
-            marginBottom: "20px",
-            textDecoration: "none",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            fontWeight: "bold",
-            letterSpacing: "1px",
-            textTransform: "uppercase",
-          }}
+          className="btn "
           onClick={handleClick}
         >
           Back to Home

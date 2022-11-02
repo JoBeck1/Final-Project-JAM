@@ -136,8 +136,9 @@ export default Header;
 
 const HeaderContainer = styled.div`
   font-size: 1.3em;
-  background-color: #c7e1ec;
-  font-family: Poppins, sans-serif;
+  background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%); 
+ font-family: Poppins, sans-serif;
   font-weight: 400;
   position: sticky;
   overflow-y: hidden;

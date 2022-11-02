@@ -50,10 +50,13 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #2b2a2a97;
+  background-color: #D9AFD9;
+background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+  
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -85,7 +88,7 @@ const CardBody = styled.div`
   h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #0e0808;
     text-align: left;
     margin: 20px 0;
     padding: 20px;
@@ -98,7 +101,7 @@ const CardBody = styled.div`
   p {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #0e0808;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -107,7 +110,7 @@ const CardBody = styled.div`
       }
   }
   span {
-    color: #ffffff;
+    color: #c93838;
     font-weight: 700;
   }
   form {
@@ -145,7 +148,7 @@ const CardBody = styled.div`
       outline: none;
       font-size: 1.2rem;
       font-weight: 600;
-      color: #ffffff;
+      color: #0e0808;
       text-align: center;
       margin: 0;
       padding: 0;
