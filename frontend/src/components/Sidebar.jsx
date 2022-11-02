@@ -22,22 +22,15 @@ function Sidebar() {
       setActive("Learning");
     }
 
-
     if (title === "Creating") {
       setNextStage({ title: "Creating" });
       setActive("Creating");
-
-
-
     }
     if (title === "Testing") {
       setNextStage({ title: "Testing" });
       setActive("Testing");
-
     }
   };
-
-      
 
   return (
     <SidebarContainer>
@@ -63,12 +56,25 @@ function Sidebar() {
       </ListStyling>
     </SidebarContainer>
   );
-          
-          }
+}
 const SidebarContainer = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #2b2a2a97;
+
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+  animation-name: slideIn;
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
@@ -87,7 +93,6 @@ const SidebarContainer = styled.div`
     align-items: center;
     margin: 0;
   }
- 
 `;
 const ListStyling = styled.ul`
   list-style: none;
@@ -109,17 +114,15 @@ const ListItems = styled.li`
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   :hover {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-    animation: 1s ease-in-out;
-    transform: scale(1.1);
+    background: linear-gradient(to left, orange, tomato);
+    text-align: right;
+    padding-left: 5%;
+    transform: perspective(500px) rotateY(-35deg);
     cursor: pointer;
   }
-@media  (max-width:1000px) {
-  width:80%
-}
+  @media (max-width: 1000px) {
+    width: 80%;
+  }
   @media (max-width: 768px) {
     width: 100%;
     height: 100%;
@@ -136,19 +139,15 @@ const LinkStyling = styled(Link)`
   font-size: 1.5rem;
   font-weight: 600;
   text-align: center;
+  
   :focus {
-    font-size: 1.5rem;
-    font-weight: 600;
-    text-align: center;
-    animation: 1s ease-in-out;
-    transform: scale(1.1);
+   
     cursor: pointer;
   }
-  @media  (max-width:1080) {
-
-height: 80px;
-font-size: 15px;
-}
+  @media (max-width: 1080) {
+    height: 80px;
+    font-size: 15px;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
