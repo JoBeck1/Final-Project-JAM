@@ -21,7 +21,7 @@ function Main() {
           </Col>
 
           {/* Main text */}
-          <Col md={6}>
+          <Col md={7}>
             <Title>
               <h1 className="animate__animated animate__backInDown">
                 Welcome to the JAM-Project!
@@ -45,7 +45,7 @@ function Main() {
 
             <hr />
 
-            <h3>For Beginners:</h3>
+            <h3>No registration needed!</h3>
             <p>
               Feel free to{" "}
               <Button
@@ -54,36 +54,35 @@ function Main() {
                 variant="primary"
                 size="sm"
               >
-                start
+                Start
+                
               </Button>{" "}
-              right away! No registration needed!
             </p>
 
             <hr />
 
-            <h3>For advanced Users:</h3>
+            <h3>For Registered Users:</h3>
             <p>
               Enjoy every merit of the JAM-Project by{" "}
               <Button link href="/signup" variant="info" size="sm">
                 {" "}
-                registering
+                Register
               </Button>{" "}
-              on this website!
+             
             </p>
 
             <hr />
-
             <h3>Already registered?</h3>
             <p>
-              AWESOME! Just{" "}
+              AWESOME! Just click below and check how much you have learned already!{" "}
               <Button link href="/login" variant="success" size="sm">
-                log in
+                logging in
               </Button>{" "}
-              here and check how much you have learned already!
+              
             </p>
           </Col>
 
-          <Col md={3}>
+          <Col md={2}>
             <div className="main_pic animate__zoomIn">
               <img
                 src={Picture1}
@@ -144,26 +143,17 @@ const MainDiv = styled.div`
   font-size: 1.3em;
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  //background-color: #96b5c4;
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  display: flex;
   text-decoration: none;
   color: #473e41;
   padding: 10px;
-  border-radius: 10px;
-  border: 2px solid #c7e1ec;
-  box-shadow: 5px 5px 5px #2f373b;
   position: relative;
   z-index: 0;
-  //margin-top: 10px;
-  //margin-bottom: 10px;
-  //margin-left: 5px;
-  //margin-right: 5px;
-
+ 
   .overlay {
     position: absolute;
     top: 0;
@@ -188,15 +178,13 @@ const MainDiv = styled.div`
     position: relative;
     z-index: 3;
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    padding: 0 1rem;
-  }
+    }
 
   img {
     width: 100%;
