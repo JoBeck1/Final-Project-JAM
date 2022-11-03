@@ -8,6 +8,8 @@ import DropdownMenu from "./DropdownMenu.jsx";
 import videoBg from "../assets/videoBg.mp4";
 
 function LogOut() {
+
+  
   return (
     <MainDiv className="fluid">
       <div className="overlay"></div>

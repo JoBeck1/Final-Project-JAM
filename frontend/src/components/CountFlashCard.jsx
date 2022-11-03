@@ -1,23 +1,23 @@
-import React, { useContext, useState , useEffect} from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import { Context } from "../store/Store";
-import {Link}  from  "react-router-dom" ;
-
+import { Link } from "react-router-dom";
 
 function CountFlashCard() {
   const {
     count,
     deckName,
-   
+
     handelNameOnDickCard,
     handelDeckNameSubmit,
     isInputExist,
-    userSissionData, GetUserData
+    userSissionData,
+    GetUserData,
   } = useContext(Context);
-console.log(userSissionData)
-useEffect(()=>{
-GetUserData()
-}, [])
+  console.log(userSissionData);
+  useEffect(() => {
+    GetUserData();
+  }, []);
   return (
     <CardContainer>
       <CardBody>
@@ -38,11 +38,40 @@ GetUserData()
           you created <span> {count}</span> FlashCards
         </p>
       </CardBody>
-      {userSissionData&& <CardBody> 
-        <h2> import Decks</h2>
-     <p><Link to="/allWords"> our collections</Link></p>  
-        <p> <Link to="/userCards"> my Cards </Link></p>
-      </CardBody>}
+      {userSissionData && (
+        <CardBody>
+          <h2> import Decks :</h2>
+          <button className="btn">
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "white",
+                fontWeight: "bold",
+                letterSpacing: "1px",
+              }}
+              to="/allWords"
+            >
+              {" "}
+              Our Collections
+            </Link>
+          </button>
+          <button className="btn">
+            {" "}
+            <Link
+              style={{
+                textDecoration: "none",
+                color: "white",
+                fontWeight: "bold",
+                letterSpacing: "1px",
+              }}
+              to="/userCards"
+            >
+              {" "}
+              My Cards{" "}
+            </Link>
+          </button>
+        </CardBody>
+      )}
     </CardContainer>
   );
 }
@@ -50,17 +79,17 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  
+
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #D9AFD9;
-background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%); 
-  
+  background-color: #d9afd9;
+  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-   
+
   @media (max-width: 768px) {
     width: 100%;
     background-color: aqua;
@@ -82,9 +111,8 @@ const CardBody = styled.div`
   &:hover {
     transform: scale(1.1);
   }
-  @media (max-width:1100px) {
-       
-      }
+  @media (max-width: 1100px) {
+  }
   h2 {
     font-size: 1.5rem;
     font-weight: 600;
@@ -92,11 +120,11 @@ const CardBody = styled.div`
     text-align: left;
     margin: 20px 0;
     padding: 20px;
-    @media (max-width:1100px) {
-       padding:5px;
-       margin: 5px;
-       font-size: 1.2rem;
-      }
+    @media (max-width: 1100px) {
+      padding: 5px;
+      margin: 5px;
+      font-size: 1.2rem;
+    }
   }
   p {
     font-size: 1.2rem;
@@ -105,9 +133,9 @@ const CardBody = styled.div`
     text-align: center;
     margin: 0;
     padding: 0;
-    @media (max-width:1100px) {
-     font-size: .8rem;
-      }
+    @media (max-width: 1100px) {
+      font-size: 0.8rem;
+    }
   }
   span {
     color: #c93838;
@@ -117,9 +145,9 @@ const CardBody = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (max-width:1100px) {
-       flex-direction: column;
-      }
+    @media (max-width: 1100px) {
+      flex-direction: column;
+    }
     input {
       width: 100%;
       height: 30px;
@@ -133,11 +161,12 @@ const CardBody = styled.div`
       font-weight: 600;
       color: #5c5757;
       text-align: center;
-      @media (max-width:1100px) {
-        display:block;
+      @media (max-width: 1100px) {
+        display: block;
         width: 130px;
       }
     }
+
     button {
       width: 100px;
       height: 30px;
@@ -154,8 +183,8 @@ const CardBody = styled.div`
       padding: 0;
       background-color: #adb2b3b0;
       cursor: pointer;
-      @media (max-width:1100px) {
-        display:block;
+      @media (max-width: 1100px) {
+        display: block;
         width: 80px;
       }
     }
