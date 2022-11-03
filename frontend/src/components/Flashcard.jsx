@@ -235,12 +235,12 @@ const FlashcardButton = styled.button`
   padding: 10px;
 
   font-size: 15px;
-  background-color: #9ed86e;
+  background-color: #868a82;
   font-weight: bold;
   border-radius: 5px;
   transition: 1s ease-in-out;
   :hover {
-    background-color: #78ca34;
+    background-color: #a3a7a0;
   }
     
   @media (max-width: 1280px) {
@@ -277,7 +277,7 @@ const ContainerButton = styled.button`
   text-align: center;
   padding: 10px;
   font-size: 15px;
-  background-color: #9ed86e;
+  background-color: #a2cf80;
   font-weight: bold;
   border-radius: 5px;
   transition: 1s ease-in-out;
@@ -349,9 +349,9 @@ const TextContainer = styled.div`
 const InputField = styled.input`
   border: none;
   border-radius: 5px;
-  background-color: #b0c99b7b;
+  background-color: #c5d3b97a;
   opacity: 0.5;
-  color: #473e41;
+  color: #000000;
   font-size: 20px;
   font-weight: 800;
   padding: 10px;

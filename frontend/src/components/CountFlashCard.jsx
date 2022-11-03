@@ -83,11 +83,10 @@ const CardContainer = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-  background-color: #d9afd9;
-  background-image: linear-gradient(0deg, #d9afd9 0%, #97d9e1 100%);
+  background-color: #d6c6d6;
+  background-image: linear-gradient( to left , #97d9e1 0%, #ffffff 100%);
 
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
 
   @media (max-width: 768px) {
