@@ -33,14 +33,14 @@ const variants = {
         setOpen(false)
     }
   return (
-    <div >
+    <div  className="big-container">
         <div className="deckList" onClick={openCard}>
             <div className="deck-content">
-                <h2>  name : {" "} {deckInfo.deckName!==""? deckInfo.deckName: i+1
+                <h2>  deck-name : {" "} {deckInfo.deckName!==""? deckInfo.deckName: i+1
   }</h2>
             </div>
         </div>
-        { open&& <motion.div    className="overlay"
+        { open&& <motion.div    className="overlay1"
       onClick={closeCard}
       variants={variants}
       initial={"closed"}
@@ -82,6 +82,7 @@ const variants = {
         </motion.button>
     </motion.div>
         </motion.div> }
+     
     </div>
   )
 }
