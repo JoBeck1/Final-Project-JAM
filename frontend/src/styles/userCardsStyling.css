@@ -1,23 +1,25 @@
 .userCard-container{
-    display: flex;
-    /* flex-direction: row; */
-    /* flex-direction: column; */
-    /* flex-wrap: wrap; */
-    justify-content: center;
-    align-items: center;
-   
+ width: 100%;
+  /* flex-wrap: wrap; 
+   justify-content: center;
+  display: flex;
+   */
     
+}
+.userCard-container h2 {
+  text-align: center;
+padding-top: 10px;;
 }
 .userCard-innerContainer{
 
   display: flex;
-  justify-content: flex-start;
   flex-wrap: wrap;
+
 }
 @media screen and (max-width: 768px){
   .userCard-innerContainer {
     justify-content: center;
-    width: 65%;
+   
   }
   
 }

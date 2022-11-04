@@ -9,11 +9,16 @@ const [filtered, setFiltered]= useState([])
 const [buttonStyle, setButtonStyle]= useState()
 const [indexNumber, setIndexNumber] = useState(0)
 const [allcards, setAllcards] = useState()
-useEffect( async()=>{
-  const AllCards = await axios.get("/allcards")
-   setAllcards(AllCards.data)
-   setFiltered(AllCards.data)
-   console.log(AllCards.data)
+
+useEffect( ()=>{
+  const allcardsHandler = async()=>{
+
+    const AllCards = await axios.get("/allcards")
+     setAllcards(AllCards.data)
+     setFiltered(AllCards.data)
+     console.log(AllCards.data)
+  }
+  allcardsHandler()
    
  }, []);
 const onClickHandlers =(activeButton)=> {
