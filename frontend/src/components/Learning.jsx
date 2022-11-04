@@ -100,23 +100,10 @@ const FlashcardInput2 = styled.p`
 `;
 
 const CircleWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  overflow: hidden;
-  border-top-right-radius: 25px;
+  
 `;
 const Circle = styled.div`
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  top: -4.2rem;
-  right: -8em;
-  z-index: 5;
-  background-color: #e6c823;
-  border-radius: 50%;
+ 
 `;
 const TopContainer = styled.div`
   width: 100%;
@@ -125,6 +112,7 @@ const TopContainer = styled.div`
   position: relative;
   align-items: center;
   justify-content: flex-end;
+  
   padding: 1em 15px;
 `;
 const ButtonContainers = styled.div`
@@ -143,9 +131,9 @@ const TextContainer = styled.div`
 const TextField = styled.h3`
   border: none;
   border-radius: 5px;
-  background-color: #9ed86e;
+  background-color: #c5d3b97a;
   opacity: 0.9;
-  color: #fff;
+  color: #1b1b1b;
 `;
 
 export default Learning;

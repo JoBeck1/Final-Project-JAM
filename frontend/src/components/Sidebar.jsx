@@ -75,8 +75,6 @@ const SidebarContainer = styled.div`
       transform: translateX(0);
     }
   }
-  border-radius: 10px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,7 +83,7 @@ const SidebarContainer = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     height: 100%;
-    background-color: aqua;
+    background-image: linear-gradient( to right , #97d9e1 0%,  #ffffff 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -125,7 +123,6 @@ const ListItems = styled.li`
   @media (max-width: 768px) {
     width: 100%;
     height: 100%;
-    background-color: aqua;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,7 +148,6 @@ const LinkStyling = styled(Link)`
   @media (max-width: 768px) {
     width: 100%;
     height: 100%;
-    background-color: aqua;
     display: flex;
     flex-direction: column;
     justify-content: center;
