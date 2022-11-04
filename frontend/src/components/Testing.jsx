@@ -2,6 +2,8 @@ import React , {useContext, useEffect} from 'react'
 import { Context } from "../store/Store";
 import ReactCardFlip from 'react-card-flip';
 import styled from 'styled-components';
+import image2 from "../assets/images/image2.jpg";
+
 
 
 function Testing() {
@@ -152,11 +154,11 @@ const Flashcard = styled.div`
   flex-direction: column;
   justify-content: space-around;
   font-size: 20px;
-  background-color: #232723;
+  background-image: url(${image2});
   position: relative;
   margin: auto;
   line-height: center;
-  border-radius: 25px;
+  border-radius: 5px;
   
   text-align: center;
   padding: 2rem 3rem;
@@ -232,7 +234,7 @@ const FlashcardButton = styled.button`
   padding:10px ;
   
   font-Size: 15px;
-  background-color:#9ed86e;
+  background-color:#6a6b69;
   font-weight: bold;
   border-Radius: 5px;
   transition: 1s ease-in-out;
@@ -283,24 +285,11 @@ const ContainerButton = styled.button`
 
   
 const CircleWrapper= styled.div`
-position: absolute;
-top: 0;
-left: 0;
-min-width: 100%;
-min-height: 100%;
-overflow:hidden;
-border-top-right-radius: 25px;
+
 
 `
 const Circle= styled.div`
-  position: absolute;
-  width: 350px;
-  height: 350px;
-  top:-4.2rem;
-  right: -8em;
-  z-index: 5;
-background-color: #e6c823;
-  border-radius:50%;
+  
  
 
 `
@@ -335,9 +324,9 @@ font-weight:300;
 const TextField = styled.h3`
   border: none;
   border-radius: 5px;
-  background-color: #9ed86e;
+  background-color: #c5d3b97a;
   opacity: 0.9;
-  color: #fff;
+  color: #1b1b1b;
 `;
 
 export default Testing
