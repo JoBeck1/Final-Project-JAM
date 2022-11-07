@@ -74,11 +74,11 @@ const onClickHandlers =(activeButton)=> {
                     key={i} className="innerCard"> <div>
                      
                       <h3> Frontside</h3>
-                      <p> word <span style={{color: 'white'}}> {word.frontSideLine1}</span></p>
-                      <p> sentance <span style={{color: 'white'}}> {word.frontSideLine2}</span></p>
+                      <p> word:<span style={{color: 'blue'}}> {word.frontSideLine1}</span></p>
+                      <p> sentence:<span style={{color: 'blue'}}> {word.frontSideLine2}</span></p>
                       <h3> Backside</h3>
-                      <p> word <span style={{color: "white"}}> {word.backSideLine1}</span></p>
-                      <p> sentance <span style={{color: 'white'}}> {word.backSideLine2}</span></p>
+                      <p> word: <span style={{color: "blue"}}> {word.backSideLine1}</span></p>
+                      <p> sentence: <span style={{color: 'blue'}}> {word.backSideLine2}</span></p>
                     </div>
                     </motion.div>)
             })}

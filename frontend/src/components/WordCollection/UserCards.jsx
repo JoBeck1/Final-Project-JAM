@@ -32,7 +32,7 @@ function UserCards() {
   return (
     <div className="userCard-container">
       <Navbar/>
-      <h2> your decks that have been created before </h2>
+      <h2 className='title-card'> Your Cards : </h2>
       {/* <Navbar/> */}
       {myCard.length>=1?(<div className="userCard-innerContainer"> {myCard.map((item, i) => 
 
@@ -40,7 +40,7 @@ function UserCards() {
           <DeckList deckInfo={item} i={i} key={i}/>
           )
       
-      )} </div>):( <div> you don't have a card</div>)
+      )} </div>):( <div> You don't have any cards</div>)
       }
     </div>
 
