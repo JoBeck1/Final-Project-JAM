@@ -64,7 +64,11 @@ const variants = {
         <h4> example: {" "} {deckInfo.frontSideLine2}</h4>
     </div>
     
+    <div className="word-row" >
+        <hr/>
+    </div>
     <div className="word-row" variant={modalRowVariants}>
+
         <h3> Back side</h3> 
       
     </div>
