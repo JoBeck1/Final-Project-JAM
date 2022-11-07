@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState , useContext} from "react";
 import { NavLink, Link } from "react-router-dom";
 import { FiAlignRight, FiXCircle, FiChevronDown } from "react-icons/fi";
 import Image from "../assets/images/unnamed.png";
 import "../styles/NavbarStyling.css";
+import { Context } from "../store/Store";
 
 const Navbar = () => {
+  const {userSissionData}= useContext(Context)
   const [isMenu, setisMenu] = useState(false);
   const [isResponsiveclose, setResponsiveclose] = useState(false);
   const toggleClass = () => {
@@ -83,6 +85,8 @@ const Navbar = () => {
                   </NavLink>
                 </li>
                
+                {
+                 userSissionData?
                 <li
                   onClick={toggleSubmenu}
                   className="menu-item sub__menus__arrows"
@@ -115,7 +119,30 @@ const Navbar = () => {
                       </NavLink>{" "}
                     </li>
                   </ul>
+                </li>:  <div className="list-container menu-item">
+                 <li >  <NavLink
+                    exact
+                    activeClassName="is-active"
+                    onClick={toggleClass}
+                    to={`/signup`}
+                  >
+                    {" "}
+                    SignUp{" "}
+                  </NavLink>
                 </li>
+                <li >  <NavLink
+                    exact
+                    activeClassName="is-active"
+                    onClick={toggleClass}
+                    to={`/login`}
+                  >
+                    {" "}
+                    Log in{" "}
+                  </NavLink>
+                </li>
+                </div>
+                  
+                }
                
               </ul>
             </nav>
