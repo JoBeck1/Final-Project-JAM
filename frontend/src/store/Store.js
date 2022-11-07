@@ -109,15 +109,15 @@ function ContextProvider(props) {
         deckName,
       });
     
-      setText({
-        frontSideLine1: '',
-        frontSideLine2: '',
-        backSideLine1: '',
-        backSideLine2: '',
-      });
-      
       
       if (response.data.message === 'your card is created successfully') {
+        setText({
+          frontSideLine1: '',
+          frontSideLine2: '',
+          backSideLine1: '',
+          backSideLine2: '',
+        });
+        
        
        
         cardInfoArray.push(response.data.data);
@@ -129,7 +129,7 @@ function ContextProvider(props) {
         });
         setCount(count + 1);
       } else {
-        toast.error('please fill all field', {
+        toast.error('please fill all field and  give your deck a name', {
           position: toast.POSITION.TOP_CENTER,
         });
       }

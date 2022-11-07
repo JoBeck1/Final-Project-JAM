@@ -45,8 +45,8 @@ console.log(flip);
               </CircleWrapper>
               <TextContainer>
 
+                  <h2 > card :{toNextCardIndex+1}from{ArrayOfCardInfo.length}</h2>
                 <FlashcardInput1>
-                  <h2 style={{color: 'white'}}> front side</h2>
                 <TextField > {ArrayOfCardInfo[toNextCardIndex].frontSideLine1}</TextField>
                  </FlashcardInput1>
             {/* Second line of Flashcard input */}
@@ -318,7 +318,10 @@ margin: 0;
 z-index: 10;
 font-size:25px;
 font-weight:300;
-
+>h2{
+  font-size:1.5rem;
+  color: black;
+}
 
 `
 const TextField = styled.h3`
