@@ -36,7 +36,7 @@ const variants = {
     <div  className="big-container">
         <div className="deckList" onClick={openCard}>
             <div className="deck-content">
-                <h2>  deck-name : {" "} {deckInfo.deckName!==""? deckInfo.deckName: i+1
+                <h2>  Deck-name : {" "} {deckInfo.deckName!==""? deckInfo.deckName: i+1
   }</h2>
             </div>
         </div>
@@ -51,6 +51,8 @@ const variants = {
     <motion.div className="word-container"     variants={modalInfoContainer}>
     <div className="word-row" variant={modalRowVariants}>
         <h3> Front side</h3> 
+       
+
       
     </div>
     <div className="word-row" variant={modalRowVariants}>
@@ -61,6 +63,7 @@ const variants = {
     <div className="word-row" variant={modalRowVariants}>
         <h4> example: {" "} {deckInfo.frontSideLine2}</h4>
     </div>
+    
     <div className="word-row" variant={modalRowVariants}>
         <h3> Back side</h3> 
       
