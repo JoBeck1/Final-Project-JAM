@@ -3,6 +3,7 @@ import {Context} from "../../store/Store"
 import "../../styles/AllwordStyling.css"
 import {motion, AnimatePresence} from "framer-motion"
 import axios from "axios";
+import Navbar from '../Navbar';
 function Allwords() {
     const {learningData,user} = useContext(Context)
 const [filtered, setFiltered]= useState([])
@@ -48,7 +49,9 @@ const onClickHandlers =(activeButton)=> {
 
   return (
     <div>
-          {filtered? <div> <div className="filter-container">
+          {filtered? <div> 
+            <Navbar/>
+            <div className="filter-container">
             <button onClick={()=>onClickHandlers (0)} className={buttonStyle===0? "active":""}> all</button>
             <button onClick={()=>onClickHandlers (1)} className={buttonStyle===1? "active":""}> just 10</button>
             <button onClick={()=>onClickHandlers (2)} className={buttonStyle===2? "active":""}> next 10</button>
