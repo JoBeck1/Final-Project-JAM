@@ -129,15 +129,15 @@ console.log(flip);
 const FlashcardContainer = styled.div`
  display: flex;
   flex-direction: column;
-  height: 65vh;
+  height: 70vh;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   width: 100%;
   text-decoration: none;
   color: #473e41;
+  margin: 20px;
  
 
   @media (max-width: 768px) {
@@ -156,12 +156,12 @@ const Flashcard = styled.div`
   font-size: 20px;
   background-image: url(${image2});
   position: relative;
-  margin: auto;
+  margin: 20px;
   line-height: center;
   border-radius: 5px;
   
   text-align: center;
-  padding: 2rem 3rem;
+  padding: 20px;
   @media  (max-width: 1024px) {
     width: 100%;
     height: 100%;
@@ -303,6 +303,7 @@ position: relative;
 align-items: center;
 justify-content:flex-end;
 padding:1em 15px;
+margin: 20px;
 
 `
 const ButtonContainers = styled.div`
