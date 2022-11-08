@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import styled from "styled-components";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Picture1 from "../assets/images/Picture1.jpg";
+import logo111 from "../assets/images/logo111.jpeg";
 import Picture2 from "../assets/images/Picture2.jpg";
 import DropdownMenu from "./DropdownMenu.jsx";
 import videoBg from "../assets/videoBg.mp4";
@@ -85,7 +85,7 @@ function Main() {
           <Col md={2}>
             <div className="main_pic animate__zoomIn">
               <img
-                src={Picture1}
+                src={logo111}
                 alt="Flashcards"
                 className="animate__zoomIn"
               />

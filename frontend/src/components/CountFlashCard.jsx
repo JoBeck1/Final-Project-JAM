@@ -40,7 +40,7 @@ function CountFlashCard() {
       </CardBody>
       {userSissionData && (
         <CardBody>
-          <h2> import Decks :</h2>
+          <h2> Cards Gallery :</h2>
           <button className="btn">
             <Link
               style={{
