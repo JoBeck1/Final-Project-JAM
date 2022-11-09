@@ -12,6 +12,7 @@ import Profile from "./components/Profile"
 import ContactForm from './components/contact/ContactForm';
 import Allwords from "./components/WordCollection/Allwords"
 import UserCards from "./components/WordCollection/UserCards"
+import LogOutScreen from "./components/LogOutScreen"
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -36,7 +37,7 @@ function App() {
   <Route path="/flashcardcreate/learning" element= {<Learning />}/>
   <Route path= "/login"  element= {<LoginForm />}/>
   <Route path= "/profile" element= {<Profile />}/>
-
+<Route path= "/logout" element= {<LogOutScreen />}/>
 
   <Route path= "/userprofile/" element= {<UserProfile />}/>
   <Route path= "/contact" element= {<ContactForm />}/>

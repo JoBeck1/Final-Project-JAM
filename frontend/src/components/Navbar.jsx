@@ -112,7 +112,7 @@ const Navbar = () => {
                       <NavLink
                         onClick={toggleClass}
                         activeClassName="is-active"
-                        to={`/LogOutScreen`}
+                        to={`/logout`}
                       >
                         {" "}
                         Log Out{" "}

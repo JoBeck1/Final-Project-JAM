@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useContext} from "react";
 import styled from "styled-components";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,11 +6,23 @@ import Picture1 from "../assets/images/Picture1.jpg";
 import Picture2 from "../assets/images/Picture2.jpg";
 import DropdownMenu from "./DropdownMenu.jsx";
 import videoBg from "../assets/videoBg.mp4";
+import axios from "axios";
+import Header from "./Header"
+import Footer from "./Footer"
+import { Context } from "../store/Store";
 
 function LogOut() {
-
-  
+const {userSissionData, setUserSissionData}= useContext(Context)
+useEffect(()=>{
+  const Logout= async()=> {
+const LogoutResult= await axios.get("/logout")
+}
+setUserSissionData(null)
+  Logout()
+}, [])  
   return (
+    <div>
+      <Header/>
     <MainDiv className="fluid">
       <div className="overlay"></div>
       <video src={videoBg} autoPlay loop muted />
@@ -59,6 +71,8 @@ function LogOut() {
         </Row>
       </div>
     </MainDiv>
+    <Footer/>
+    </div>
   );
 }
 
