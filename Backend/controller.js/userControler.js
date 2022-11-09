@@ -94,11 +94,15 @@ const login = async (req, res) => {
     res.json({ message: 'something is wrong' });
   }
 };
+const logout= async (req, res) => {
+  req.session.destroy();
+  res.json({ message: 'you are logged out' });
+}
 
 
 
 
-module.exports = { signup, login };
+module.exports = { signup, login, logout };
 
 
 

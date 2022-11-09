@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 import axios, { Axios } from 'axios';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
@@ -31,7 +31,13 @@ function ContextProvider(props) {
   // send the data to backend to rigister
 
   // git the deck to the unregisterd user by using localstorage
-  const [cardInfo, setCardInfo] = useLocalStorage('cardInfo', []);
+   const [cardInfo, setCardInfo] = useLocalStorage('cardInfo', []);
+  // const [cardInfo, setCardInfo] = useState( []);
+  // useEffect(()=>{
+    
+  //     localStorage.setItem("cardInfo", cardInfo)
+
+  // },[cardInfo])
   // set state to make array of card info in learning page
   const [cardInfoArray, setCardInfoArray]= useState([])
 
@@ -100,6 +106,7 @@ function ContextProvider(props) {
     
   }
   // set submit from flashcard  and send the data to backend
+  // const [cardInfo, setCardInfo] = useLocalStorage('cardInfo', []);
   const handleFlashCardSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -175,6 +182,7 @@ function ContextProvider(props) {
     const userData = await axios.get("/profile");
     setUserSissionData(userData.data.user)
   }
+  console.log(userSissionData)
   // state for counting result of testing
 const [test, setTest]= useState({yes:0, no:0,notSure: 0})
 const [delay, setDelay] = useState(false)
@@ -182,7 +190,7 @@ const [toNextCardIndex, setToNextCardIndex] = useState(0)
 const [popup, setPopup] = useState(false)
 // function to count answers in the testing page 
 
-let ArrayOfCardInfo= (cardInfo!==[]) ? JSON.parse(cardInfo) : []
+let ArrayOfCardInfo= (cardInfo.length>0) ? JSON.parse(cardInfo) : []
 let numberOfFlashCards=ArrayOfCardInfo.length
 console.log(numberOfFlashCards);
 const countAnswer= (buttonName)=>{
@@ -275,7 +283,7 @@ const countAnswer= (buttonName)=>{
        countAnswer, toNextCardIndex, test,
        setDelay,
        delay, finalResult,toChartPage, calcTheResult, popup,
-        resetPages, repeatTheTest, createNewCard, setUser, user,learningData,userSissionData, GetUserData
+        resetPages, repeatTheTest, createNewCard, setUser, user,learningData,userSissionData, GetUserData, setUserSissionData
       }}
     >
       {' '}

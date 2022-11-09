@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../model/Usermodel');
 const bcrypt = require('bcrypt');
-const {signup, login}= require('../controller.js/userControler')
+const {signup, login, logout}= require('../controller.js/userControler')
 const {auth} = require('../middelware/auth')
 const FlashCard = require('../model/Flashcard')
 const { body, validationResult } = require('express-validator');
@@ -35,5 +35,7 @@ router.get("/mycards", auth,myCards)
   
 router.get("/allcards", auth,AllCards)
 router.post("/userprofile", auth,upDate )
+
+router.get("/logout", auth,logout)
 
 module.exports = router;
