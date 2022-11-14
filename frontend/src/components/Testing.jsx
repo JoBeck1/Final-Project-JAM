@@ -45,7 +45,7 @@ console.log(flip);
               </CircleWrapper>
               <TextContainer>
 
-                  <h2 > card :{toNextCardIndex+1}from{ArrayOfCardInfo.length}</h2>
+                  <h2 style={{color:"green", marginBottom: "10px"}} > Card : {toNextCardIndex+1} from {ArrayOfCardInfo.length}</h2>
                 <FlashcardInput1>
                 <TextField > {ArrayOfCardInfo[toNextCardIndex].frontSideLine1}</TextField>
                  </FlashcardInput1>

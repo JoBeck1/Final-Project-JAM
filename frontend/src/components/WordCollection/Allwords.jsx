@@ -52,9 +52,9 @@ const onClickHandlers =(activeButton)=> {
           {filtered? <div> 
             <Navbar/>
             <div className="filter-container">
-            <button onClick={()=>onClickHandlers (0)} className={buttonStyle===0? "active":""}> all</button>
-            <button onClick={()=>onClickHandlers (1)} className={buttonStyle===1? "active":""}> just 10</button>
-            <button onClick={()=>onClickHandlers (2)} className={buttonStyle===2? "active":""}> next 10</button>
+            <button onClick={()=>onClickHandlers (0)} className={buttonStyle===0? "active":""}> All</button>
+            <button onClick={()=>onClickHandlers (1)} className={buttonStyle===1? "active":""}> Just 10</button>
+            <button onClick={()=>onClickHandlers (2)} className={buttonStyle===2? "active":""}> Next 10</button>
           </div>
         <motion.div 
         layout 
@@ -74,11 +74,11 @@ const onClickHandlers =(activeButton)=> {
                     key={i} className="innerCard"> <div>
                      
                       <h3> Frontside</h3>
-                      <p> word:<span style={{color: 'blue'}}> {word.frontSideLine1}</span></p>
-                      <p> sentence:<span style={{color: 'blue'}}> {word.frontSideLine2}</span></p>
+                      <p> Word:<span style={{color: 'blue'}}> {word.frontSideLine1}</span></p>
+                      <p> Sentence:<span style={{color: 'blue'}}> {word.frontSideLine2}</span></p>
                       <h3> Backside</h3>
-                      <p> word: <span style={{color: "blue"}}> {word.backSideLine1}</span></p>
-                      <p> sentence: <span style={{color: 'blue'}}> {word.backSideLine2}</span></p>
+                      <p> Word: <span style={{color: "blue"}}> {word.backSideLine1}</span></p>
+                      <p> Sentence: <span style={{color: 'blue'}}> {word.backSideLine2}</span></p>
                     </div>
                     </motion.div>)
             })}
