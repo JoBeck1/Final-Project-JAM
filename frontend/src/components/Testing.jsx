@@ -27,7 +27,7 @@ console.log(flip);
   return (
    
     <FlashcardContainer >
-      {resetPages? <div><h2> no card exist</h2></div>: <div>
+      {resetPages? <div><h2 style={{fontSize: "2,5rem", color: "#473e41", borderBottom: "dotted"}}> No card exist</h2></div>: <div>
         <ReactCardFlip isFlipped={flip}
         
             flipDirection="horizontal"
