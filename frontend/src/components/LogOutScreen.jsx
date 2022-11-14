@@ -2,7 +2,7 @@ import React, {useEffect, useContext} from "react";
 import styled from "styled-components";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Picture1 from "../assets/images/Picture1.jpg";
+import logo111 from "../assets/images/logo111.jpeg";
 import Picture2 from "../assets/images/Picture2.jpg";
 import DropdownMenu from "./DropdownMenu.jsx";
 import videoBg from "../assets/videoBg.mp4";
@@ -34,7 +34,7 @@ setUserSissionData(null)
           </Col>
 
           {/* Main text */}
-          <Col md={6}>
+          <Col md={7}>
             <Title>
               <h1 className="animate__animated animate__backInDown">
                 Thank you for using the JAM-Project!
@@ -54,10 +54,10 @@ setUserSissionData(null)
             <hr />
           </Col>
 
-          <Col md={3}>
+          <Col md={2}>
             <div className="main_pic animate__zoomIn">
               <img
-                src={Picture1}
+                src={logo111}
                 alt="Flashcards"
                 className="animate__zoomIn"
               />
@@ -117,27 +117,16 @@ const MainDiv = styled.div`
   font-size: 1.3em;
   font-family: Poppins, sans-serif;
   font-weight: 400;
-  background-color: #96b5c4;
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  display: flex;
   text-decoration: none;
   color: #473e41;
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid #c7e1ec;
-  box-shadow: 5px 5px 5px #2f373b;
-
-  background: #fff;
-  position: relative;
-  z-index: 1;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
+  padding: 60px;
+  position:  relative;
+  z-index: 0;
 
   .overlay {
     position: absolute;
@@ -149,6 +138,8 @@ const MainDiv = styled.div`
     z-index: 2;
     opacity: 0.5;
   }
+
+  
 
   video {
     position: absolute;
@@ -165,12 +156,10 @@ const MainDiv = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    padding: 0 1rem;
   }
 
   img {
