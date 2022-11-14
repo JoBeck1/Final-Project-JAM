@@ -109,7 +109,7 @@ function Header() {
                     to={`/signup`}
                   >
                     {" "}
-                    SignUp{" "}
+                    Sign up{" "}
                   </NavLink>
                 </li>
                 <li className="menu-item">

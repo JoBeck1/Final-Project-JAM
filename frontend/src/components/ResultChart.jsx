@@ -24,7 +24,7 @@ function ResultChart() {
       },
       title: {
         display: true,
-        text: "chart for your result ",
+        text: " Your result ",
         color: "black",
         fullSize: true,
         font: {
@@ -72,15 +72,15 @@ function ResultChart() {
         <h2 className="final_result">{finalResult}</h2>
         <button className="button" onClick={createNewCard}>
           {" "}
-          create new{" "}
+          Create new{" "}
         </button>
         <button className="button" onClick={repeatTheTest}>
           {" "}
-          repeat the test
+          Repeat the test
         </button>
         <button className="button" onClick={refreshAndBackToHome}>
           {" "}
-          done{" "}
+          Done{" "}
         </button>
       </div>
     </div>

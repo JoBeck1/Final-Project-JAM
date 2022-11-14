@@ -32,7 +32,7 @@ function Learning() {
                   <Circle></Circle>
                 </CircleWrapper>
                 <TextContainer>
-                  <h2>frontside</h2>
+                  <h2 style={{marginBottom: '10px', color: 'green'}}>frontside</h2>
                   <FlashcardInput1>
                     <TextField>{item.frontSideLine1}</TextField>
                   </FlashcardInput1>
@@ -51,6 +51,7 @@ function Learning() {
                   <Circle></Circle>
                 </CircleWrapper>
                 <TextContainer>
+                  <h2 style={{marginBottom: '10px', color: 'green'}}> backside</h2>
                   <FlashcardInput1>
                     <TextField>{item.backSideLine1}</TextField>
                   </FlashcardInput1>
