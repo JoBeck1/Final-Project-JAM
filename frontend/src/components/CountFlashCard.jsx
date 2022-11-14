@@ -21,7 +21,9 @@ function CountFlashCard() {
   return (
     <CardContainer>
       <CardBody>
-        <h2 > Deck : {deckName}</h2>
+
+        <h2> deck : {deckName}</h2>
+
         {isInputExist && (
           <form onSubmit={handelDeckNameSubmit}>
             <input
@@ -29,13 +31,15 @@ function CountFlashCard() {
               type="text"
               onChange={handelNameOnDickCard}
             />
-            <button type="submit">Done</button>
+            <button type="submit">done</button>
           </form>
         )}
 
         <p>
           {" "}
-          you created <span> {count}</span> Flashcards
+
+          you created <span> {count}</span> flashCards
+
         </p>
       </CardBody>
       {userSissionData && (
@@ -52,7 +56,7 @@ function CountFlashCard() {
               to="/allWords"
             >
               {" "}
-              Our Collections
+              Our collections
             </Link>
           </button>
           <button className="btn">
@@ -67,7 +71,7 @@ function CountFlashCard() {
               to="/userCards"
             >
               {" "}
-              My Cards{" "}
+              My cards{" "}
             </Link>
           </button>
         </CardBody>
