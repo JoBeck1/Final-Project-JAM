@@ -16,7 +16,7 @@ function Learning() {
 
   return (
     <FlashcardContainer>
-      {resetPages? <div> <h2> no card exist</h2></div>: <Carousel className="carousel">
+      {resetPages? <div> <h2 style={{fontSize: "2,5rem", color: "#473e41", borderBottom: "dotted"}}> No card exist</h2></div>: <Carousel className="carousel">
         
         { ArrayOfCardinfo.map((item, i) => {
           return (
@@ -78,7 +78,6 @@ const FlashcardContainer = styled.div`
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   width: 100%;
   text-decoration: none;

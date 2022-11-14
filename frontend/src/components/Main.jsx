@@ -55,7 +55,6 @@ function Main() {
                 size="sm"
               >
                 Start
-                
               </Button>{" "}
             </p>
 
@@ -68,27 +67,22 @@ function Main() {
                 {" "}
                 Register
               </Button>{" "}
-             
             </p>
 
             <hr />
             <h3>Already registered?</h3>
             <p>
-              AWESOME! Just click below and check how much you have learned already!{" "}
+              AWESOME! Just click below and check how much you have learned
+              already!{" "}
               <Button link href="/login" variant="success" size="sm">
                 logging in
               </Button>{" "}
-              
             </p>
           </Col>
 
           <Col md={2}>
             <div className="main_pic animate__zoomIn">
-              <img
-                src={logo111}
-                alt="Flashcards"
-                className="animate__zoomIn"
-              />
+              <img src={logo111} alt="Flashcards" className="animate__zoomIn" />
             </div>
             <div className="main_pic">
               <img src={Picture2} alt="Flags" />
@@ -153,7 +147,7 @@ const MainDiv = styled.div`
   padding: 10px;
   position: relative;
   z-index: 0;
- 
+
   .overlay {
     position: absolute;
     top: 0;
@@ -164,6 +158,8 @@ const MainDiv = styled.div`
     z-index: 2;
     opacity: 0.5;
   }
+
+  
 
   video {
     position: absolute;
@@ -184,7 +180,7 @@ const MainDiv = styled.div`
     align-items: center;
     text-align: center;
     color: #fff;
-    }
+  }
 
   img {
     width: 100%;
