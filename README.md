@@ -1,5 +1,10 @@
 # JAM — Language Learning with Flashcards
 
+## Live Demo
+
+🌐 [Open JAM Live Demo](https://jam-dci-deployment.vercel.app/)
+
+
 JAM is a full-stack language-learning web application built as the final team project for the Web Development course at the Digital Career Institute (DCI) in 2022.
 
 The name **JAM** comes from the first names of the three creators: **Jochen, Ahmed and Mohammed**.
