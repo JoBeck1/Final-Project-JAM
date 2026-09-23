@@ -15,13 +15,18 @@ const session= require('express-session');
 const cookieParser= require("cookie-parser");
 app.use(cookieParser())
 
-app.use(cors())
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 const port = process.env.PORT || 5000;
 app.use(session({
     secret: 'secret-key',
     cookie: {
-maxAge:1000*60*60*60
-    },
+  maxAge: 1000 * 60 * 60 * 60,
+  secure: process.env.NODE_ENV === 'production',
+  sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax'
+},
     resave: true,
     saveUninitialized:true
 }));
